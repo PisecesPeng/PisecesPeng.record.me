@@ -1,0 +1,2030 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PMML version="4.1" xmlns="http://www.dmg.org/PMML-4_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.dmg.org/PMML-4_1 http://www.dmg.org/v4-1/pmml-4-1.xsd">
+    <Header>
+        <Application name="JPMML-R" version="1.0-SNAPSHOT"/>
+        <Timestamp>2016-02-03T03:22:45Z</Timestamp>
+    </Header>
+    <DataDictionary>
+        <DataField name="cost" optype="continuous" dataType="double"/>
+        <DataField name="quantity" optype="continuous" dataType="double"/>
+        <DataField name="total_component_weight" optype="continuous" dataType="double"/>
+        <DataField name="quantity_cost_mean" optype="continuous" dataType="double"/>
+        <DataField name="mat_quantity_cost_mean" optype="continuous" dataType="double"/>
+        <DataField name="solid_volume" optype="continuous" dataType="double"/>
+    </DataDictionary>
+    <MiningModel functionName="regression">
+        <MiningSchema>
+            <MiningField name="cost" usageType="target"/>
+            <MiningField name="quantity"/>
+            <MiningField name="total_component_weight"/>
+            <MiningField name="quantity_cost_mean"/>
+            <MiningField name="mat_quantity_cost_mean"/>
+            <MiningField name="solid_volume"/>
+        </MiningSchema>
+        <Targets>
+            <Target field="cost" rescaleConstant="13.272219215671093"/>
+        </Targets>
+        <Segmentation multipleModelMethod="sum">
+            <Segment id="1">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-6.678681882005442E-5">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.0016769676495621156">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="1.173"/>
+                        </Node>
+                        <Node id="3" score="0.0759430677667883">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="1.173"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="2">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="7.09914340080688E-5">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.001450393148972686">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="1.3605"/>
+                        </Node>
+                        <Node id="3" score="0.08240474533649599">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="1.3605"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="3">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-1.1380430153737022E-4">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.0017572212577286936">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="1.154"/>
+                        </Node>
+                        <Node id="3" score="0.07928918337128552">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="1.154"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="4">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="3.559511719923212E-4">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.0014739905478508481">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="1.154"/>
+                        </Node>
+                        <Node id="3" score="0.08534400395812636">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="1.154"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="5">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-5.449124228367527E-5">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.005351770267282613">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="22.4906870573"/>
+                        </Node>
+                        <Node id="3" score="0.022690887622118544">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="22.4906870573"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="6">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="2.060598073863699E-5">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.005378274867718919">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="21.805778893099998"/>
+                        </Node>
+                        <Node id="3" score="0.02242661062870007">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="21.805778893099998"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="7">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-2.7454703834317855E-4">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.005458391930118276">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="21.8033568652"/>
+                        </Node>
+                        <Node id="3" score="0.02141443055172552">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="21.8033568652"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="8">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="mat_quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="2.4215801742348078E-4">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-1.4202314432404224E-4">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="lessThan" value="246.958027823"/>
+                        </Node>
+                        <Node id="3" score="0.35983572541310505">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="greaterOrEqual" value="246.958027823"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="9">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="mat_quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="1.4036793592824224E-4">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-3.5009269198125857E-4">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="lessThan" value="246.958027823"/>
+                        </Node>
+                        <Node id="3" score="0.38664915644587333">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="greaterOrEqual" value="246.958027823"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="10">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="5.038194287694503E-5">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.005331141164900096">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="22.4906870573"/>
+                        </Node>
+                        <Node id="3" score="0.022770493955891754">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="22.4906870573"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="11">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="mat_quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="1.9557231268531254E-4">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-3.1634919547175754E-4">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="lessThan" value="157.4670928785"/>
+                        </Node>
+                        <Node id="3" score="0.294865468123405">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="greaterOrEqual" value="157.4670928785"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="12">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-1.8077223007088855E-4">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.005488171308734231">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="20.9410222027"/>
+                        </Node>
+                        <Node id="3" score="0.02165905727786448">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="20.9410222027"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="13">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="4.391609406805672E-6">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.005207690396185056">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="23.02822061095"/>
+                        </Node>
+                        <Node id="3" score="0.021792839468304643">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="23.02822061095"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="14">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-1.61226113980385E-5">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.001439298444883297">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="1.685"/>
+                        </Node>
+                        <Node id="3" score="0.09779908339516782">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="1.685"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="15">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="1.2115804606425386E-4">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.001505935056181911">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="1.154"/>
+                        </Node>
+                        <Node id="3" score="0.07900026886749632">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="1.154"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="16">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="9.064456377861172E-5">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.0015194717604282378">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="1.154"/>
+                        </Node>
+                        <Node id="3" score="0.077108749518103">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="1.154"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="17">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="mat_quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="1.1164992463147738E-5">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-3.131867156186634E-4">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="lessThan" value="246.958027823"/>
+                        </Node>
+                        <Node id="3" score="0.44174870488097345">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="greaterOrEqual" value="246.958027823"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="18">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="mat_quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="1.5857129782221797E-6">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-4.882835929097557E-4">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="lessThan" value="125.5258671215"/>
+                        </Node>
+                        <Node id="3" score="0.2819778946329582">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="greaterOrEqual" value="125.5258671215"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="19">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-2.358034286193479E-4">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.005402393918721293">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="21.412117536449998"/>
+                        </Node>
+                        <Node id="3" score="0.02153935377783814">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="21.412117536449998"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="20">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="mat_quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-1.877120946170056E-5">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-4.350514848455043E-4">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="lessThan" value="246.958027823"/>
+                        </Node>
+                        <Node id="3" score="0.34628016454593147">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="greaterOrEqual" value="246.958027823"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="21">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="mat_quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="5.683746168251865E-5">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-3.329412481589948E-4">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="lessThan" value="246.958027823"/>
+                        </Node>
+                        <Node id="3" score="0.3648897098733391">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="greaterOrEqual" value="246.958027823"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="22">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="4.9169118341995406E-5">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.0018181459868145343">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="0.9365"/>
+                        </Node>
+                        <Node id="3" score="0.06679653062227049">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="0.9365"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="23">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="1.7445648628699805E-4">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.0014018253244863985">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="1.3605"/>
+                        </Node>
+                        <Node id="3" score="0.08914076818936327">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="1.3605"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="24">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="8.023721706562697E-5">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.005364031063510394">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="20.3978430054"/>
+                        </Node>
+                        <Node id="3" score="0.02229454909995816">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="20.3978430054"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="25">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="8.415236171315989E-7">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.005446177392859217">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="21.805778893099998"/>
+                        </Node>
+                        <Node id="3" score="0.022396205012805096">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="21.805778893099998"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="26">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-5.1960737168254394E-5">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.0010699218097764975">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="2.7475"/>
+                        </Node>
+                        <Node id="3" score="0.13163679471668246">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="2.7475"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="27">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-3.029794125536658E-4">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.005403531768394287">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="21.824140482849998"/>
+                        </Node>
+                        <Node id="3" score="0.020846890792114672">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="21.824140482849998"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="28">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="2.346667715531708E-4">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.0012801034532441452">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="1.501"/>
+                        </Node>
+                        <Node id="3" score="0.09294991816568267">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="1.501"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="29">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-8.08176351713139E-5">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.005314426372652316">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="22.2342159879"/>
+                        </Node>
+                        <Node id="3" score="0.02238139508598347">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="22.2342159879"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="30">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="6.605252339872282E-5">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.0015082148374845404">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="1.3575"/>
+                        </Node>
+                        <Node id="3" score="0.09214819894966579">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="1.3575"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="31">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="mat_quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="2.170155018261554E-5">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-3.319376137209372E-4">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="lessThan" value="246.958027823"/>
+                        </Node>
+                        <Node id="3" score="0.3531186187357499">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="greaterOrEqual" value="246.958027823"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="32">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="3.447285905688129E-4">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.005306594849926371">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="23.302707401"/>
+                        </Node>
+                        <Node id="3" score="0.023738534056451342">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="23.302707401"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="33">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-2.3165532377334846E-5">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.001503944259659801">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="1.49"/>
+                        </Node>
+                        <Node id="3" score="0.08985340010008806">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="1.49"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="34">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="mat_quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-2.0459295301056162E-5">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-4.9127366770695E-4">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="lessThan" value="171.730477828"/>
+                        </Node>
+                        <Node id="3" score="0.3356253487660626">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="greaterOrEqual" value="171.730477828"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="35">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-2.019148357757061E-4">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.005324405513800185">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="20.3978430054"/>
+                        </Node>
+                        <Node id="3" score="0.021002773178329735">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="20.3978430054"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="36">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="mat_quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-1.316236793419492E-4">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-5.255188937974517E-4">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="lessThan" value="162.8501453165"/>
+                        </Node>
+                        <Node id="3" score="0.3468437196424905">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="greaterOrEqual" value="162.8501453165"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="37">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-1.8041647181675887E-4">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.005346555616775648">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="23.302707401"/>
+                        </Node>
+                        <Node id="3" score="0.021546068710038124">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="23.302707401"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="38">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="mat_quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-1.3183161748852692E-4">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-5.907929985949114E-4">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="lessThan" value="125.5258671215"/>
+                        </Node>
+                        <Node id="3" score="0.25425176350314277">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="greaterOrEqual" value="125.5258671215"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="39">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-9.798719348176351E-5">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.005377618470577277">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="20.619480377000002"/>
+                        </Node>
+                        <Node id="3" score="0.021326913279158196">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="20.619480377000002"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="40">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-1.025753425622637E-4">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.005339676034518939">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="21.824140482849998"/>
+                        </Node>
+                        <Node id="3" score="0.02219964826355699">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="21.824140482849998"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="41">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-2.217623038079421E-4">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.00530760639192951">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="20.619480377000002"/>
+                        </Node>
+                        <Node id="3" score="0.020813316721848683">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="20.619480377000002"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="42">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="mat_quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="2.5125823798075297E-4">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-2.354726649437251E-4">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="lessThan" value="246.958027823"/>
+                        </Node>
+                        <Node id="3" score="0.3472440366990456">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="greaterOrEqual" value="246.958027823"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="43">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="mat_quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-1.1359143634873834E-4">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-4.502797680093557E-4">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="lessThan" value="246.958027823"/>
+                        </Node>
+                        <Node id="3" score="0.36009482510741747">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="greaterOrEqual" value="246.958027823"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="44">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="mat_quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="8.665480620502882E-5">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-3.658501116781261E-4">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="lessThan" value="246.958027823"/>
+                        </Node>
+                        <Node id="3" score="0.3388318363335348">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="greaterOrEqual" value="246.958027823"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="45">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-5.9736941967493256E-5">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.005283067895842196">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="22.4906870573"/>
+                        </Node>
+                        <Node id="3" score="0.021926166871527347">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="22.4906870573"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="46">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="2.125436135490239E-4">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.00522410680386752">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="23.02822061095"/>
+                        </Node>
+                        <Node id="3" score="0.023525897802096792">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="23.02822061095"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="47">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="2.847271062504349E-4">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.0015494642769146307">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="0.9365"/>
+                        </Node>
+                        <Node id="3" score="0.070435345190129">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="0.9365"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="48">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="1.4339796648295424E-4">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.005245337902060449">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="22.4906870573"/>
+                        </Node>
+                        <Node id="3" score="0.022564620149988675">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="22.4906870573"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="49">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-2.829785992702595E-4">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.001810053738916309">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="1.178"/>
+                        </Node>
+                        <Node id="3" score="0.07349886235836518">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="1.178"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="50">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-1.2153469096342084E-4">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.0017746533524045397">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="0.9755"/>
+                        </Node>
+                        <Node id="3" score="0.06575546918799126">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="0.9755"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="51">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-2.0257843489681533E-4">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.0017352321098552804">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="1.154"/>
+                        </Node>
+                        <Node id="3" score="0.07335478061882873">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="1.154"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="52">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-1.7587438555241296E-4">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.0010923404788987338">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="3.1045"/>
+                        </Node>
+                        <Node id="3" score="0.13494389389187397">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="3.1045"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="53">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-8.558781149362919E-5">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.0015113303275385644">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="1.508"/>
+                        </Node>
+                        <Node id="3" score="0.08755005217473506">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="1.508"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="54">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-8.838698764235857E-5">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.0014093447946671998">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="1.508"/>
+                        </Node>
+                        <Node id="3" score="0.0839518597006622">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="1.508"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="55">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-1.777285912561846E-4">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.0018708578374310972">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="0.9704999999999999"/>
+                        </Node>
+                        <Node id="3" score="0.06636407135249978">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="0.9704999999999999"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="56">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="1.435383250613721E-4">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.0015362721125493134">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="1.154"/>
+                        </Node>
+                        <Node id="3" score="0.08213056536472443">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="1.154"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="57">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="1.4096241231626705E-4">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.0015318489692166942">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="1.154"/>
+                        </Node>
+                        <Node id="3" score="0.08123642902399174">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="1.154"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="58">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="1.2287641392529102E-4">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.005206926849356439">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="23.302707401"/>
+                        </Node>
+                        <Node id="3" score="0.022374851032286532">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="23.302707401"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="59">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-1.1563574168605086E-5">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.0015126906264155146">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="1.3605"/>
+                        </Node>
+                        <Node id="3" score="0.0847129674857901">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="1.3605"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="60">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="mat_quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-1.108846393823409E-4">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-4.43196636884935E-4">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="lessThan" value="246.958027823"/>
+                        </Node>
+                        <Node id="3" score="0.4147252589096893">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="greaterOrEqual" value="246.958027823"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="61">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="2.487362765719884E-6">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.005332584624462808">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="19.71116662865"/>
+                        </Node>
+                        <Node id="3" score="0.021489480845869217">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="19.71116662865"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="62">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="1.394588987539371E-4">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-8.683769782421771E-4">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="2.7545"/>
+                        </Node>
+                        <Node id="3" score="0.13167088151233453">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="2.7545"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="63">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-6.772642768260642E-5">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.005317467807742479">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="23.02822061095"/>
+                        </Node>
+                        <Node id="3" score="0.02257201581020848">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="23.02822061095"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="64">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-1.3610117430481628E-4">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.0016476902092458089">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="1.154"/>
+                        </Node>
+                        <Node id="3" score="0.07703891677629364">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="1.154"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="65">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="1.9625990522558387E-4">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.0016736072146370403">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="0.9365"/>
+                        </Node>
+                        <Node id="3" score="0.06858465810110347">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="0.9365"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="66">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="mat_quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="4.696690187876639E-5">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-4.0123305905729657E-4">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="lessThan" value="232.55298969950002"/>
+                        </Node>
+                        <Node id="3" score="0.35325212559112457">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="greaterOrEqual" value="232.55298969950002"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="67">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-1.0726828966364838E-4">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.0015893011531868575">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="1.3575"/>
+                        </Node>
+                        <Node id="3" score="0.08353957505347963">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="1.3575"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="68">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="1.9410605051053425E-4">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.005242233393210819">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="23.302707401"/>
+                        </Node>
+                        <Node id="3" score="0.023175340156395358">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="23.302707401"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="69">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="1.7492305094430694E-4">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.001492518805940041">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="1.154"/>
+                        </Node>
+                        <Node id="3" score="0.08128327032786838">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="1.154"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="70">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="mat_quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-8.974284357947936E-5">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-4.524649777349991E-4">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="lessThan" value="246.958027823"/>
+                        </Node>
+                        <Node id="3" score="0.38797112325509014">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="greaterOrEqual" value="246.958027823"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="71">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="8.42437868005121E-5">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.005124832343450759">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="21.4302827456"/>
+                        </Node>
+                        <Node id="3" score="0.021841489944093115">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="21.4302827456"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="72">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="2.8464622319580248E-5">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.00524166053002786">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="21.64032820445"/>
+                        </Node>
+                        <Node id="3" score="0.02165984314174361">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="21.64032820445"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="73">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="1.2500603232167915E-4">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.005226488569564509">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="23.302707401"/>
+                        </Node>
+                        <Node id="3" score="0.022553846288980415">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="23.302707401"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="74">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-6.335972365624849E-5">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.001586616046993869">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="1.173"/>
+                        </Node>
+                        <Node id="3" score="0.07453557995126482">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="1.173"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="75">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-1.0736498530487623E-4">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.0017526499610019607">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="0.9524999999999999"/>
+                        </Node>
+                        <Node id="3" score="0.0649125185677837">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="0.9524999999999999"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="76">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-6.473454903724889E-5">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.005193298394372045">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="22.2342159879"/>
+                        </Node>
+                        <Node id="3" score="0.021643500617585812">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="22.2342159879"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="77">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="mat_quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-1.2508392268157967E-4">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-5.495950858783723E-4">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="lessThan" value="125.5258671215"/>
+                        </Node>
+                        <Node id="3" score="0.2887354666707723">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="greaterOrEqual" value="125.5258671215"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="78">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-1.416771110630267E-4">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.0016381375924278442">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="1.3605"/>
+                        </Node>
+                        <Node id="3" score="0.08334267883416815">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="1.3605"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="79">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-1.1079182186733602E-4">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.0051674837956583305">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="21.4302827456"/>
+                        </Node>
+                        <Node id="3" score="0.02098288739132842">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="21.4302827456"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="80">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-4.553454682025063E-4">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.005286715356266851">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="22.221974928050003"/>
+                        </Node>
+                        <Node id="3" score="0.020389249678068724">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="22.221974928050003"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="81">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="3.034156910919678E-5">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.0014415762507329565">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="1.3605"/>
+                        </Node>
+                        <Node id="3" score="0.08577973582465662">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="1.3605"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="82">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="1.1303116390702578E-4">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.00456981293605575">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="25.345880651549997"/>
+                        </Node>
+                        <Node id="3" score="0.025994052430353454">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="25.345880651549997"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="83">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="9.37773535844075E-5">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.0018594173084840859">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="0.9704999999999999"/>
+                        </Node>
+                        <Node id="3" score="0.07459565938533015">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="0.9704999999999999"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="84">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="6.003706701670523E-5">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.004607897448858992">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="25.85042908625"/>
+                        </Node>
+                        <Node id="3" score="0.025414270831710915">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="25.85042908625"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="85">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="mat_quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-2.0260061345614018E-4">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-5.57236652711808E-4">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="lessThan" value="246.958027823"/>
+                        </Node>
+                        <Node id="3" score="0.5311131133993855">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="greaterOrEqual" value="246.958027823"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="86">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-2.0609777047329026E-4">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.0016716591398940484">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="1.3605"/>
+                        </Node>
+                        <Node id="3" score="0.0838213216007908">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="1.3605"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="87">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="1.780788566554922E-4">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.0014494131091974682">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="1.3605"/>
+                        </Node>
+                        <Node id="3" score="0.0927566083273569">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="1.3605"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="88">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="mat_quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="3.1946520805367764E-4">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-2.2658161793500108E-4">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="lessThan" value="125.5258671215"/>
+                        </Node>
+                        <Node id="3" score="0.2820607982173157">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="greaterOrEqual" value="125.5258671215"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="89">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="8.531873125439516E-5">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.005153171067525008">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="21.78499527545"/>
+                        </Node>
+                        <Node id="3" score="0.02180715816807431">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="21.78499527545"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="90">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-2.541303863105998E-4">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.005300623715620793">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="20.2659734061"/>
+                        </Node>
+                        <Node id="3" score="0.02093274244007214">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="20.2659734061"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="91">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-7.828565877078974E-5">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.00520621485067594">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="21.824140482849998"/>
+                        </Node>
+                        <Node id="3" score="0.021349196011169313">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="21.824140482849998"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="92">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="mat_quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="2.0436543011235497E-4">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-2.162237630342093E-4">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="lessThan" value="241.43332221100002"/>
+                        </Node>
+                        <Node id="3" score="0.42014865514718525">
+                            <SimplePredicate field="mat_quantity_cost_mean" operator="greaterOrEqual" value="241.43332221100002"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="93">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-1.0889907528468735E-4">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.0018622806568498991">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="0.9355"/>
+                        </Node>
+                        <Node id="3" score="0.06320380021153044">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="0.9355"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="94">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="-2.063215728095374E-4">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.005188088697120431">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="21.960461376650002"/>
+                        </Node>
+                        <Node id="3" score="0.020574813244124454">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="21.960461376650002"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="95">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="1.3319133216290068E-4">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.0011663942349220732">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="2.0045"/>
+                        </Node>
+                        <Node id="3" score="0.09528601577368151">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="2.0045"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="96">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="1.257885725253004E-4">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.004431323526979564">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="26.084122047050002"/>
+                        </Node>
+                        <Node id="3" score="0.02541586939384915">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="26.084122047050002"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="97">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="1.863797942589834E-5">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.0052584353959200855">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="21.64032820445"/>
+                        </Node>
+                        <Node id="3" score="0.02129875965046695">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="21.64032820445"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="98">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="1.7049795980559883E-4">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.004453003448187358">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="26.29165040485"/>
+                        </Node>
+                        <Node id="3" score="0.025501850963493892">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="26.29165040485"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="99">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="quantity_cost_mean"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="4.815551039047171E-5">
+                            <SimplePredicate field="quantity_cost_mean" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.0045510629991099205">
+                            <SimplePredicate field="quantity_cost_mean" operator="lessThan" value="25.67736182905"/>
+                        </Node>
+                        <Node id="3" score="0.024965839352957663">
+                            <SimplePredicate field="quantity_cost_mean" operator="greaterOrEqual" value="25.67736182905"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="100">
+                <True/>
+                <TreeModel functionName="regression" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="total_component_weight"/>
+                    </MiningSchema>
+                    <Node id="1">
+                        <True/>
+                        <Node id="4" score="1.6170175784501646E-5">
+                            <SimplePredicate field="total_component_weight" operator="isMissing"/>
+                        </Node>
+                        <Node id="2" score="-0.0015904601662871712">
+                            <SimplePredicate field="total_component_weight" operator="lessThan" value="1.154"/>
+                        </Node>
+                        <Node id="3" score="0.07561018755274654">
+                            <SimplePredicate field="total_component_weight" operator="greaterOrEqual" value="1.154"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+        </Segmentation>
+    </MiningModel>
+</PMML>

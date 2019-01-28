@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PMML xmlns="http://www.dmg.org/PMML-4_3" version="4.3">
+	<Header>
+		<Application name="JPMML-TensorFlow" version="1.0-SNAPSHOT"/>
+		<Timestamp>2018-08-29T02:32:09Z</Timestamp>
+	</Header>
+	<DataDictionary>
+		<DataField name="_target" optype="continuous" dataType="float"/>
+		<DataField name="acceleration" optype="continuous" dataType="double"/>
+		<DataField name="cylinders" optype="continuous" dataType="double"/>
+		<DataField name="displacement" optype="continuous" dataType="double"/>
+		<DataField name="horsepower" optype="continuous" dataType="double"/>
+		<DataField name="model_year" optype="continuous" dataType="double"/>
+		<DataField name="weight" optype="continuous" dataType="double"/>
+		<DataField name="origin" optype="categorical" dataType="string">
+			<Value value="1"/>
+			<Value value="2"/>
+			<Value value="3"/>
+		</DataField>
+	</DataDictionary>
+	<TransformationDictionary>
+		<DerivedField name="float(acceleration)" optype="continuous" dataType="float">
+			<FieldRef field="acceleration"/>
+		</DerivedField>
+		<DerivedField name="float(cylinders)" optype="continuous" dataType="float">
+			<FieldRef field="cylinders"/>
+		</DerivedField>
+		<DerivedField name="float(displacement)" optype="continuous" dataType="float">
+			<FieldRef field="displacement"/>
+		</DerivedField>
+		<DerivedField name="float(horsepower)" optype="continuous" dataType="float">
+			<FieldRef field="horsepower"/>
+		</DerivedField>
+		<DerivedField name="float(model_year)" optype="continuous" dataType="float">
+			<FieldRef field="model_year"/>
+		</DerivedField>
+		<DerivedField name="float(weight)" optype="continuous" dataType="float">
+			<FieldRef field="weight"/>
+		</DerivedField>
+	</TransformationDictionary>
+	<RegressionModel functionName="regression" x-mathContext="float">
+		<MiningSchema>
+			<MiningField name="_target" usageType="target"/>
+			<MiningField name="origin"/>
+			<MiningField name="acceleration"/>
+			<MiningField name="cylinders"/>
+			<MiningField name="displacement"/>
+			<MiningField name="horsepower"/>
+			<MiningField name="model_year"/>
+			<MiningField name="weight"/>
+		</MiningSchema>
+		<RegressionTable intercept="0.32714313">
+			<NumericPredictor name="float(acceleration)" coefficient="0.30297887"/>
+			<NumericPredictor name="float(cylinders)" coefficient="0.1414512"/>
+			<NumericPredictor name="float(displacement)" coefficient="-0.054809194"/>
+			<NumericPredictor name="float(horsepower)" coefficient="0.035477545"/>
+			<NumericPredictor name="float(model_year)" coefficient="0.34887207"/>
+			<NumericPredictor name="float(weight)" coefficient="-7.5828226E-4"/>
+			<CategoricalPredictor name="origin" value="1" coefficient="-0.11984502"/>
+			<CategoricalPredictor name="origin" value="2" coefficient="0.21810958"/>
+			<CategoricalPredictor name="origin" value="3" coefficient="0.4929063"/>
+		</RegressionTable>
+	</RegressionModel>
+</PMML>

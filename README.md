@@ -16,17 +16,17 @@
 
 ### :open_file_folder: Practice Sample
 
-- [TheInitiationBay](https://github.com/PisecesPeng/SampleWare/tree/master/TheInitiationBay) ``` A social website with basic functions and friendly interface ```
-- [StuTerminal](https://github.com/PisecesPeng/SampleWare/tree/master/StuTerminal) ``` Terminal for operating student data ```
-- [UserBaseJSP](https://github.com/PisecesPeng/SampleWare/tree/master/UserBaseJSP) ``` Simple JSP with login function ```
-- [UserBasePlat](https://github.com/PisecesPeng/SampleWare/tree/master/UserBasePlat) ``` Simple user-enabled platform ```
-- [Bookstore](https://github.com/PisecesPeng/SampleWare/tree/master/BookStore) ``` Bookstore with basic functions ```
-- [Fakebook](https://github.com/PisecesPeng/SampleWare/tree/master/Fakebook) ``` Basic social webpage ```
-- [InChat](https://github.com/PisecesPeng/SampleWare/tree/master/InChat) ``` Online chat webpage ```
-- [OpKnightAPI](https://github.com/PisecesPeng/SampleWare/tree/master/OpKnightAPI) ``` Op knight API with RESTful ```
-- [Derby&H2Demo](https://github.com/PisecesPeng/SampleWare/tree/master/Derby%26H2Demo) ``` Start derby&H2 configuration ```
-- [LoginKaptcha](https://github.com/PisecesPeng/SampleWare/tree/master/LoginKaptcha) ``` login with captcha ```
+- [TheInitiationBay](https://github.com/PisecesPeng/SampleWare/tree/master/TheInitiationBay) ``` A social website with basic functions and friendly interface. [Java: SSM + Bootstrap] ```
+- [StuTerminal](https://github.com/PisecesPeng/SampleWare/tree/master/StuTerminal) ``` Terminal for operating student data. [Java: JDBC] ```
+- [UserBaseJSP](https://github.com/PisecesPeng/SampleWare/tree/master/UserBaseJSP) ``` Simple JSP with login function. [Java: JSP] ```
+- [UserBasePlat](https://github.com/PisecesPeng/SampleWare/tree/master/UserBasePlat) ``` Simple user-enabled platform. [Java: Mybatis] ```
+- [Bookstore](https://github.com/PisecesPeng/SampleWare/tree/master/BookStore) ``` Bookstore with basic functions. [Java: Spring + Mybatis] ```
+- [Fakebook](https://github.com/PisecesPeng/SampleWare/tree/master/Fakebook) ``` Basic social webpage. [Java: SSM] ```
+- [InChat](https://github.com/PisecesPeng/SampleWare/tree/master/InChat) ``` Online chat webpage. [JS: Express + Socket.IO] ```
+- [OpKnightAPI](https://github.com/PisecesPeng/SampleWare/tree/master/OpKnightAPI) ``` Op knight API with RESTful. [Java: Springboot + Mybatis] ```
+- [Derby&H2Demo](https://github.com/PisecesPeng/SampleWare/tree/master/Derby%26H2Demo) ``` Start derby&H2 configuration. [Java: Springboot] ```
+- [LoginKaptcha](https://github.com/PisecesPeng/SampleWare/tree/master/LoginKaptcha) ``` login with captcha. [Java: Springboot] ```
 
+### :hammer: Utils
 
-
-
+- [Java](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/Java) ``` Record Java Utils ```
