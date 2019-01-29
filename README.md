@@ -5,7 +5,7 @@
 
 ### :art: [Article List](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/Article)
 
-<br/>
+- **Some notes or memo**
 
 ### :floppy_disk: Database
 
