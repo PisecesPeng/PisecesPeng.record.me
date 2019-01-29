@@ -1,0 +1,13 @@
+*.java linguist-vendored
+*.js linguist-vendored
+*.ts linguist-vendored
+*.vue linguist-vendored
+*.jsx linguist-vendored
+*.css linguist-vendored
+*.html linguist-vendored
+*.go linguist-vendored
+*.cs linguist-vendored
+*.sh linguist-vendored
+*.sql linguist-vendored
+*.xml linguist-vendored
+Dockerfile linguist-vendored
