@@ -1,7 +1,10 @@
 <div align="center">
   <h1>:man_technologist:</h1>
 </div>
-<br/>
+
+
+### :art: [Article List](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/Article)
+
 
 ### :floppy_disk: Database
 
@@ -22,7 +25,7 @@
 - [UserBasePlat](https://github.com/PisecesPeng/SampleWare/tree/master/UserBasePlat) ``` Simple user-enabled platform. [Java: Mybatis] ```
 - [Bookstore](https://github.com/PisecesPeng/SampleWare/tree/master/BookStore) ``` Bookstore with basic functions. [Java: Spring + Mybatis] ```
 - [Fakebook](https://github.com/PisecesPeng/SampleWare/tree/master/Fakebook) ``` Basic social webpage. [Java: SSM] ```
-- [InChat](https://github.com/PisecesPeng/SampleWare/tree/master/InChat) ``` Online chat webpage. [JS: Express + Socket.IO] ```
+- [InChat](https://github.com/PisecesPeng/SampleWare/tree/master/InChat) ``` Online chat webpage. [JavaScript: Express + Socket.IO] ```
 - [OpKnightAPI](https://github.com/PisecesPeng/SampleWare/tree/master/OpKnightAPI) ``` Op knight API with RESTful. [Java: Springboot + Mybatis] ```
 - [Derby&H2Demo](https://github.com/PisecesPeng/SampleWare/tree/master/Derby%26H2Demo) ``` Start derby&H2 configuration. [Java: Springboot] ```
 - [LoginKaptcha](https://github.com/PisecesPeng/SampleWare/tree/master/LoginKaptcha) ``` login with captcha. [Java: Springboot] ```

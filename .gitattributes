@@ -10,4 +10,6 @@
 *.sh linguist-vendored
 *.sql linguist-vendored
 *.xml linguist-vendored
+*.yml linguist-vendored
+*.md linguist-vendored
 Dockerfile linguist-vendored
