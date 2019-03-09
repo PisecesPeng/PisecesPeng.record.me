@@ -5,8 +5,15 @@
 
 ### :penguin: Linux
 
-- [Linux常用命令备忘(持续更新...)](https://github.com/PisecesPeng/PisecesPeng.record.me/issues/1)
+- [Linux command memo (continuous update..)](https://github.com/PisecesPeng/PisecesPeng.record.me/issues/1)
+
+### :coffee: Java
+
+- [Effective Java](https://github.com/PisecesPeng/PisecesPeng.record.me/issues/3)
+- [Java Serialization, declare SerialVersionUID](https://github.com/PisecesPeng/PisecesPeng.record.me/issues/6)
+- [Java Serialization, handling sensitive attributes](https://github.com/PisecesPeng/PisecesPeng.record.me/issues/7)
 
 ### :hammer_and_wrench: Tools
 
-- [Vim基础操作总结](https://github.com/PisecesPeng/PisecesPeng.record.me/issues/2)
+- [Summary of Vim basic operations](https://github.com/PisecesPeng/PisecesPeng.record.me/issues/2)
+- [Maven, suitable for using its command](https://github.com/PisecesPeng/PisecesPeng.record.me/issues/5)
