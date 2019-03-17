@@ -27,9 +27,10 @@
 - [Bookstore](https://github.com/PisecesPeng/SampleWare/tree/master/BookStore) ``` Bookstore with basic functions. [Java: Spring + Mybatis] ```
 - [Fakebook](https://github.com/PisecesPeng/SampleWare/tree/master/Fakebook) ``` Basic social webpage. [Java: SSM] ```
 - [InChat](https://github.com/PisecesPeng/SampleWare/tree/master/InChat) ``` Online chat webpage. [JavaScript: Express + Socket.IO] ```
-- [OpKnightAPI](https://github.com/PisecesPeng/SampleWare/tree/master/OpKnightAPI) ``` Op knight API with RESTful. [Java: Springboot + Mybatis] ```
-- [Derby&H2Demo](https://github.com/PisecesPeng/SampleWare/tree/master/Derby%26H2Demo) ``` Start derby&H2 configuration. [Java: Springboot] ```
-- [LoginKaptcha](https://github.com/PisecesPeng/SampleWare/tree/master/LoginKaptcha) ``` login with captcha. [Java: Springboot] ```
+- [OpKnightAPI](https://github.com/PisecesPeng/SampleWare/tree/master/OpKnightAPI) ``` Op knight API with RESTful. [Java: SpringBoot + Mybatis] ```
+- [Derby&H2Demo](https://github.com/PisecesPeng/SampleWare/tree/master/Derby%26H2Demo) ``` Start derby&H2 configuration. [Java: SpringBoot] ```
+- [LoginKaptcha](https://github.com/PisecesPeng/SampleWare/tree/master/LoginKaptcha) ``` login with captcha. [Java: SpringBoot] ```
+- [BakeryTerminal](https://github.com/PisecesPeng/SampleWare/tree/master/BakeryTerminal) ``` Bakery service terminal. [Java: SpringBoot + SpringDataJPA + SpringTest] ```
 
 ### :hammer: Utils
 
