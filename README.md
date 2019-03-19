@@ -3,20 +3,27 @@
 </div>
 
 
-### :art: [Article List](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/Article)
+### :art: Article
 
-- **Some notes or memo**
+#### :penguin: Linux
 
-### :floppy_disk: Database
+- [Linux command memo (continuous update..)](https://github.com/PisecesPeng/PisecesPeng.record.me/issues/1)
 
-- [SQL](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/Database/SQL) ``` SQL statement record ```
+#### :coffee: Java
 
-### :whale: Docker
+- [Effective Java](https://github.com/PisecesPeng/PisecesPeng.record.me/issues/3)
+- [Java Serialization, declare SerialVersionUID](https://github.com/PisecesPeng/PisecesPeng.record.me/issues/6)
+- [Java Serialization, handling sensitive attributes](https://github.com/PisecesPeng/PisecesPeng.record.me/issues/7)
 
-- [MySQL](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/Docker/MySQL) ``` Powered by mysql:5.7 ```
-- [Oracle](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/Docker/Oracle-ee-11g) ``` Powered by sath89/oracle-ee-11g ```
-- [Neo4j](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/Docker/Neo4j-enterprise) ``` Powered by graphstack/neo4j-enterprise ```
-- [Redis](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/Docker/Redis) ``` Powered by redis:5.0 ```
+#### :leaves: Spring
+
+- [Spring Data JPA, problems encountered in development](https://github.com/PisecesPeng/PisecesPeng.record.me/issues/8)
+- [Briefly understand Spring @Transactional](https://github.com/PisecesPeng/PisecesPeng.record.me/issues/9)
+
+#### :wrench: Tools
+
+- [Summary of Vim basic operations](https://github.com/PisecesPeng/PisecesPeng.record.me/issues/2)
+- [Maven, suitable for using its command](https://github.com/PisecesPeng/PisecesPeng.record.me/issues/5)
 
 ### :open_file_folder: Practice Sample
 
@@ -32,6 +39,24 @@
 - [LoginKaptcha](https://github.com/PisecesPeng/SampleWare/tree/master/LoginKaptcha) ``` login with captcha. [Java: SpringBoot] ```
 - [BakeryTerminal](https://github.com/PisecesPeng/SampleWare/tree/master/BakeryTerminal) ``` Bakery service terminal. [Java: SpringBoot + SpringDataJPA + SpringTest] ```
 
-### :hammer: Utils
+### :memo: Record
 
-- [Java](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/Java) ``` Record Java Utils ```
+#### :hammer_and_wrench: Utils
+
+- [Javassist](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/JavaUtils/Javassist) ``` Template generation class [Java] ```
+- [JpmmlInvoker](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/JavaUtils/JpmmlInvoker) ``` invoke pmml [Java] ```
+- [SnakeCase](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/JavaUtils/SnakeCase) ``` SnakeCase, Examples for underscore-java [Java] ```
+- [ThreadLocal](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/JavaUtils/ThreadLocal) ``` Simple op ThreadLocal [Java] ```
+- [GzipBase64](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/JavaUtils/GzipBase64) ``` Gzip & Base64 utils [Java] ```
+
+#### :whale: Docker
+
+- [MySQL](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/Docker/MySQL) ``` Powered by mysql:5.7 ```
+- [Oracle](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/Docker/Oracle-ee-11g) ``` Powered by sath89/oracle-ee-11g ```
+- [Neo4j](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/Docker/Neo4j-enterprise) ``` Powered by graphstack/neo4j-enterprise ```
+- [Redis](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/Docker/Redis) ``` Powered by redis:5.0 ```
+
+#### :scroll: Script
+
+- [SQL](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/Script/SQL) ``` SQL statement record ```
+
