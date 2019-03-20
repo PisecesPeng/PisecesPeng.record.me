@@ -3,7 +3,7 @@
 </div>
 
 
-### :art: Article
+### :art: [Article](https://github.com/PisecesPeng/PisecesPeng.record.me/issues)
 
 #### :penguin: Linux
 
