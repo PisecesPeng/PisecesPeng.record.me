@@ -14,6 +14,8 @@
 - [Effective Java](https://github.com/PisecesPeng/PisecesPeng.record.me/issues/3)
 - [Java Serialization, declare SerialVersionUID](https://github.com/PisecesPeng/PisecesPeng.record.me/issues/6)
 - [Java Serialization, handling sensitive attributes](https://github.com/PisecesPeng/PisecesPeng.record.me/issues/7)
+- [Java, introduction to the List method](https://github.com/PisecesPeng/PisecesPeng.record.me/issues/10)
+- [Java, Stream usage example](https://github.com/PisecesPeng/PisecesPeng.record.me/issues/11)
 
 #### :leaves: Spring
 
@@ -36,7 +38,7 @@
 - [InChat](https://github.com/PisecesPeng/SampleWare/tree/master/InChat) ``` Online chat webpage. [JavaScript: Express + Socket.IO] ```
 - [OpKnightAPI](https://github.com/PisecesPeng/SampleWare/tree/master/OpKnightAPI) ``` Op knight API with RESTful. [Java: SpringBoot + Mybatis] ```
 - [Derby&H2Demo](https://github.com/PisecesPeng/SampleWare/tree/master/Derby%26H2Demo) ``` Start derby&H2 configuration. [Java: SpringBoot] ```
-- [LoginKaptcha](https://github.com/PisecesPeng/SampleWare/tree/master/LoginKaptcha) ``` login with captcha. [Java: SpringBoot] ```
+- [LoginKaptcha](https://github.com/PisecesPeng/SampleWare/tree/master/LoginKaptcha) ``` login with captcha. [Java: SpringBoot + kaptcha] ```
 - [BakeryTerminal](https://github.com/PisecesPeng/SampleWare/tree/master/BakeryTerminal) ``` Bakery service terminal. [Java: SpringBoot + SpringDataJPA + SpringTest] ```
 
 ### :memo: Record
