@@ -40,6 +40,7 @@
 - [Derby&H2Demo](https://github.com/PisecesPeng/SampleWare/tree/master/Derby%26H2Demo) ``` Start derby&H2 configuration. [Java: SpringBoot] ```
 - [LoginKaptcha](https://github.com/PisecesPeng/SampleWare/tree/master/LoginKaptcha) ``` login with captcha. [Java: SpringBoot + kaptcha] ```
 - [BakeryTerminal](https://github.com/PisecesPeng/SampleWare/tree/master/BakeryTerminal) ``` Bakery service terminal. [Java: SpringBoot + SpringDataJPA + SpringTest] ```
+- [LuckyGuy](https://github.com/PisecesPeng/SampleWare/tree/master/LuckyGuy) ``` Have you won the prize?. [Java: SpringBoot + Redis + Interceptor] ```
 
 ### :memo: Record
 
