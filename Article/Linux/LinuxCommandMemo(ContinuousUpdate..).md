@@ -1,4 +1,4 @@
-<h2> Linux command memo (continuous update..) </h2>
+<h2> Linux常用进阶命令(持续更新..) </h2>
 
 - [SSH](#ssh)
 - [SCP](#scp)

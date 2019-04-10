@@ -17,6 +17,7 @@
 > 2) 函数式编程.对Stream的任何修改都不会修改背后的数据源.(比如过滤操作不会删除被过滤的元素,而是会产生一个不包含被过滤元素的新Stream)
 > 3) 惰性执行.Stream上的操作不会立即执行,只有等用户真正需要结果时才会执行.
 > 4) 可消费性.Stream只能被'消费'一次,一旦遍历过就会失效,若想要再次必须重新生成.
+<hr>
 
 ### 1. 创建.of().generate().iterate()
 ```java
@@ -33,6 +34,7 @@ doubleStream.forEach(System.out::print);  // 输出结果为 : 0.100086928961647
 Stream<Integer> integerStream = Stream.iterate(0, item -> item + 5).limit(10);
 integerStream.forEach(System.out::print);  // 输出结果为 : 051015202530354045
 ```
+<hr>
 
 ### 2. 限制/跳过.limit().skip()
 ```java
@@ -43,18 +45,21 @@ stream.limit(3).forEach(System.out::print);  // 输出结果为 : abc
 stream = Stream.of("a", "b", "c", "d", "e");
 stream.skip(3).forEach(System.out::print);  // 输出结果为 : de
 ```
+<hr>
 
 ### 3. 过滤.filter()
 ```java
 Stream<String> stream = Stream.of("a", "bb", "", "", "e");
 System.out.print(stream.filter(s -> s.isEmpty()).count());  // 输出结果为 : 2
 ```
+<hr>
 
 ### 4. 去重.distinct()
 ```java
 Stream<String> stream = Stream.of("a", "a", "c", "d", "d");
 stream.distinct().forEach(System.out::print);  // 输出结果为 : acd
 ```
+<hr>
 
 ### 5. 映射.map()
 ```java
@@ -70,18 +75,21 @@ Stream<List<Integer>> flatStream = Stream.of(Arrays.asList(1), Arrays.asList(2, 
 //层级结构扁平化,将底层元素抽出来放到一起,最终输出都是直接的数字
 System.out.println(flatStream.flatMap(childList -> childList.stream()).collect(Collectors.toList()));  // 输出结果为 : [1, 2, 3, 3, 5, 6]
 ```
+<hr>
 
 ### 6. 窥视.peek()
 ```java
 Stream<String> stream = Stream.of("a", "b", "c", "d", "e");
 System.out.println(stream.peek(v -> System.out.print("peek : " + v)).map(String::toUpperCase).collect(Collectors.toList()));  // 输出结果为 : abcde[A, B, C, D, E]
 ```
+<hr>
 
 ### 7. 排序.sort()
 ```java
 Stream<String> stream = Stream.of("a", "c", "e", "b", "d");
 System.out.println(stream.sorted(Comparator.comparing(String::toString)).collect(Collectors.toList()));  // 输出结果为 : [a, b, c, d, e]
 ```
+<hr>
 
 ### 8. 最大值/最小值.max().min()
 ```java
@@ -90,6 +98,7 @@ System.out.println(maxStream .max(Comparator.comparing(String::toString)).get())
 Stream<Integer> minStream = Stream.of(6, 2, 1, 6, 8, 12);
 System.out.println(minStream.min(Comparator.comparing(Integer::intValue)).get());  // 输出结果为 : 1
 ```
+<hr>
 
 ### 9. 匹配.match()
 ```java
@@ -105,6 +114,7 @@ stream = Stream.of("a", "c", "e", "b", "d");
 // Stream 中没有一个元素符合传入的Predicate,返回true
 System.out.println(Boolean.valueOf(stream.noneMatch(p -> "e".equals(p))));  // 输出结果为 : false
 ```
+<hr>
 
 ### 10.收集.collect()
 ```java
@@ -177,6 +187,7 @@ Stream<String> stream = Stream.of("a", "b", "c", "d", "e");
 String joined = stream.collect(Collectors.joining(",", "{", "}"));
 System.out.print(joined);  // 输出结果为 : {a,b,c,d,e}
 ```
+<hr>
 
 ### 11. 集合.reduce()
 ```java
@@ -193,3 +204,4 @@ stream = Stream.of("aa", "bb", "ccc", "d", "eee");
 System.out.println(stream.reduce(0, (sum, str) -> sum+str.length(), (a, b) -> a+b));  // 输出结果为 : 11
 // stream.mapToInt(str -> str.length()).sum();
 ```
+<hr>

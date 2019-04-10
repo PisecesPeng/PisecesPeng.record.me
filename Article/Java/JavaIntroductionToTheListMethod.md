@@ -7,9 +7,8 @@
 - [5. 切分.spliterator()](#5-%E5%88%87%E5%88%86spliterator)
 - [6. 其他.other](#6-%E5%85%B6%E4%BB%96other)
 
-> List是一个按顺序查找、有序的集合,
-> 可以包含重复的元素且允许存储项为空,
-> 提供了按索引访问的方式.
+> List是一个按顺序查找、有序的集合,可以包含重复的元素且允许存储项为空,提供了按索引访问的方式.
+<hr>
 
 ### 1. 增加.add()
 ```java
@@ -22,6 +21,7 @@ listAdd.addAll(2, Arrays.asList("f", "g", "h"));
 
 listAdd.forEach(System.out::print);  // 输出结果为 : abfghcde
 ```
+<hr>
 
 ### 2. 修改.set()
 ```java
@@ -35,6 +35,7 @@ listSet.set(2, "d");
 
 listSet.forEach(System.out::print);  // 输出结果为 : abd
 ```
+<hr>
 
 ### 3. 移除.remove()
 ```java
@@ -51,6 +52,7 @@ listRemove.forEach(System.out::print);  // 输出结果为 : c
 listRemove.removeAll(Arrays.asList("c"));
 listRemove.forEach(System.out::print);  // 输出结果为 :
 ```
+<hr>
 
 ### 4. 迭代.iterator()
 ```java
@@ -116,6 +118,7 @@ while (it3.hasNext()) {
 }
 listIter.forEach(System.out::print);  // 输出结果为 : okbok
 ```
+<hr>
 
 ### 5. 切分.spliterator()
 ```java
@@ -151,6 +154,7 @@ s1.forEachRemaining(System.out::print);  // 输出结果为 : s1 : cde
 System.out.print("s2 : ");
 s2.forEachRemaining(System.out::print);  // 输出结果为 : s2 : ab
 ```
+<hr>
 
 ### 6. 其他.other
 ```java
@@ -203,3 +207,4 @@ for (String str: strings) {
 listFunction.clear();
 listFunction.forEach(System.out::print);  // 输出结果为 :
 ```
+<hr>
