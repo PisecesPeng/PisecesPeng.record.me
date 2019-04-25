@@ -3,7 +3,7 @@
 - [1. 生成’SSh key’](#1-%E7%94%9F%E6%88%90ssh-key)
 - [2. 关联远程仓库](#2-%E5%85%B3%E8%81%94%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93)
   - [1. 将远程仓库直接clone到本地​](#1-%E5%B0%86%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9B%B4%E6%8E%A5clone%E5%88%B0%E6%9C%AC%E5%9C%B0%E2%80%8B)
-  - [2. 添加远程仓库​<br/><br/>](#2-%E6%B7%BB%E5%8A%A0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E2%80%8Bbrbr)
+  - [2. 添加远程仓库​](#2-%E6%B7%BB%E5%8A%A0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E2%80%8B)
 - [3. 进行一次简单的push操作](#3-%E8%BF%9B%E8%A1%8C%E4%B8%80%E6%AC%A1%E7%AE%80%E5%8D%95%E7%9A%84push%E6%93%8D%E4%BD%9C)
 <hr>
 
@@ -37,6 +37,7 @@ git clone git://xxx/xx.git
 ``` ps. clone的同时,也会把仓库中的文件同时pull到本地. ```
 
 #### 2. 添加远程仓库​
+
 ```shell
 git init
 git remote add origin git://xxx/xx.git
