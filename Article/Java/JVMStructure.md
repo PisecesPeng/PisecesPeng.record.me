@@ -1,0 +1,438 @@
+<h2> JVM结构的简单梳理 </h2>
+
+- [JVM是什么](#jvm%E6%98%AF%E4%BB%80%E4%B9%88)
+- [JVM的基本特性](#jvm%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%89%B9%E6%80%A7)
+- [JVM的流程结构](#jvm%E7%9A%84%E6%B5%81%E7%A8%8B%E7%BB%93%E6%9E%84)
+  - [1. Java编译(Java Compiler)](#1-java%E7%BC%96%E8%AF%91java-compiler)
+  - [2. 类加载子系统(Class Loader Subsystem)](#2-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%AD%90%E7%B3%BB%E7%BB%9Fclass-loader-subsystem)
+    - [2.1 Loading](#21-loading)
+    - [2.2 Linking](#22-linking)
+    - [2.3 Initializing](#23-initializing)
+  - [3. 运行时数据区(Runtime Data Areas)](#3-%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BAruntime-data-areas)
+    - [3.1 堆(Heap)](#31-%E5%A0%86heap)
+      - [3.1.1 GC堆(Garbage Collected Heap)](#311-gc%E5%A0%86garbage-collected-heap)
+      - [3.1.2 运行时常量池(Runtime Constant Pool)](#312-%E8%BF%90%E8%A1%8C%E6%97%B6%E5%B8%B8%E9%87%8F%E6%B1%A0runtime-constant-pool)
+    - [3.2 程序计数器(Program Counter Register)](#32-%E7%A8%8B%E5%BA%8F%E8%AE%A1%E6%95%B0%E5%99%A8program-counter-register)
+    - [3.3 本地方法栈(Native Method Stack)](#33-%E6%9C%AC%E5%9C%B0%E6%96%B9%E6%B3%95%E6%A0%88native-method-stack)
+    - [3.4 虚拟机栈(VM Stack)](#34-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88vm-stack)
+      - [3.4.1 栈帧(Stack Frame)](#341-%E6%A0%88%E5%B8%A7stack-frame)
+        - [3.4.1.1 局部变量(Local Variables)](#3411-%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8Flocal-variables)
+        - [3.4.1.2 操作数栈(Operand Stacks)](#3412-%E6%93%8D%E4%BD%9C%E6%95%B0%E6%A0%88operand-stacks)
+        - [3.4.1.3 动态连接(Dynamic Linking)](#3413-%E5%8A%A8%E6%80%81%E8%BF%9E%E6%8E%A5dynamic-linking)
+        - [3.4.1.4 返回地址(Return Address)](#3414-%E8%BF%94%E5%9B%9E%E5%9C%B0%E5%9D%80return-address)
+  - [4. 元空间(Metaspace)](#4-%E5%85%83%E7%A9%BA%E9%97%B4metaspace)
+  - [5. 执行引擎(Execution Engine)](#5-%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8Eexecution-engine)
+    - [5.1 解释器(Interpreter)](#51-%E8%A7%A3%E9%87%8A%E5%99%A8interpreter)
+    - [5.2 即时编译器(JIT(Just-In-Time) Compiler)](#52-%E5%8D%B3%E6%97%B6%E7%BC%96%E8%AF%91%E5%99%A8jitjust-in-time-compiler)
+    - [5.3 GC收集器(Garbage Collector)](#53-gc%E6%94%B6%E9%9B%86%E5%99%A8garbage-collector)
+<hr>
+
+## JVM是什么
+
+JVM是一种用于计算设备的**规范**,它是一个虚构出来的计算机,是通过软件模拟物理机器执行程序的执行器.<br/>
+JVM屏蔽了与具体操作系统平台相关的信息,使Java程序只需生成在JVM上运行的**字节码**,就可以在多种平台上不加修改地运行.<br/>
+JVM在执行字节码时,实际上最终还是把字节码解释成具体平台上的**机器指令**执行.<br/>
+
+<div align="center">
+    <img src="https://raw.githubusercontent.com/PisecesPeng/PisecesPeng.record.me/master/resource/image/JVMStructure/JVMProcess.png">
+</div>
+
+## JVM的基本特性
+
+- **基于栈(Stack-based)的虚拟机** : 不同于Intel x86和ARM等比较流行的计算机处理器都是基于寄存器(register)架构,JVM是基于栈执行的.
+- **符号引用(Symbolic reference)** : 除基本类型外的所有Java类型(类和接口)都是通过符号引用取得关联的,而非显式的基于内存地址的引用.
+- **垃圾回收机制** : 类的实例通过用户代码进行显式创建,但却通过垃圾回收机制自动销毁.
+- **通过明确清晰基本类型确保平台无关性** : 像C/C++等传统编程语言对于int类型数据在同平台上会有不同的字节长度.JVM却通过明确的定义基本类型的字节长度来维持代码的平台兼容性,从而做到平台无关.
+- **网络字节序(Network byte order)** : Java class文件的二进制表示使用的是基于网络的字节序(network byte order).为了在使用小端(little endian)的Intel x86平台和在使用了大端(big endian)的RISC系列平台之间保持平台无关,必须要定义一个固定的字节序.JVM选择了网络传输协议中使用的网络字节序,即基于大端(big endian)的字节序.
+
+## JVM的流程结构
+
+<div align="center">
+    <img src="https://raw.githubusercontent.com/PisecesPeng/PisecesPeng.record.me/master/resource/image/JVMStructure/JVMStructure.png">
+</div>
+
+### 1. Java编译(Java Compiler)
+
+**Java字节码**是一种运行于Java和机器语言的中间语言,Java字节码也是部署Java程序的最小单元.<br/>
+JVM本身就是用于执行Java字节码的执行器,所以'.java'源码文件要先编译为'.class'二进制字节码.<br/>
+
+<div align="center">
+    <img src="https://raw.githubusercontent.com/PisecesPeng/PisecesPeng.record.me/master/resource/image/JVMStructure/JavaCompiler.png">
+</div>
+
+``` ps. javap -c/-verbose 可以将'.class'已可阅读方式输出 ```
+
+> 生成的'.class'文件由以下几部分组成 :<br/>
+>> - **结构信息** : 包括**class**文件格式版本号及各部分的数量与大小的信息.<br/>
+>> - **元数据** : 对应于**Java**源码中声明与常量的信息.包含类/继承的超类/实现的接口的声明信息、域与方法声明信息和常量池.<br/>
+>> - **方法信息** : 对应**Java**源码中语句和表达式对应的信息.包含字节码、异常处理器表、求值栈与局部变量区大小、求值栈的类型记录、调试符号信息.<br/>
+
+> Java字节码中有4中表示调用方法的操作码 :<br/>
+>> - **invokeinterface**: 调用接口方法<br/>
+>> - **invokespecial**: 调用初始化方法、私有方法、或父类中定义的方法<br/>
+>> - **invokestatic**: 调用静态方法<br/>
+>> - **invokevirtual**: 调用实例方法<br/>
+
+### 2. 类加载子系统(Class Loader Subsystem)
+
+注意! 类加载的几个阶段是按顺序开始,而不是按顺序进行或完成.<br/>
+因为这些阶段通常都是互相交叉地混合进行的,通常在一个阶段执行的过程中调用或激活另一个阶段.<br/>
+
+#### 2.1 Loading
+
+<div align="center">
+    <img src="https://raw.githubusercontent.com/PisecesPeng/PisecesPeng.record.me/master/resource/image/JVMStructure/ClassLoading.png">
+</div>
+
+中文名称 | 实现语言 | 作用
+-- | -- | --
+根加载器 | C++ | 在运行JVM时创建,用于加载JavaAPIs,包括Object类,不是ClassLoader子类
+扩展加载器 | Java | 用于加载除基本JavaAPIs以外扩展类,也用于加载各种安全扩展功能
+系统加载器 | Java | 加载应用程序相关的类与用户指定的ClassPath里的类
+用户自定义加载器 | Java | 应用程序根据自身需要自定义的ClassLoader,如Tomcat、JBoss会根据J2EE规范自行实现ClassLoader
+
+```
+ps.
+加载过程中会先检查类是否被已加载,检查顺序是自底向上(见上图),
+只要某个Classloader已加载就视为已加载此类,保证此类只所有 ClassLoader加载一次.
+而加载的顺序是自顶向下,也就是由上层来逐层尝试加载此类(见上图).
+```
+
+#### 2.2 Linking
+
+<div align="center">
+    <img src="https://raw.githubusercontent.com/PisecesPeng/PisecesPeng.record.me/master/resource/image/JVMStructure/ClassLinking.png">
+</div>
+
+**1. 验证(Verifying)** :<br/>
+> 验证**类是否符合Java规范和JVM规范**(编译阶段的语法语义分析不同).<br/>
+> 大部分TCK的测试用例都用于检测对于给定的错误的类文件是否能得到相应的验证错误信息.<br/>
+
+> TCK(Technology Compatibility Kit),由Oracle提供的测试工具.<br/>
+>> TCK通过执行大量的测试用例(包括大量通过不同方式生成的错误类文件)来验证JVM规范.<br/>
+>> 只有通过TCK测试的JVM才能被称作是JVM.<br/>
+
+> 类似TCK,还有一个JCP(http://jcp.org),用于验证新的Java技术规范.<br/>
+>> 对于一个JCP,必须具有详细的文档,相关的实现以及提交给JSR的TCK测试.<br/>
+>> 如果用户想像JSR一样使用新的Java技术,那他必须先从RI提供者那里得到许可,或者自己直接实现它并对之进行TCK测试.<br/>
+
+``` 
+ps. 
+一般情况由javac编译的class文件是不会有问题的,
+但可能有人的class文件是通过其他方式编译出来的,
+这就有可能不符合JVM的编译规则,就需要过滤掉这部分不合法文件
+```
+
+**2. 准备(Preparing)** : <br/>
+> 根据内存需求准备相应的**数据结构**,并分别描述出类中定义的**字段**、**方法**以及实现的**接口信息**.<br/>
+> 被final修饰的静态变量,会直接赋值为用户的定义值.<br/>
+> 为类的静态变量分配内存,并设置类变量的初始值为默认值(不初始化静态代码块).<br/>
+
+``` ps. '内存分配'仅包括类的静态变量,不包括实例变量,实例变量会在对象实例化时随对象一块分配在Java堆中 ```
+
+基本数据类型与referece的默认值,如下 : 
+
+数据类型 | 默认零值
+-- | -- 
+int | 0
+long | 0L
+short | (short)0
+char | '\u0000'
+byte | (byte)0
+boolean | false
+float | 0.0f
+double | 0.0d
+reference | null
+
+> 注意!
+> 1. 就基本数据类型来说,对于类变量(static)和全局变量,如果不显式地对其赋值而直接使用,则系统会为其赋予默认的零值,<br/>
+而对于局部变量来说,在使用前必须显式地为其赋值,否则编译时不通过.
+> 2. 对于同时被static和final修饰的常量,必须在声明的时候就为其显式地赋值,否则编译时不通过,<br/>
+而被final修饰的常量则既可以在声明时显式地为其赋值,也可以在类初始化时显式地为其赋值.<br/>
+总之,在使用前必须为其显式地赋值,系统不会为其赋予默认零值.
+> 3. 对于引用数据类型reference来说,如数组引用、对象引用等,<br/>
+如果没有对其进行显式地赋值而直接使用,系统都会为其赋予默认的零值,即null.
+> 4. 如果在数组初始化时没有对数组中的各元素赋值,那么其中的元素将根据对应的数据类型而被赋予默认的零值.<br/>
+
+**3. 解析(Resolving)** : <br/>
+> 将常量池中的所有**符号引用**(字面量描述)转为**直接引用**(对象和实例的地址指针、实例变量和方法的偏移量).<br/>
+> 可以认为一些静态绑定的会被解析,动态绑定则只会在运行时进行解析.静态绑定包括一些final方法(不可以重写)、static方法(只会属于当前类)、构造器(不会被重写).<br/>
+
+#### 2.3 Initializing
+
+> 这是类加载的最后阶段.为类的变量初始化合适的值.<br/>
+> 如果执行的是静态变量,那么就会使用用户指定的值覆盖之前在准备阶段设置的初始值.<br/>
+> 如果执行的是static代码块,那么在初始化阶段,JVM就会执行static代码块中定义的所有操作.<br/>
+
+> 注意!
+> 1. JVM必须确保一个类在初始化的过程中,如果是多线程需要同时初始化它,仅仅只能允许其中一个线程对其执行初始化操作,<br/>
+其余线程必须等待,只有在活动线程执行完对类的初始化操作之后,才会通知正在等待的其他线程.<br/>
+> 2. 非静态类在实例化类,在Java堆中创建对象的时候,才会进行初始化,<br/>
+即在类被Java程序"第一次主动使用"的时候,才会触发初始化操作(如果还没有加载,则会顺势触发类的加载过程).<br/>
+
+### 3. 运行时数据区(Runtime Data Areas)
+
+<div align="center">
+    <img src="https://raw.githubusercontent.com/PisecesPeng/PisecesPeng.record.me/master/resource/image/JVMStructure/RuntimeDataAreas.png">
+</div>
+
+#### 3.1 堆(Heap)
+
+1. JVM所管理的内存中最大的一块,是所有线程共享的一块内存区域,在JVM启动时创建.<br/>
+2. Heap是JVM用来存储对象实例以及数组值的区域,几乎所有的对象实例以及数组都在这里分配内存,Heap中的对象的内存需要等待GC进行回收.<br/>
+3. 由于Heap共享多个线程的内存,所存储的数据不是线程安全的.<br/>
+4. 若是在Heap中没有内存完成实例分配,并且Heap也无法再扩展时,将会抛出OutOfMemoryError异常.<br/>
+5. 注意.Heap空间的大小JVM、是否不执行垃圾回收,包括晋升老年代的年龄阀值等等配置都是可以修改设置的.<br/>
+6. 已知Heap是所有线程共享的,因此在其上进行对象内存的分配是需要进行加锁,这也导致了new对象的开销是比较大的.<br/>
+7. Oracle Hotspot JVM为了提升对象内存分配的效率,对于所创建的线程都会分配一块独立的空间TLAB(Thread Local Allocation Buffer),<br/>
+其大小由JVM根据运行的情况计算而得,在TLAB上分配对象时不需要加锁,因此JVM在给线程的对象分配内存时会尽量的在TLAB上分配,<br/>
+以上情况下JVM中分配对象内存的性能和C基本是一样高效的,但如果对象过大的话则仍然是直接使用堆空间分配.<br/>
+1. TLAB仅作用于新生代的Eden空间,因此在编写Java程序时,通常多个小的对象比大的对象分配起来更加高效.<br/>
+
+##### 3.1.1 GC堆(Garbage Collected Heap)
+
+<div align="center">
+    <img src="https://raw.githubusercontent.com/PisecesPeng/PisecesPeng.record.me/master/resource/image/JVMStructure/GCHeap.png">
+</div>
+
+Heap划分为两大块 : 
+
+1. 新生代(Young Generation)
+
+```bash
+# 其分为以下几块区域
+# Eden Space : 任何新进入运行时数据区域的实例都会存放在此
+# S0 Survivor Space : 存在时间较长,经过垃圾回收没有被清除的实例,就从Eden搬到了S0
+# S1 Survivor Space : 存在时间更长的实例,就从S0搬到了S1
+```
+> 所有新创建的Object都将会存储在新生代中.晋升到老年代有以下几种情况 : <br/>
+> 1. 每经历一次垃圾回收,对象的年龄加1(首次进Survivor区后初始年龄为1),当增加至一定程度(默认为15)时,晋升为老年代.<br/>
+> 2. 当一次Minor GC后,对象不够Survivor区完全容纳,会直接晋升为老年代.<br/>
+> 3. 当新生代的相同年龄的对象超过Survivor区的50%时,年龄大于或等于其相同年龄的对象,会直接晋升为老年代.<br/>
+
+2. 老年代(Old/Tenured Generation)
+
+```bash
+# Tenured : 主要存放应用程序中生命周期长的内存对象
+```
+> 老年代的对象比较稳定,所以Major GC不会频繁执行.触发Major GC(Full GC)有以下情况 : <br/>
+> 1. 当有新生代的对象晋升入老年代,导致空间不够用时才触发Major GC.<br/>
+> 2. 当无法找到足够大的连续空间分配给新创建的较大对象时也会提前触发一次Major GC进行垃圾回收腾出空间.<br/>
+> 3. 发生Minor GC时,JVM会检测之前每次晋升到老年代的平均大小是否大于老年代的剩余空间大小,<br/>
+如果大于,则进行一次Major GC,<br/>
+如果小于,则查看HandlePromotionFailure设置是否允许担保失败,<br/>
+如果允许,那只会进行一次Minor GC,<br/>
+如果不允许,则改为进行一次Major GC.<br/>
+
+Major GC的耗时比较长,需要先扫描再回收,且为了减少内存碎片导致的内存损耗,一般都需要进行合并整理方便下次直接分配.<br/>
+老年代也会存在内存容量不过的情况,也会抛出OutOfMemoryError异常<br/>
+
+``` ps. JDK1.8,方法区(HotSpot的永久代(Permanent Generation)),已替换为元空间(Metaspace),使用的是直接内存,受本机可用内存的限制,并且永远不会得到java.lang.OutOfMemoryError(可限制大小). ```
+
+##### 3.1.2 运行时常量池(Runtime Constant Pool)
+
+<div align="center">
+    <img src="https://raw.githubusercontent.com/PisecesPeng/PisecesPeng.record.me/master/resource/image/JVMStructure/ConstantPoolInfo.png">
+</div>
+
+``` ps. JDK1.7及之后版本的JVM已经将运行时常量池从方法区中移了出来,在Java Heap中开辟了一块区域存放运行时常量池 ```
+
+Class文件中有类的版本、字段、方法、接口等描述信息外,还有常量池信息(见上图,用于存放编译期生成的各种字面量和符号引用,这部分内容将在类加载后存放到常量池中).<br/>
+当常量池无法再申请到内存时是会抛出OutOfMemoryError异常.<br/>
+
+``` ps. 运行时常量池中的内容主要是从各个类型的class文件的常量池中获取 ```
+
+运行时常量是相对于常量来说的,它具备一个重要特征是 : **动态性**<br/>
+值相同的动态常量与我们通常说的常量只是来源不同,但是都是储存在池内同一块内存区域.<br/>
+Java并不要求常量一定只能在编译期产生,运行期间也可能产生新的常量,这些常量被放在运行时常量池中.<br/>
+这里所说的常量包括:**基本类型包装类**(包装类不管理浮点型,整形只会管理-128到127)和**String类**(也可以通过String.intern()方法可以强制将String放入常量池)<br/>
+
+> 常量池是为了避免频繁的创建和销毁对象而影响系统性能,其实现了对象的共享.<br/>
+例如字符串常量池,在编译阶段就把所有的字符串文字放到一个常量池中.<br/>
+>> **节省内存空间**:常量池中所有相同的字符串常量被合并,只占用一个空间.<br/>
+>> **节省运行时间**:比较字符串时,==比equals()快.对于两个引用变量,只用==判断引用是否相等,也就可以判断实际值是否相等.<br/>
+
+#### 3.2 程序计数器(Program Counter Register)
+
+每个线程都会有一个程序计数器,各线程之间计数器互不影响,独立储存,我们称这类内存区域为"线程私有"的内存.<br/>
+程序计数器是一块较小的内存空间.当字节码解释器工作时,通过改变这个计数器的值来选取下一条需要执行的字节码指令.<br/>
+
+> 程序计数器主要有两个作用 : <br/>
+> 1. 字节码解释器通过改变程序计数器来依次读取指令,从而实现代码的流程控制,如:顺序执行、分支、选择、循环、跳转、异常处理、线程恢复等基础功能.<br/>
+> 2. 在多线程的情况下,程序计数器用于记录当前线程执行的位置,从而当线程被切换回来的时候能够知道该线程上次运行到哪儿了.<br/>
+
+``` ps. 程序计数器是唯一一个不会出现OutOfMemoryError的内存区域,它的生命周期随着线程的启动而创建,随着线程的结束而死亡. ```<br/>
+``` ps. 若下一步执行的指令为Native的话,则PC寄存器中不存储任何信息. ```<br/>
+
+#### 3.3 本地方法栈(Native Method Stack)
+
+为非Java编写的本地代程定义的栈空间.也就是说它基本上是用于通过JNI(Java Native Interface)方式调用和执行的C/C++代码,根据具体情况,C栈或C++栈将会被创建.<br/>
+此区域还用于存储每个native方法调用的状态.<br/>
+
+> **本地方法栈**与**虚拟机栈**所发挥的作用非常相似,区别是:<br/>
+> - 虚拟机栈为虚拟机执行Java方法服务,而本地方法栈则为虚拟机使用到的Native方法服务.<br/>
+> - 本地方法被执行的时候,在本地方法栈也会创建一个栈帧,用于存放该本地方法的局部变量表、操作数栈、动态链接、出口信息.<br/>
+> - 方法执行完毕后相应的栈帧也会出栈并释放内存空间,也会出现StackOverFlowError和OutOfMemoryError两种异常.<br/>
+
+``` ps. 本地方法栈在HotSpot JVM中与虚拟机栈合二为一 ```
+
+#### 3.4 虚拟机栈(VM Stack)
+
+<div align="center">
+    <img src="https://raw.githubusercontent.com/PisecesPeng/PisecesPeng.record.me/master/resource/image/JVMStructure/VMStack.png">
+</div>
+
+虚拟机栈是**线程私有**的,不能被任何其他线程引用,并跟随线程的启动而创建.其中存储的数据无素称为栈帧(Stack Frame).<br/>
+虚拟机栈会拥有多个栈帧(Stack Frame).JVM会把栈桢压入虚拟机栈或从中弹出一个栈帧.<br/>
+如果有任何异常抛出,如printStackTrace()方法输出的栈跟踪信息的每一行表示一个栈帧.<br/>
+
+```
+注意.
+1. 如果线程中的计算需要比允许的更大的虚拟机栈,则JVM会抛出一个StackOverflowError.
+2. 如果可以动态扩展虚拟机栈,并且尝试进行扩展但内存不足以实现扩展,或者可以内存不足以为新线程创建初始虚拟机栈,则JVM抛出一个OutOfMemoryError.
+```
+
+##### 3.4.1 栈帧(Stack Frame)
+
+栈帧用于存储**数据**和**部分结果**、**动态链接**、**返回地址**、**调度异常**以及属于当前运行方法的**运行时常量池的引用**等信息.<br/>
+本地变量数组和操作数栈的大小在编译时就已确定,所以属在运行时属于方法的栈帧大小是固定的.<br/>
+由于除了推送和弹出帧之外,永远不会直接操作虚拟机栈.虚拟机栈的内存不需要是连续的.<br/>
+
+``` ps.无论是'return语句'还是'抛出异常',不管哪种返回方式都会导致栈帧被弹出. ```
+
+###### 3.4.1.1 局部变量(Local Variables)
+
+每个栈帧包含一个称为局部变量的变量数组,用于存放方法参数和方法内定义的局部变量.<br/>
+帧的局部变量数组的长度在编译时确定,并以类或接口的二进制表示形式提供,同时提供与帧相关的方法的代码.<br/>
+JVM使用局部变量在方法调用上传递参数.在类方法调用中,任何参数都从局部变量0开始的连续局部变量中传递.<br/>
+在实例方法调用中,局部变量0总是用于传递对调用实例方法的对象的引用.随后,任何参数都在从局部变量1开始的连续局部变量中传递,以及其后的就是真正的方法的本地变量.<br/>
+
+> 局部变量表的容量以**变量槽**(Variable Slot)为最小单位 :<br/>
+> 一个Slot可以存放一个32位以内(boolean、byte、char、short、int、float、reference和returnAddress)的数据类型,<br/>
+reference类型表示一个对象实例的引用,returnAddress已经很少见了,可以忽略.<br/>
+> 对于64位的数据类型(Java语言中明确的64位数据类型只有long和double),JVM会以高位对齐的方式为其分配两个连续的Slot空间.<br/>
+
+###### 3.4.1.2 操作数栈(Operand Stacks)
+
+<div align="center">
+    <img src="https://raw.githubusercontent.com/PisecesPeng/PisecesPeng.record.me/master/resource/image/JVMStructure/OperandStacks.png">
+</div>
+
+```
+ps.
+在概念模型中,一个活动线程中两个栈帧是相互独立的.但大多数虚拟机实现都会做一些优化处理,
+即上图,让下一个栈帧的部分操作数栈与上一个栈帧的部分局部变量表重叠在一起,这样的好处是方法调用时可以共享一部分数据,而无须进行额外的参数复制传递.
+```
+
+每个栈帧包含一个后进先出(LIFO)堆栈,称为其操作数栈,帧的操作数栈的最大深度在编译时已确定,并与用于与帧相关的方法的代码一起提供.<br/>
+当一个方法执行开始时,这个方法的操作数栈是空的,在方法执行过程中,会有各种字节码指令往操作数栈中写入和提取内容,也就是出栈/入栈操作.<br/>
+JVM提供指令以将局部变量或字段中的常量或值加载到操作数栈上.<br/>
+其他JVM指令从操作数栈中获取操作数,对它们进行操作,并将结果推回操作数栈.<br/>
+操作数栈还用于准备要传递给方法和接收方法结果的参数.<br/>
+
+###### 3.4.1.3 动态连接(Dynamic Linking)
+
+每个栈帧都包含一个指向运行时常量池中该栈帧所属方法的引用,持有这个引用是为了支持方法调用过程中的动态连接.<br/>
+字节码中方法调用指令是以常量池中的指向方法的符号引用为参数的,动态链接将这些符号方法引用转换为具体的方法引用.<br/>
+
+``` ps. 注意!有一部分符号引用会在类加载阶段或第一次使用的时候转化为直接引用,这种转化称为静态解析,另外一部分在每次的运行期间转化为直接引用,这部分称为动态连接. ```
+
+###### 3.4.1.4 返回地址(Return Address)
+
+当一个方法被执行后,有两种方式退出这个方法: <br/>
+> 1. **正常方法调用完成**(Normal Method Invocation Completion)<br/>
+>> 如果调用不会直接从Java虚拟机或执行显式throw语句引发异常,则方法调用会正常完成.<br/>
+>> 如果当前方法的调用正常完成,则可以将值返回给调用方法.<br/>
+>> 当被调用的方法执行其中一个返回指令时,就会发生这种情况,返回指令的选择必须适合于返回值的类型(如果有的话).<br/>
+>> 这种退出方法的方式是,执行引擎遇到任意一个方法返回的字节码指令.<br/>
+
+> 2. **突然方法调用完成**(Abrupt Method Invocation Completion)<br/>
+>> 在方法执行过程中遇到了异常,且这个异常没有在方法体内得到处理(即本方法异常处理表中没有匹配的异常处理器),则方法调用会突然完成,就导致方法退出.<br/>
+>> 这种退出方式不会给上层调用者产生任何返回值.<br/>
+
+无论采用何种退出方式,在方法退出后,都需要返回到方法被调用的位置,程序才能继续执行,<br/>
+方法返回时可能需要在栈帧中保存一些信息,用来帮助恢复它的上层方法的执行状态.<br/>
+一般来说,<br/>
+方法正常退出时,调用者的程序计数器的值可以作为返回地址,栈帧中很可能会保存这个计数器值.<br/>
+而方法异常退出时,返回地址是通过异常处理器表来确定的,栈帧中一般不会保存这部分信息.<br/>
+```
+ps.
+方法退出的过程实际上等同于把当前栈帧出栈,因此退出时可能执行的操作有 : 
+恢复上层方法的局部变量表和操作数栈,把返回值(如果有的话)压入调用者栈帧的操作数栈中,调整程序计数器的值以指向方法调用指令后面的一条指令等.
+```
+
+### 4. 元空间(Metaspace)
+
+<div align="center">
+    <img src="https://raw.githubusercontent.com/PisecesPeng/PisecesPeng.record.me/master/resource/image/JVMStructure/Metaspace.png">
+</div>
+
+``` ps. JDK 1.8之后,方法区(Oracle Hotspot JVM)的永久代被彻底移除了,取而代之是元空间,元空间使用的是直接内存 ```
+
+> Metaspace的组成 : <br/>
+> 1. **Klass Metaspace**:<br/>
+ Klass Metaspace就是用来存klass的,klass是我们熟知的class文件在JVM里的运行时数据结构.<br/>
+ 我们看到的类似A.class其实是存在Heap里的,是java.lang.Class的一个对象实例.<br/>
+ 这块内存是紧接着Heap的,和之前的永久代一样,这块内存大小可通过-XX:CompressedClassSpaceSize参数来控制,<br/>
+ 这个参数默认是1G,但是这块内存也可以没有,假如没有开启压缩指针就不会有这块内存,这种情况下klass都会存在NoKlass Metaspace里,<br/>
+ 另外如果我们把-Xmx设置大于32G的话,其实也是没有这块内存的,因为会这么大内存会关闭压缩指针开关.<br/>
+ 还有就是这块内存最多只会存在一块.<br/>
+> 2. **NoKlass Metaspace**:<br/>
+NoKlass Metaspace专门来存klass相关的其他的内容,比如Method,ConstantPool等.<br/>
+这块内存是由多块内存组合起来的,所以可以认为是不连续的内存块组成的.<br/>
+这块内存是必须的,虽然叫做NoKlass Metaspace,但是也其实可以存klass的内容,在第一点已经提到了.<br/>
+```
+ps. 
+Klass Metaspace和NoKlass Mestaspace都是所有classloader共享的,所以类加载器们要分配内存,
+但是每个类加载器都有一个SpaceManager,来管理属于这个类加载的内存小块.
+如果Klass Metaspace用完了,那就会OutOfMemoryError,不过一般情况下不会,
+NoKlass Mestaspace是由一块块内存慢慢组合起来的,在没有达到限制条件的情况下,会不断加长这条链,让它可以持续工作.
+```
+
+> Metaspace的特点 : <br/>
+> 1. 类及相关的元数据的生命周期与类加载器的一致.<br/>
+> 2. 类的元数据放入Native Memory,字符串池和类的静态变量放入Java Heap中.<br/>
+> 3. 每个加载器有专门的存储空间.<br/>
+> 4. 只进行线性分配.<br/>
+> 5. 不会单独回收某个类.<br/>
+> 6. 省掉了GC扫描及压缩的时间(永久代会为GC带来不必要的复杂度,并且回收效率偏低).<br/>
+> 7. 元空间里的对象的位置是固定的.<br/>
+> 8. 如果GC发现某个类加载器不再存活了,会把相关的空间整个回收掉.<br/>
+
+### 5. 执行引擎(Execution Engine)
+
+JVM通过类加载器把字节码载入运行时数据区,由执行引擎执行.<br/>
+执行引擎以指令为单位读入Java字节码,就像CPU一个接一个的执行机器命令一样.<br/>
+每个字节码命令包含一字节的操作码和可选的操作数.执行引擎读取一个指令并执行相应的操作数,然后去读取并执行下一条指令.<br/>
+
+#### 5.1 解释器(Interpreter)
+
+**读取**、**解释**并**逐一执行**每一条字节码指令.<br/>
+因为解释器逐一解释和执行指令,解释器解释字节码的速度更快,但对解释结果的执行速度较慢.所有的解释性语言都有类似的缺点.<br/>
+解释器的缺点是,当多次调用一种方法时,每次都需要新的解释.<br/>
+
+#### 5.2 即时编译器(JIT(Just-In-Time) Compiler)
+
+<div align="center">
+    <img src="https://raw.githubusercontent.com/PisecesPeng/PisecesPeng.record.me/master/resource/image/JVMStructure/JITCompiler.png">
+</div>
+
+``` 即时编译器的引入用来弥补解释器的不足.执行引擎先以解释器的方式运行,然后在合适的时机,即时编译器把整修字节码编译成本地代码. ```
+
+> 首先,即时编译器先把字节码通过中间代码生成器(Itermediate Representation Generator)转为一种中间形式的表达式.<br/>
+> 然后,代码优化器(Code Optimizer)负责优化上面生成的代码.<br/>
+> 最后,目标代码生成器(Target Code Generator)负责生成机器代码或本地代码.<br/>
+> 期间,Profiler会负责查找热点代码,即该方法是否被多次调用.<br/>
+
+```
+ps.
+Oracel Hotspot VM使用的即时编译器称为Hotspot编译器.
+之所以称为Hotspot是因为Hotspot Compiler会根据分析找到具有更高编译优先级的热点代码,然后所这些热点代码转为本地代码.并且通过对本地代码的缓存,编译后的代码能具有更快的执行速度.
+如果一个被编译过的方法不再被频繁调用,也即不再是热点代码,Hotspot VM会把这些本地代码从缓存中删除并对其再次使用解释器模式执行.
+Hotspot VM有Server VM和Client VM之后,它们所使用的即时编译器也有所不同.
+```
+
+#### 5.3 GC收集器(Garbage Collector) 
+
+> GC是后台的守护进程.<br/>
+> 有多种且针对不同区域的GC收集器(如.Serial收集器、CMS(Concurrent Mark Sweep)收集器、G1(GarbageFirst)收集器等等).<br/>

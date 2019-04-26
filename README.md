@@ -23,6 +23,7 @@
 
 ### Java
 
+- [JVM结构的简单梳理](Article/Java/JVMStructure.md)
 - [Java基础问题杂项](Article/Java/JavaBasicQuestion.md)
 - [Java, SerialVersionUID该如何声明](Article/Java/JavaSerializationDeclareSerialVersionUID.md)
 - [Java, Serialization处理敏感属性](Article/Java/JavaSerializationHandlingSensitiveAttributes.md)
@@ -62,6 +63,7 @@
 - [LoginKaptcha](https://github.com/PisecesPeng/SampleWare/tree/master/LoginKaptcha) ``` login with captcha. [Java: SpringBoot + kaptcha] ```
 - [BakeryTerminal](https://github.com/PisecesPeng/SampleWare/tree/master/BakeryTerminal) ``` Bakery service terminal. [Java: SpringBoot + SpringDataJPA + SpringTest] ```
 - [LuckyGuy](https://github.com/PisecesPeng/SampleWare/tree/master/LuckyGuy) ``` Have you won the prize?. [Java: SpringBoot + Redis + Interceptor] ```
+- [Swaggdemo](https://github.com/PisecesPeng/SampleWare/tree/master/Swaggdemo) ``` Just a simple swagger demo. [Java: SpringBoot + Swagger] ```
 
 ## Record
 
@@ -90,4 +92,4 @@
 
 <h3> 关于转载 </h3>
 
-如果你需要转载本仓库的一些文章,记得注明原文地址就可以了.
+如果你需要转载本仓库的文章或图片,记得注明原文地址就可以了.
