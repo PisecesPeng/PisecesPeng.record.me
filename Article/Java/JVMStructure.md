@@ -426,7 +426,7 @@ JVM通过类加载器把字节码载入运行时数据区,由执行引擎执行.
 
 ```
 ps.
-Oracel Hotspot VM使用的即时编译器称为Hotspot编译器.
+Oracle Hotspot VM使用的即时编译器称为Hotspot编译器.
 之所以称为Hotspot是因为Hotspot Compiler会根据分析找到具有更高编译优先级的热点代码,然后所这些热点代码转为本地代码.并且通过对本地代码的缓存,编译后的代码能具有更快的执行速度.
 如果一个被编译过的方法不再被频繁调用,也即不再是热点代码,Hotspot VM会把这些本地代码从缓存中删除并对其再次使用解释器模式执行.
 Hotspot VM有Server VM和Client VM之后,它们所使用的即时编译器也有所不同.
