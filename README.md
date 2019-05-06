@@ -81,6 +81,7 @@
 - [Oracle](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/Docker/Oracle-ee-11g) ``` Powered by sath89/oracle-ee-11g ```
 - [Neo4j](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/Docker/Neo4j-enterprise) ``` Powered by graphstack/neo4j-enterprise ```
 - [Redis](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/Docker/Redis) ``` Powered by redis:5.0 ```
+- [RabbitMQ](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/Docker/RabbitMQ) ``` Powered by rabbitmq:management ``` 
 
 ### Script
 
