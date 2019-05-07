@@ -85,7 +85,8 @@
 
 ### Script
 
-- [SQL](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/Script/SQL) ``` SQL statement record ```
+- [SQL](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/Script/SQL) ``` Recording SQL scripts ```
+- [Shell](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/Script/Shell) ``` Recording Shell scripts ```
 
 <br/>
 
