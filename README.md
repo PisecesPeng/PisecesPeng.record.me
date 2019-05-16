@@ -54,11 +54,11 @@
 - [TheInitiationBay](https://github.com/PisecesPeng/SampleWare/tree/master/TheInitiationBay) ``` A social website with basic functions and friendly interface. [Java: SSM + Bootstrap] ```
 - [StuTerminal](https://github.com/PisecesPeng/SampleWare/tree/master/StuTerminal) ``` Terminal for operating student data. [Java: JDBC] ```
 - [UserBaseJSP](https://github.com/PisecesPeng/SampleWare/tree/master/UserBaseJSP) ``` Simple JSP with login function. [Java: JSP] ```
-- [UserBasePlat](https://github.com/PisecesPeng/SampleWare/tree/master/UserBasePlat) ``` Simple user-enabled platform. [Java: Mybatis] ```
-- [Bookstore](https://github.com/PisecesPeng/SampleWare/tree/master/BookStore) ``` Bookstore with basic functions. [Java: Spring + Mybatis] ```
-- [Fakebook](https://github.com/PisecesPeng/SampleWare/tree/master/Fakebook) ``` Basic social webpage. [Java: SSM] ```
+- [UserBasePlat](https://github.com/PisecesPeng/SampleWare/tree/master/UserBasePlat) ``` Simple user-enabled platform. [Java: MyBatis] ```
+- [Bookstore](https://github.com/PisecesPeng/SampleWare/tree/master/BookStore) ``` Bookstore with basic functions. [Java: Spring + MyBatis] ```
+- [Fakebook](https://github.com/PisecesPeng/SampleWare/tree/master/Fakebook) ``` Basic social webpage. [Java: Spring + SpringMVC + MyBatis] ```
 - [InChat](https://github.com/PisecesPeng/SampleWare/tree/master/InChat) ``` Online chat webpage. [JavaScript: Express + Socket.IO] ```
-- [OpKnightAPI](https://github.com/PisecesPeng/SampleWare/tree/master/OpKnightAPI) ``` Op knight API with RESTful. [Java: SpringBoot + Mybatis] ```
+- [OpKnightAPI](https://github.com/PisecesPeng/SampleWare/tree/master/OpKnightAPI) ``` Op knight API with RESTful. [Java: SpringBoot + MyBatis] ```
 - [Derby&H2Demo](https://github.com/PisecesPeng/SampleWare/tree/master/Derby%26H2Demo) ``` Start derby&H2 configuration. [Java: SpringBoot] ```
 - [LoginKaptcha](https://github.com/PisecesPeng/SampleWare/tree/master/LoginKaptcha) ``` login with captcha. [Java: SpringBoot + kaptcha] ```
 - [BakeryTerminal](https://github.com/PisecesPeng/SampleWare/tree/master/BakeryTerminal) ``` Bakery service terminal. [Java: SpringBoot + SpringDataJPA + SpringTest] ```
@@ -94,4 +94,4 @@
 
 <h3> 关于转载 </h3>
 
-如果你需要转载本仓库的文章或图片,记得注明原文地址就可以了.
+如果需要转载本仓库的文章,记得注明原文地址就可以了.

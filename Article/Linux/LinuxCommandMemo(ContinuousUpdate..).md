@@ -58,22 +58,22 @@
 <hr>
 
 ### NC/NETCAT
-**command** : target ``` nc -lp local_port > filename ```
-**command** : source ``` nc -w num target_host target_port < filename ```
-> **desc**. 从source端到target端实现文件拷贝(target端需先激活监听)
-> **desc**. [-l]使用监听模式，监控传入的资料,[-p]设置本地主机使用的通信端口,[-w]设置等待连线的时间
+**command**(target) : ``` nc -lp local_port > filename ```<br/>
+**command**(source) : ``` nc -w num target_host target_port < filename ```<br/>
+> **desc**. 从source端到target端实现文件拷贝(target端需先激活监听)<br/>
+> **desc**. [-l]使用监听模式，监控传入的资料,[-p]设置本地主机使用的通信端口,[-w]设置等待连线的时间<br/>
 
 **command** : ``` nc [-u] -v -w num remote_host -z port_start_num[-port_end_num] ```
-> **desc**. 进行端口扫描
-> **desc**. [-v]显示指令执行过程,[-z]使用0输入/输出模式(只在扫描通信端口时使用),[-u]使用UDP传输协议
+> **desc**. 进行端口扫描<br/>
+> **desc**. [-v]显示指令执行过程,[-z]使用0输入/输出模式(只在扫描通信端口时使用),[-u]使用UDP传输协议<br/>
 
-**command** : target  ``` nc -lp local_port ```
-**command** : source ``` nc remote_host remote_port ```
+**command**(target) : ``` nc -lp local_port ```<br/>
+**command**(source) : ``` nc remote_host remote_port ```<br/>
 > **desc**. 实现聊天功能(ctrl+d退出)
 
-> **eg.** 
-target ``` nc -lp 12345 > source.log ```、source ``` nc -w 1 1.2.3.4 12345 < source.log ``` 
-``` nc -v -w 1 1.2.3.4 -z 1-10000 ```
+> **eg.** <br/>
+target : ``` nc -lp 12345 > source.log ```<br/>
+source : ``` nc -w 1 1.2.3.4 12345 < source.log ``` or ``` nc -v -w 1 1.2.3.4 -z 1-10000 ```<br/>
 <hr>
 
 ### NETSTAT
@@ -91,5 +91,5 @@ target ``` nc -lp 12345 > source.log ```、source ``` nc -w 1 1.2.3.4 12345 < so
 
 **command** : ``` netstat -i[e] ```
 > **desc**. 显示网络接口列表,[e]显示详细信息(类似ifconfig回显).
-
 <hr>
+
