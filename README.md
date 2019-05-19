@@ -8,10 +8,10 @@
   - [Spring](#spring)
   - [Git](#git)
   - [Maven](#maven)
-  - [Vim](#vim)
+  - [Utils](#utils)
 - [Practice](#practice)
 - [Record](#record)
-  - [Utils](#utils)
+  - [Code](#code)
   - [Docker](#docker)
   - [Script](#script)
 
@@ -45,9 +45,10 @@
 
 - [Maven, 基本命令与杂项](Article/Tools/MavenSuitableForUsingItsCommand.md)
 
-### Vim
+### Utils
 
 - [Vim基本操作摘要](Article/Tools/SummaryOfVimBasicOperations.md)
+- [说一说Gson有哪些常用方法](Article/Utils/SimpleGsonUtil.md)
 
 ## Practice
 
@@ -67,7 +68,7 @@
 
 ## Record
 
-### Utils
+### Code
 
 - [Javassist](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/JavaUtils/Javassist) ``` Template generation class [Java] ```
 - [JpmmlInvoker](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/JavaUtils/JpmmlInvoker) ``` invoke pmml [Java] ```
