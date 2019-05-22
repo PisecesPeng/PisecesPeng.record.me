@@ -1,18 +1,18 @@
 <h2> 说一说Gson有哪些常用方法 </h2>
 
-- [1. 基础的toJson()](#%081-%E5%9F%BA%E7%A1%80%E7%9A%84tojson)
+- [1. 基础的toJson()](#1-%E5%9F%BA%E7%A1%80%E7%9A%84tojson)
 - [2. 序列化空值](#2-%E5%BA%8F%E5%88%97%E5%8C%96%E7%A9%BA%E5%80%BC)
 - [3. @SerializedName指定名称](#3-serializedname%E6%8C%87%E5%AE%9A%E5%90%8D%E7%A7%B0)
 - [4. @Expose限制返回结果](#4-expose%E9%99%90%E5%88%B6%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C)
 - [5. 版本控制输出结果](#5-%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C)
 - [6. 格式化日期输出](#6-%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%A5%E6%9C%9F%E8%BE%93%E5%87%BA)
-- [7. 格式化Json输出](#7-%08%E6%A0%BC%E5%BC%8F%E5%8C%96json%E8%BE%93%E5%87%BA)
+- [7. 格式化Json输出](#7-%E6%A0%BC%E5%BC%8F%E5%8C%96json%E8%BE%93%E5%87%BA)
 - [8. 禁止转义HTML标签](#8-%E7%A6%81%E6%AD%A2%E8%BD%AC%E4%B9%89html%E6%A0%87%E7%AD%BE)
-- [9. 通过ExclusionStrategy忽略指定类型的字段](#9-%E9%80%9A%E8%BF%87exclusionstrategy%08%E5%BF%BD%E7%95%A5%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%AD%97%E6%AE%B5)
+- [9. 通过ExclusionStrategy忽略指定类型的字段](#9-%E9%80%9A%E8%BF%87exclusionstrategy%E5%BF%BD%E7%95%A5%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%AD%97%E6%AE%B5)
 - [10. 通过Modifiers忽略指定类型的字段](#10-%E9%80%9A%E8%BF%87modifiers%E5%BF%BD%E7%95%A5%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%AD%97%E6%AE%B5)
 - [11. 设置命名规则](#11-%E8%AE%BE%E7%BD%AE%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99)
 - [12. 自定义命名规则](#12-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99)
-- [13. 使用Json输出特殊double/float值](#13-%08%08%E4%BD%BF%E7%94%A8json%E8%BE%93%E5%87%BA%E7%89%B9%E6%AE%8Adoublefloat%E5%80%BC)
+- [13. 使用Json输出特殊double/float值](#13-%E4%BD%BF%E7%94%A8json%E8%BE%93%E5%87%BA%E7%89%B9%E6%AE%8Adoublefloat%E5%80%BC)
 - [14. 将Long序列化为其他类型](#14-%E5%B0%86long%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%BA%E5%85%B6%E4%BB%96%E7%B1%BB%E5%9E%8B)
 - [15. other](#15-other)
 

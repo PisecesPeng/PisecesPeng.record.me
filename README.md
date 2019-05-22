@@ -25,16 +25,16 @@
 
 - [JVM结构的简单梳理](Article/Java/JVMStructure.md)
 - [Java基础问题杂项](Article/Java/JavaBasicQuestion.md)
-- [Java, SerialVersionUID该如何声明](Article/Java/JavaSerializationDeclareSerialVersionUID.md)
-- [Java, Serialization处理敏感属性](Article/Java/JavaSerializationHandlingSensitiveAttributes.md)
-- [Java, List常用方法示例](Article/Java/JavaIntroductionToTheListMethod.md)
+- [序列化SerialVersionUID该如何声明](Article/Java/JavaSerializationDeclareSerialVersionUID.md)
+- [序列化Serialization处理敏感属性](Article/Java/JavaSerializationHandlingSensitiveAttributes.md)
+- [集合类List常用方法示例](Article/Java/JavaIntroductionToTheListMethod.md)
 - [Java, 流Stream使用示例](Article/Java/JavaStreamUsageExample.md)
+- [简单解释JavaNIO聊天Demo的流程](Article/Java/JavaNIOChatDemo.md)
 
 ### Spring
 
 - [Spring Data JPA, 开发中注意的问题](Article/Framework/Spring/SpringDataJPAProblemsEncounteredInDevelopment.md)
 - [简要了解Spring @Transactional](Article/Framework/Spring/BrieflyUnderstandSpringTransactional.md)
-
 
 ### Git
 
