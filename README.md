@@ -65,6 +65,7 @@
 - [BakeryTerminal](https://github.com/PisecesPeng/SampleWare/tree/master/BakeryTerminal) ``` Bakery service terminal. [Java: SpringBoot + SpringDataJPA + SpringTest] ```
 - [LuckyGuy](https://github.com/PisecesPeng/SampleWare/tree/master/LuckyGuy) ``` Have you won the prize?. [Java: SpringBoot + Redis + Interceptor] ```
 - [Swaggdemo](https://github.com/PisecesPeng/SampleWare/tree/master/Swaggdemo) ``` Just a simple swagger demo. [Java: SpringBoot + Swagger] ```
+- [TicketCloud](https://github.com/PisecesPeng/SampleWare/tree/master/TicketCloud) ``` Simple SpringCloud demo. [Java: SpringBoot + SpringCloud + Guava] ```
 
 ## Record
 
