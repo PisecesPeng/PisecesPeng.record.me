@@ -71,24 +71,24 @@
 
 ### Code
 
-- [Javassist](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/JavaUtils/Javassist) ``` Template generation class [Java] ```
-- [JpmmlInvoker](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/JavaUtils/JpmmlInvoker) ``` invoke pmml [Java] ```
-- [SnakeCase](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/JavaUtils/SnakeCase) ``` SnakeCase, Examples for underscore-java [Java] ```
-- [ThreadLocal](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/JavaUtils/ThreadLocal) ``` Simple op ThreadLocal [Java] ```
-- [GzipBase64](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/JavaUtils/GzipBase64) ``` Gzip & Base64 utils [Java] ```
+- [Javassist](https://github.com/PisecesPeng/SampleWare/tree/master/A1JavaUtils/Javassist) ``` Template generation class [Java] ```
+- [JpmmlInvoker](https://github.com/PisecesPeng/SampleWare/tree/master/A1JavaUtils/JpmmlInvoker) ``` invoke pmml [Java] ```
+- [SnakeCase](https://github.com/PisecesPeng/SampleWare/tree/master/A1JavaUtils/SnakeCase) ``` SnakeCase, Examples for underscore-java [Java] ```
+- [ThreadLocal](https://github.com/PisecesPeng/SampleWare/tree/master/A1JavaUtils/ThreadLocal) ``` Simple op ThreadLocal [Java] ```
+- [GzipBase64](https://github.com/PisecesPeng/SampleWare/tree/master/A1JavaUtils/GzipBase64) ``` Gzip & Base64 utils [Java] ```
 
 ### Docker
 
-- [MySQL](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/Docker/MySQL) ``` Powered by mysql:5.7 ```
-- [Oracle](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/Docker/Oracle-ee-11g) ``` Powered by sath89/oracle-ee-11g ```
-- [Neo4j](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/Docker/Neo4j-enterprise) ``` Powered by graphstack/neo4j-enterprise ```
-- [Redis](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/Docker/Redis) ``` Powered by redis:5.0 ```
-- [RabbitMQ](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/Docker/RabbitMQ) ``` Powered by rabbitmq:management ``` 
+- [MySQL](https://github.com/PisecesPeng/SampleWare/tree/master/A1Docker/MySQL) ``` Powered by mysql:5.7 ```
+- [Oracle](https://github.com/PisecesPeng/SampleWare/tree/master/A1Docker/Oracle-ee-11g) ``` Powered by sath89/oracle-ee-11g ```
+- [Neo4j](https://github.com/PisecesPeng/SampleWare/tree/master/A1Docker/Neo4j-enterprise) ``` Powered by graphstack/neo4j-enterprise ```
+- [Redis](https://github.com/PisecesPeng/SampleWare/tree/master/A1Docker/Redis) ``` Powered by redis:5.0 ```
+- [RabbitMQ](https://github.com/PisecesPeng/SampleWare/tree/master/A1Docker/RabbitMQ) ``` Powered by rabbitmq:management ``` 
 
 ### Script
 
-- [SQL](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/Script/SQL) ``` Recording SQL scripts ```
-- [Shell](https://github.com/PisecesPeng/PisecesPeng.record.me/tree/master/Script/Shell) ``` Recording Shell scripts ```
+- [SQL](https://github.com/PisecesPeng/SampleWare/tree/master/A1Script/SQL) ``` Recording SQL scripts ```
+- [Shell](https://github.com/PisecesPeng/SampleWare/tree/master/A1Script/Shell) ``` Recording Shell scripts ```
 
 <br/>
 

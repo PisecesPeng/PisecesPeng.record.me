@@ -1,2 +1,0 @@
-# RabbitMQ
-FROM rabbitmq:management
