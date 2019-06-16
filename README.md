@@ -35,6 +35,7 @@
 
 - [Spring Data JPA, 开发中注意的问题](Article/Framework/Spring/SpringDataJPAProblemsEncounteredInDevelopment.md)
 - [简要了解Spring @Transactional](Article/Framework/Spring/BrieflyUnderstandSpringTransactional.md)
+- [常用Spring/SpringBoot注解扫盲](Article/Framework/Spring/SpringAnnotation.md)
 
 ### Git
 
