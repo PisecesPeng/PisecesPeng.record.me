@@ -1,7 +1,7 @@
 <h2> 提高Java代码运行效率的35个小细节 </h2>
 
-> 性能优化大部分都是在时间、效率、代码结构层次等方面的权衡,
-> 以下优化是比较浅鲜的,仅供参考,开发中需根据实际场景,敲出最合适的代码.
+> 性能优化大部分都是在时间、效率、代码结构层次等方面的权衡,<br/>
+> 以下优化是比较浅鲜的,仅供参考,开发中需根据实际场景,敲出最合适的代码.<br/>
 <hr>
 
 ### 1. 尽量在合适的场合使用单例
@@ -324,17 +324,15 @@ if ("123".equals(str)) { }
 
 ### 35. 不要创建一些不使用的对象,不要导入一些不使用的类
 
-如题.<br/>
-
 <br/>
 <br/>
 <br/>
 <br/>
 <br/>
 
-感谢以下文章给了我一些思路:
-https://mp.weixin.qq.com/s/50mCaRbrrTt8DqOmp7JTwg
-https://mp.weixin.qq.com/s/AiMz62n3pMOPLfWx-0KmHQ
+感谢以下文章给了我写作思路:<br/>
+https://mp.weixin.qq.com/s/50mCaRbrrTt8DqOmp7JTwg<br/>
+https://mp.weixin.qq.com/s/AiMz62n3pMOPLfWx-0KmHQ<br/>
 
 
 
