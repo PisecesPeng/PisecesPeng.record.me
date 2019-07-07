@@ -69,6 +69,7 @@
 - [Swaggdemo](https://github.com/PisecesPeng/SampleWare/tree/master/Swaggdemo) ``` Just a simple swagger demo. [Java: SpringBoot + Swagger] ```
 - [StarSinger](https://github.com/PisecesPeng/SampleWare/tree/master/StarSinger) ``` Spring AOP with Dynamic(CGLIB & JDK) & Static ```
 - [TicketCloud](https://github.com/PisecesPeng/SampleWare/tree/master/TicketCloud) ``` Simple SpringCloud demo. [Java: SpringBoot + SpringCloud + Guava] ```
+- [TroubleCrasher](https://github.com/PisecesPeng/SampleWare/tree/master/TroubleCrasher) ``` Let's Crash the Exception. [Java: SpringBoot + Exception] ```
 
 ## Record
 
