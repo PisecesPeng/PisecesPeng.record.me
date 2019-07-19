@@ -70,6 +70,7 @@
 - [StarSinger](https://github.com/PisecesPeng/SampleWare/tree/master/StarSinger) ``` Spring AOP with Dynamic(CGLIB & JDK) & Static ```
 - [TicketCloud](https://github.com/PisecesPeng/SampleWare/tree/master/TicketCloud) ``` Simple SpringCloud demo. [Java: SpringBoot + SpringCloud + Guava] ```
 - [TroubleCrasher](https://github.com/PisecesPeng/SampleWare/tree/master/TroubleCrasher) ``` Let's Crash the Exception. [Java: SpringBoot + Exception] ```
+- [Ticktask](https://github.com/PisecesPeng/SampleWare/tree/master/Ticktask) ``` The task is running accurately. [Java: SpringBoot + Spring-Scheduling] ```
 
 ## Record
 
