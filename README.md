@@ -82,6 +82,7 @@
 - [SnakeCase](https://github.com/PisecesPeng/SampleWare/tree/master/A1JavaUtils/SnakeCase) ``` SnakeCase, Examples for underscore-java [Java] ```
 - [ThreadLocal](https://github.com/PisecesPeng/SampleWare/tree/master/A1JavaUtils/ThreadLocal) ``` Simple op ThreadLocal [Java] ```
 - [GzipBase64](https://github.com/PisecesPeng/SampleWare/tree/master/A1JavaUtils/GzipBase64) ``` Gzip & Base64 utils [Java] ```
+- [StrategyEnum](https://github.com/PisecesPeng/SampleWare/tree/master/A1JavaUtils/StrategyEnum) ``` Strategy Enum demo [Java] ```
 
 ### Docker
 
