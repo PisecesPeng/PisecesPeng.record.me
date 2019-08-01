@@ -31,6 +31,7 @@
 - [集合类List常用方法示例](Article/Java/JavaIntroductionToTheListMethod.md)
 - [Java, 流Stream使用示例](Article/Java/JavaStreamUsageExample.md)
 - [简单解释JavaNIO聊天Demo的流程](Article/Java/JavaNIOChatDemo.md)
+- [Guava Cache常用方法示例](Article/Java/GuavaCacheUsageExample.md)
 
 ### Spring
 
