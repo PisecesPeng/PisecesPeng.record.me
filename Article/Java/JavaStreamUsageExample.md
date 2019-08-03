@@ -80,7 +80,7 @@ System.out.println(flatStream.flatMap(childList -> childList.stream()).collect(C
 ### 6. 窥视.peek()
 ```java
 Stream<String> stream = Stream.of("a", "b", "c", "d", "e");
-System.out.println(stream.peek(v -> System.out.print("peek : " + v)).map(String::toUpperCase).collect(Collectors.toList()));  // 输出结果为 : abcde[A, B, C, D, E]
+System.out.println(stream.peek(v -> System.out.print(v)).map(String::toUpperCase).collect(Collectors.toList()));  // 输出结果为 : abcde[A, B, C, D, E]
 ```
 <hr>
 
