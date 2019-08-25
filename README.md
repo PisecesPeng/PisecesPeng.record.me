@@ -85,6 +85,7 @@
 - [GzipBase64](https://github.com/PisecesPeng/SampleWare/tree/master/A1JavaUtils/GzipBase64) ``` Gzip & Base64 utils [Java] ```
 - [StrategyEnum](https://github.com/PisecesPeng/SampleWare/tree/master/A1JavaUtils/StrategyEnum) ``` Strategy Enum demo [Java] ```
 - [AES256Util](https://github.com/PisecesPeng/SampleWare/tree/master/A1JavaUtils/AES256) ``` AES encryption util [Java] ```
+- [Telnetty](https://github.com/PisecesPeng/SampleWare/tree/master/A1JavaUtils/Telnetty) ``` Telnet communication by netty [Java] ```
 
 ### Docker
 
@@ -92,7 +93,8 @@
 - [Oracle](https://github.com/PisecesPeng/SampleWare/tree/master/A1Docker/Oracle-ee-11g) ``` Powered by sath89/oracle-ee-11g ```
 - [Neo4j](https://github.com/PisecesPeng/SampleWare/tree/master/A1Docker/Neo4j-enterprise) ``` Powered by graphstack/neo4j-enterprise ```
 - [Redis](https://github.com/PisecesPeng/SampleWare/tree/master/A1Docker/Redis) ``` Powered by redis:5.0 ```
-- [RabbitMQ](https://github.com/PisecesPeng/SampleWare/tree/master/A1Docker/RabbitMQ) ``` Powered by rabbitmq:management ``` 
+- [RabbitMQ](https://github.com/PisecesPeng/SampleWare/tree/master/A1Docker/RabbitMQ) ``` Powered by rabbitmq:management ```
+- [Zookeeper](https://github.com/PisecesPeng/SampleWare/tree/master/A1Docker/Zookeeper) ``` Powered by Zookeeper ```
 
 ### Script
 
