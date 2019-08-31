@@ -86,6 +86,7 @@
 - [StrategyEnum](https://github.com/PisecesPeng/SampleWare/tree/master/A1JavaUtils/StrategyEnum) ``` Strategy Enum demo [Java] ```
 - [AES256Util](https://github.com/PisecesPeng/SampleWare/tree/master/A1JavaUtils/AES256) ``` AES encryption util [Java] ```
 - [Telnetty](https://github.com/PisecesPeng/SampleWare/tree/master/A1JavaUtils/Telnetty) ``` Telnet communication by netty [Java] ```
+- [MongoFindDemo](https://github.com/PisecesPeng/SampleWare/tree/master/A1JavaUtils/MongoFindDemo) ``` Mongo client demo for find() [Java] ```
 
 ### Docker
 
@@ -100,6 +101,7 @@
 
 - [SQL](https://github.com/PisecesPeng/SampleWare/tree/master/A1Script/SQL) ``` Recording SQL scripts ```
 - [Shell](https://github.com/PisecesPeng/SampleWare/tree/master/A1Script/Shell) ``` Recording Shell scripts ```
+- [Hadoop](https://github.com/PisecesPeng/SampleWare/tree/master/A1Script/Hadoop) ``` Recording Hadoop scripts ```
 
 <br/>
 
