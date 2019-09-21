@@ -1,20 +1,5 @@
 <h1 align="center"> :man_technologist: PisecesPeng.Record.me </h1>
 
-<h2> Guide </h2>
-
-- [Article](#article)
-  - [Linux](#linux)
-  - [Java](#java)
-  - [Spring](#spring)
-  - [Git](#git)
-  - [Maven](#maven)
-  - [Utils](#utils)
-- [Practice](#practice)
-- [Record](#record)
-  - [Code](#code)
-  - [Docker](#docker)
-  - [Script](#script)
-
 ## Article
 
 ### Linux
