@@ -76,6 +76,7 @@
 - [TroubleCrasher](https://github.com/PisecesPeng/SampleWare/tree/master/TroubleCrasher) ``` Let's Crash the Exception. [Java: SpringBoot + Exception] ```
 - [Ticktask](https://github.com/PisecesPeng/SampleWare/tree/master/Ticktask) ``` The task is running accurately. [Java: SpringBoot + Spring-Scheduling] ```
 - [NaiveRPC](https://github.com/PisecesPeng/SampleWare/tree/master/NaiveRPC) ``` This is a very naive RPC. [Java: Netty] ```
+- [NaiveRPC](https://github.com/PisecesPeng/SampleWare/tree/master/OriginSql4Spring) ``` execute sql by spring.jdbc.core.JdbcTemplate. [Java: SpringBoot + JdbcTemplate] ```
 
 ## Record
 
