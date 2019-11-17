@@ -5,6 +5,7 @@
 - [Java常见命令遍历](#java%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4%E9%81%8D%E5%8E%86)
 - [简述'Thread'、'ThreadLocal'与'ThreadLocalMap'的关系](#%E7%AE%80%E8%BF%B0threadthreadlocal%E4%B8%8Ethreadlocalmap%E7%9A%84%E5%85%B3%E7%B3%BB)
 - [Java四种引用类型](#java%E5%9B%9B%E7%A7%8D%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B)
+- [快速失败(fail-fast)和安全失败(fail-safe)的区别](#%E5%BF%AB%E9%80%9F%E5%A4%B1%E8%B4%A5fail-fast%E5%92%8C%E5%AE%89%E5%85%A8%E5%A4%B1%E8%B4%A5fail-safe%E7%9A%84%E5%8C%BA%E5%88%AB)
 <hr>
 
 ### Java是值传递还是引用传递
@@ -109,4 +110,21 @@ ps.
 软引用,弱引用都非常适合来保存那些可有可无的缓存数据,当系统内存不足时,这些缓存数据会被回收,不会导致内存溢出.
 而当内存资源充足时,这些缓存数据又可以存在相当长的时间,从而起到加速系统的作用.
 ```
+<hr>
+
+### 快速失败(fail-fast)和安全失败(fail-safe)的区别
+
+> **快速失败(fail-fast)**
+>> 迭代器在遍历时会直接访问集合中的内容, 并且在遍历过程中使用一个'**modCount**'变量.<br/>
+>> 集合在被遍历期间如果内容发生变化, 就会改变'**modCount**'的值.<br/>
+>> 当迭代器遍历下一个元素之前, 都会检测'**modCount**'是否等于'**expectedmodCount**', 是的话就返回遍历,否则抛出异常'ConcurrentModificationException', 并终止遍历.<br/>
+
+ps. 简而言之, **快速失败**(fail-fast)是基于对底层集合做操作, 它受源集合上修改的影响. java.util包下面的所有的集合类都是快速失败的.
+
+> **安全失败(fail-safe)**
+>> 迭代时是对源集合的先拷贝再进行遍历, 在遍历时不是直接在源集合内容上访问的.<br/>
+>> 这样避免了异常, 但同样地, 迭代器在遍历时是不知道源集合发生的修改的.<br/>
+
+ps. 简而言之, **安全失败**(fail-safe)基于对底层集合做拷贝, 它不受源集合上修改的影响. java.util.concurrent包下面的所有的集合类都是安全失败的.
+
 <hr>

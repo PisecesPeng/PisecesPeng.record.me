@@ -7,6 +7,9 @@
   - [2. 类加载子系统(Class Loader Subsystem)](#2-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%AD%90%E7%B3%BB%E7%BB%9Fclass-loader-subsystem)
     - [2.1 Loading](#21-loading)
     - [2.2 Linking](#22-linking)
+      - [2.2.1 验证(Verifying)](#221-%E9%AA%8C%E8%AF%81verifying)
+      - [2.2.2 准备(Preparing)](#222-%E5%87%86%E5%A4%87preparing)
+      - [2.2.3 解析(Resolving)](#223-%E8%A7%A3%E6%9E%90resolving)
     - [2.3 Initializing](#23-initializing)
   - [3. 运行时数据区(Runtime Data Areas)](#3-%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BAruntime-data-areas)
     - [3.1 堆(Heap)](#31-%E5%A0%86heap)
@@ -104,7 +107,8 @@ ps.
     <img src="https://raw.githubusercontent.com/PisecesPeng/PisecesPeng.record.me/master/resource/image/JVMStructure/ClassLinking.png">
 </div>
 
-**1. 验证(Verifying)** :<br/>
+##### 2.2.1 验证(Verifying)
+
 > 验证**类是否符合Java规范和JVM规范**(编译阶段的语法语义分析不同).<br/>
 > 大部分TCK的测试用例都用于检测对于给定的错误的类文件是否能得到相应的验证错误信息.<br/>
 
@@ -123,7 +127,8 @@ ps.
 这就有可能不符合JVM的编译规则,就需要过滤掉这部分不合法文件
 ```
 
-**2. 准备(Preparing)** : <br/>
+##### 2.2.2 准备(Preparing)
+
 > 根据内存需求准备相应的**数据结构**,并分别描述出类中定义的**字段**、**方法**以及实现的**接口信息**.<br/>
 > 被final修饰的静态变量,会直接赋值为用户的定义值.<br/>
 > 为类的静态变量分配内存,并设置类变量的初始值为默认值(不初始化静态代码块).<br/>
@@ -154,7 +159,7 @@ reference | null
 如果没有对其进行显式地赋值而直接使用,系统都会为其赋予默认的零值,即null.
 > 4. 如果在数组初始化时没有对数组中的各元素赋值,那么其中的元素将根据对应的数据类型而被赋予默认的零值.<br/>
 
-**3. 解析(Resolving)** : <br/>
+##### 2.2.3 解析(Resolving)
 > 将常量池中的所有**符号引用**(字面量描述)转为**直接引用**(对象和实例的地址指针、实例变量和方法的偏移量).<br/>
 > 可以认为一些静态绑定的会被解析,动态绑定则只会在运行时进行解析.静态绑定包括一些final方法(不可以重写)、static方法(只会属于当前类)、构造器(不会被重写).<br/>
 
