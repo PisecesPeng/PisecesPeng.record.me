@@ -1,11 +1,12 @@
 <h2> Java基础问题杂项 </h2>
 
-- [Java是值传递还是引用传递](#java%E6%98%AF%E5%80%BC%E4%BC%A0%E9%80%92%E8%BF%98%E6%98%AF%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92)
-- ['=='与'equals'的区别](#%E4%B8%8Eequals%E7%9A%84%E5%8C%BA%E5%88%AB)
-- [Java常见命令遍历](#java%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4%E9%81%8D%E5%8E%86)
-- [简述'Thread'、'ThreadLocal'与'ThreadLocalMap'的关系](#%E7%AE%80%E8%BF%B0threadthreadlocal%E4%B8%8Ethreadlocalmap%E7%9A%84%E5%85%B3%E7%B3%BB)
-- [Java四种引用类型](#java%E5%9B%9B%E7%A7%8D%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B)
-- [快速失败(fail-fast)和安全失败(fail-safe)的区别](#%E5%BF%AB%E9%80%9F%E5%A4%B1%E8%B4%A5fail-fast%E5%92%8C%E5%AE%89%E5%85%A8%E5%A4%B1%E8%B4%A5fail-safe%E7%9A%84%E5%8C%BA%E5%88%AB)
+- [Java是值传递还是引用传递](#java%e6%98%af%e5%80%bc%e4%bc%a0%e9%80%92%e8%bf%98%e6%98%af%e5%bc%95%e7%94%a8%e4%bc%a0%e9%80%92)
+- ['=='与'equals'的区别](#%e4%b8%8eequals%e7%9a%84%e5%8c%ba%e5%88%ab)
+- [Java常见命令遍历](#java%e5%b8%b8%e8%a7%81%e5%91%bd%e4%bb%a4%e9%81%8d%e5%8e%86)
+- [简述'Thread'、'ThreadLocal'与'ThreadLocalMap'的关系](#%e7%ae%80%e8%bf%b0threadthreadlocal%e4%b8%8ethreadlocalmap%e7%9a%84%e5%85%b3%e7%b3%bb)
+- [Java四种引用类型](#java%e5%9b%9b%e7%a7%8d%e5%bc%95%e7%94%a8%e7%b1%bb%e5%9e%8b)
+- [快速失败(fail-fast)和安全失败(fail-safe)的区别](#%e5%bf%ab%e9%80%9f%e5%a4%b1%e8%b4%a5fail-fast%e5%92%8c%e5%ae%89%e5%85%a8%e5%a4%b1%e8%b4%a5fail-safe%e7%9a%84%e5%8c%ba%e5%88%ab)
+- [偏向锁、轻量级锁、重量级锁之间的简单比较](#%e5%81%8f%e5%90%91%e9%94%81%e8%bd%bb%e9%87%8f%e7%ba%a7%e9%94%81%e9%87%8d%e9%87%8f%e7%ba%a7%e9%94%81%e4%b9%8b%e9%97%b4%e7%9a%84%e7%ae%80%e5%8d%95%e6%af%94%e8%be%83)
 <hr>
 
 ### Java是值传递还是引用传递
@@ -126,5 +127,15 @@ ps. 简而言之, **快速失败**(fail-fast)是基于对底层集合做操作, 
 >> 这样避免了异常, 但同样地, 迭代器在遍历时是不知道源集合发生的修改的.<br/>
 
 ps. 简而言之, **安全失败**(fail-safe)基于对底层集合做拷贝, 它不受源集合上修改的影响. java.util.concurrent包下面的所有的集合类都是安全失败的.
+
+<hr>
+
+### 偏向锁、轻量级锁、重量级锁之间的简单比较
+
+| 锁 | 优点 | 缺点 | 适用场景 |
+|:--:|:--:|:--:|:--:|
+| 偏向锁 | 加锁和解锁不需要额外的消耗,<br/>和执行非同步方法比仅存在纳秒级的差距. | 如果线程间存在锁竞争,<br/>会带来额外的锁撤销的消耗. | 适用于只有一个线程访问同步块场景. |
+| 轻量级锁 | 竞争的线程不会阻塞,<br/>提高了程序的响应速度. | 如果始终得不到锁竞争的线程,<br/>使用自旋会消耗CPU. | 追求响应时间, <br/>同步块执行速度非常快. |
+| 重量级锁 | 线程竞争不使用自旋,<br/>不会消耗CPU. | 线程阻塞,<br/>响应时间缓慢 | 追求吞吐量.<br/>同步块执行速度较长. |
 
 <hr>
