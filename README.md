@@ -16,6 +16,7 @@
 - [集合类List常用方法示例](Article/Java/JavaIntroductionToTheListMethod.md)
 - [Java, 流Stream使用示例](Article/Java/JavaStreamUsageExample.md)
 - [简单解释JavaNIO聊天Demo的流程](Article/Java/JavaNIOChatDemo.md)
+- [说一说Gson有哪些常用方法](Article/Java/SimpleGsonUtil.md)
 - [Guava Cache常用方法示例](Article/Java/GuavaCacheUsageExample.md)
 - [Guava Array&List常用方法示例](Article/Java/GuavaArrayAndListExample.md)
 - [Guava Maps常用方法示例](Article/Java/GuavaMapsExample.md)
@@ -27,19 +28,16 @@
 - [简要了解Spring @Transactional](Article/Framework/Spring/BrieflyUnderstandSpringTransactional.md)
 - [常用Spring/SpringBoot注解扫盲](Article/Framework/Spring/SpringAnnotation.md)
 
-### Git
+### SQL
 
-- [Git配置'SSH key'以及关联远程仓库](Article/Tools/GitConfiguresSSHkeyAndAssociatedRemoteRepository.md)
-- [Git实用文件操作](Article/Tools/BrieflyDescribeGitsFileOperations.md)
+- [常见MySQL语句优化笔记](Article/SQL/MysqlOptimizationDetails.md)
 
-### Maven
+### Tool
 
-- [Maven, 基本命令与杂项](Article/Tools/MavenSuitableForUsingItsCommand.md)
-
-### Utils
-
-- [Vim基本操作摘要](Article/Tools/SummaryOfVimBasicOperations.md)
-- [说一说Gson有哪些常用方法](Article/Utils/SimpleGsonUtil.md)
+- [Maven, 基本命令与杂项](Article/Tool/MavenSuitableForUsingItsCommand.md)
+- [Git配置'SSH key'以及关联远程仓库](Article/Tool/GitConfiguresSSHkeyAndAssociatedRemoteRepository.md)
+- [Git实用文件操作](Article/Tool/BrieflyDescribeGitsFileOperations.md)
+- [Vim基本操作摘要](Article/Tool/SummaryOfVimBasicOperations.md)
 
 ## Practice
 
