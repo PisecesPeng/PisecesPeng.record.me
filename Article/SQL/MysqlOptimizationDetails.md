@@ -1,21 +1,22 @@
 <h2> 常见MySQL语句优化笔记 </h2>
 
-- [1. 合理创建索引](#1-%E5%90%88%E7%90%86%E5%88%9B%E5%BB%BA%E7%B4%A2%E5%BC%95)
-- [2. SQL语句中IN包含的值不应过多](#2-sql%E8%AF%AD%E5%8F%A5%E4%B8%ADin%E5%8C%85%E5%90%AB%E7%9A%84%E5%80%BC%E4%B8%8D%E5%BA%94%E8%BF%87%E5%A4%9A)
-- [3. 区分'IN'和'EXISTS', 'NOT IN'和'NOT EXISTS'](#3-%E5%8C%BA%E5%88%86in%E5%92%8Cexists-not-in%E5%92%8Cnot-exists)
-- [4. 注意范围查询语句](#4-%E6%B3%A8%E6%84%8F%E8%8C%83%E5%9B%B4%E6%9F%A5%E8%AF%A2%E8%AF%AD%E5%8F%A5)
-- [5. 避免使用'!='或'<>'操作符](#5-%E9%81%BF%E5%85%8D%E4%BD%BF%E7%94%A8%E6%88%96%E6%93%8D%E4%BD%9C%E7%AC%A6)
-- [6. 避免使用'OR'连接条件](#6-%E9%81%BF%E5%85%8D%E4%BD%BF%E7%94%A8or%E8%BF%9E%E6%8E%A5%E6%9D%A1%E4%BB%B6)
-- [7. 尽量用'UNION ALL'代替'UNION'](#7-%E5%B0%BD%E9%87%8F%E7%94%A8union-all%E4%BB%A3%E6%9B%BFunion)
-- [8. 进行'is null'值和'is not null'判断都不可取](#8-%E8%BF%9B%E8%A1%8Cis-null%E5%80%BC%E5%92%8Cis-not-null%E5%88%A4%E6%96%AD%E9%83%BD%E4%B8%8D%E5%8F%AF%E5%8F%96)
-- [9. 'SELECT'语句务必指明字段名称](#9-select%E8%AF%AD%E5%8F%A5%E5%8A%A1%E5%BF%85%E6%8C%87%E6%98%8E%E5%AD%97%E6%AE%B5%E5%90%8D%E7%A7%B0)
-- [10. 适当使用'LIMIT 1'](#10-%E9%80%82%E5%BD%93%E4%BD%BF%E7%94%A8limit-1)
-- [11. 不要在'where'子句中的'='左边进行计算](#11-%E4%B8%8D%E8%A6%81%E5%9C%A8where%E5%AD%90%E5%8F%A5%E4%B8%AD%E7%9A%84%E5%B7%A6%E8%BE%B9%E8%BF%9B%E8%A1%8C%E8%AE%A1%E7%AE%97)
-- [12. 避免隐式类型转换](#12-%E9%81%BF%E5%85%8D%E9%9A%90%E5%BC%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2)
-- [13. 对于联合索引来说, 要遵守最左前缀法则](#13-%E5%AF%B9%E4%BA%8E%E8%81%94%E5%90%88%E7%B4%A2%E5%BC%95%E6%9D%A5%E8%AF%B4-%E8%A6%81%E9%81%B5%E5%AE%88%E6%9C%80%E5%B7%A6%E5%89%8D%E7%BC%80%E6%B3%95%E5%88%99)
-- [14. 不建议使用'%'前缀模糊查询](#14-%E4%B8%8D%E5%BB%BA%E8%AE%AE%E4%BD%BF%E7%94%A8%E5%89%8D%E7%BC%80%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2)
-- [15. 用'EXISTS'替换'DISTINCT'](#15-%E7%94%A8exists%E6%9B%BF%E6%8D%A2distinct)
-- [16. 关于'JOIN'优化](#16-%E5%85%B3%E4%BA%8Ejoin%E4%BC%98%E5%8C%96)
+- [1. 合理创建索引](#1-%e5%90%88%e7%90%86%e5%88%9b%e5%bb%ba%e7%b4%a2%e5%bc%95)
+- [2. SQL语句中IN包含的值不应过多](#2-sql%e8%af%ad%e5%8f%a5%e4%b8%adin%e5%8c%85%e5%90%ab%e7%9a%84%e5%80%bc%e4%b8%8d%e5%ba%94%e8%bf%87%e5%a4%9a)
+- [3. 区分'IN'和'EXISTS', 'NOT IN'和'NOT EXISTS'](#3-%e5%8c%ba%e5%88%86in%e5%92%8cexists-not-in%e5%92%8cnot-exists)
+- [4. 注意范围查询语句](#4-%e6%b3%a8%e6%84%8f%e8%8c%83%e5%9b%b4%e6%9f%a5%e8%af%a2%e8%af%ad%e5%8f%a5)
+- [5. 避免使用'!='或'<>'操作符](#5-%e9%81%bf%e5%85%8d%e4%bd%bf%e7%94%a8%e6%88%96%e6%93%8d%e4%bd%9c%e7%ac%a6)
+- [6. 避免使用'OR'连接条件](#6-%e9%81%bf%e5%85%8d%e4%bd%bf%e7%94%a8or%e8%bf%9e%e6%8e%a5%e6%9d%a1%e4%bb%b6)
+- [7. 尽量用'UNION ALL'代替'UNION'](#7-%e5%b0%bd%e9%87%8f%e7%94%a8union-all%e4%bb%a3%e6%9b%bfunion)
+- [8. 进行'is null'值和'is not null'判断都不可取](#8-%e8%bf%9b%e8%a1%8cis-null%e5%80%bc%e5%92%8cis-not-null%e5%88%a4%e6%96%ad%e9%83%bd%e4%b8%8d%e5%8f%af%e5%8f%96)
+- [9. 'SELECT'语句务必指明字段名称](#9-select%e8%af%ad%e5%8f%a5%e5%8a%a1%e5%bf%85%e6%8c%87%e6%98%8e%e5%ad%97%e6%ae%b5%e5%90%8d%e7%a7%b0)
+- [10. 适当使用'LIMIT 1'](#10-%e9%80%82%e5%bd%93%e4%bd%bf%e7%94%a8limit-1)
+- [11. 不要在'where'子句中的'='左边进行计算](#11-%e4%b8%8d%e8%a6%81%e5%9c%a8where%e5%ad%90%e5%8f%a5%e4%b8%ad%e7%9a%84%e5%b7%a6%e8%be%b9%e8%bf%9b%e8%a1%8c%e8%ae%a1%e7%ae%97)
+- [12. 避免隐式类型转换](#12-%e9%81%bf%e5%85%8d%e9%9a%90%e5%bc%8f%e7%b1%bb%e5%9e%8b%e8%bd%ac%e6%8d%a2)
+- [13. 对于联合索引来说, 要遵守最左前缀法则](#13-%e5%af%b9%e4%ba%8e%e8%81%94%e5%90%88%e7%b4%a2%e5%bc%95%e6%9d%a5%e8%af%b4-%e8%a6%81%e9%81%b5%e5%ae%88%e6%9c%80%e5%b7%a6%e5%89%8d%e7%bc%80%e6%b3%95%e5%88%99)
+- [14. 不建议使用'%'前缀模糊查询](#14-%e4%b8%8d%e5%bb%ba%e8%ae%ae%e4%bd%bf%e7%94%a8%e5%89%8d%e7%bc%80%e6%a8%a1%e7%b3%8a%e6%9f%a5%e8%af%a2)
+- [15. 用'EXISTS'替换'DISTINCT'](#15-%e7%94%a8exists%e6%9b%bf%e6%8d%a2distinct)
+- [16. 'DISTINCT'与'GROUP BY'的去重](#16-distinct%e4%b8%8egroup-by%e7%9a%84%e5%8e%bb%e9%87%8d)
+- [17. 关于'JOIN'优化](#17-%e5%85%b3%e4%ba%8ejoin%e4%bc%98%e5%8c%96)
 
 <hr>
 
@@ -199,7 +200,15 @@ WHERE E.DEPT_NO = D.DEPT_NO
 
 <hr>
 
-### 16. 关于'JOIN'优化
+### 16. 'DISTINCT'与'GROUP BY'的去重
+
+'**DISTINCT**'更倾向于'去重'的概念, 将数据查询出来后再把重复的去掉;<br/>
+'**GROUP BY**'更倾向于'按组查询'的概念, 其实很多时候都是统计时使用;<br/>
+但也可以适当使用'**GROUP BY**'帮助去重, 一般情况下性能上要比'**DISTINCT**'好些.<br/>
+
+<hr>
+
+### 17. 关于'JOIN'优化
 
 '**LEFT JOIN**' 左表为驱动表;<br/>
 '**INNER JOIN**' MySQL会自动找出那个数据少的表作用驱动表;<br/>
