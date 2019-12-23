@@ -41,6 +41,7 @@
 
 ## Practice
 
+- [Rusteam](https://github.com/PisecesPeng/Rusteam) ``` Forming Rust through steam, Drive boost through Rust. [Rust] ```
 - [TheInitiationBay](https://github.com/PisecesPeng/SampleWare/tree/master/TheInitiationBay) ``` A social website with basic functions and friendly interface. [Java: SSM + Bootstrap] ```
 - [StuTerminal](https://github.com/PisecesPeng/SampleWare/tree/master/StuTerminal) ``` Terminal for operating student data. [Java: JDBC] ```
 - [UserBaseJSP](https://github.com/PisecesPeng/SampleWare/tree/master/UserBaseJSP) ``` Simple JSP with login function. [Java: JSP] ```
