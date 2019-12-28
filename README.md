@@ -60,9 +60,10 @@
 - [TroubleCrasher](https://github.com/PisecesPeng/SampleWare/tree/master/TroubleCrasher) ``` Let's Crash the Exception. [Java: SpringBoot + Exception] ```
 - [Ticktask](https://github.com/PisecesPeng/SampleWare/tree/master/Ticktask) ``` The task is running accurately. [Java: SpringBoot + Spring-Scheduling] ```
 - [NaiveRPC](https://github.com/PisecesPeng/SampleWare/tree/master/NaiveRPC) ``` This is a very naive RPC. [Java: Netty] ```
-- [OriginSql4Spring](https://github.com/PisecesPeng/SampleWare/tree/master/OriginSql4Spring) ``` execute sql by spring...JdbcTemplate. [Java: SpringBoot + JdbcTemplate + Flyway] ```
-- [RocksQueue](https://github.com/PisecesPeng/SampleWare/tree/master/RocksQueue) ``` example for rocks-queue-java use. [Java: SpringBoot + rocks-queue-java] ```
-- [GzipFile](https://github.com/PisecesPeng/SampleWare/tree/master/GzipFile) ``` upload&download gzip file. [Java: SpringBoot + java.io.* + java.util.zip] ```
+- [OriginSql4Spring](https://github.com/PisecesPeng/SampleWare/tree/master/OriginSql4Spring) ``` Execute sql by spring...JdbcTemplate. [Java: SpringBoot + JdbcTemplate + Flyway] ```
+- [RocksQueue](https://github.com/PisecesPeng/SampleWare/tree/master/RocksQueue) ``` Example for rocks-queue-java use. [Java: SpringBoot + rocks-queue-java] ```
+- [GzipFile](https://github.com/PisecesPeng/SampleWare/tree/master/GzipFile) ``` Upload&Download gzip file. [Java: SpringBoot + java.io.* + java.util.zip] ```
+- [DubboCross](https://github.com/PisecesPeng/SampleWare/tree/master/DubboCross) ``` Connect service using Dubbo only. [Java: SpringBoot + Dubbo] ```
 
 ## Record
 
