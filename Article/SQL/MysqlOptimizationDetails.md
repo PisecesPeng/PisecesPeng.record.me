@@ -4,7 +4,7 @@
 - [2. SQL语句中IN包含的值不应过多](#2-sql%e8%af%ad%e5%8f%a5%e4%b8%adin%e5%8c%85%e5%90%ab%e7%9a%84%e5%80%bc%e4%b8%8d%e5%ba%94%e8%bf%87%e5%a4%9a)
 - [3. 区分'IN'和'EXISTS', 'NOT IN'和'NOT EXISTS'](#3-%e5%8c%ba%e5%88%86in%e5%92%8cexists-not-in%e5%92%8cnot-exists)
 - [4. 注意范围查询语句](#4-%e6%b3%a8%e6%84%8f%e8%8c%83%e5%9b%b4%e6%9f%a5%e8%af%a2%e8%af%ad%e5%8f%a5)
-- [5. 避免使用'!='或'<>'操作符](#5-%e9%81%bf%e5%85%8d%e4%bd%bf%e7%94%a8%e6%88%96%e6%93%8d%e4%bd%9c%e7%ac%a6)
+- [5. 避免使用'!='或'&lt;&gt;'操作符](#5-%e9%81%bf%e5%85%8d%e4%bd%bf%e7%94%a8%e6%88%96ltgt%e6%93%8d%e4%bd%9c%e7%ac%a6)
 - [6. 避免使用'OR'连接条件](#6-%e9%81%bf%e5%85%8d%e4%bd%bf%e7%94%a8or%e8%bf%9e%e6%8e%a5%e6%9d%a1%e4%bb%b6)
 - [7. 尽量用'UNION ALL'代替'UNION'](#7-%e5%b0%bd%e9%87%8f%e7%94%a8union-all%e4%bb%a3%e6%9b%bfunion)
 - [8. 进行'is null'值和'is not null'判断都不可取](#8-%e8%bf%9b%e8%a1%8cis-null%e5%80%bc%e5%92%8cis-not-null%e5%88%a4%e6%96%ad%e9%83%bd%e4%b8%8d%e5%8f%af%e5%8f%96)
@@ -17,6 +17,7 @@
 - [15. 用'EXISTS'替换'DISTINCT'](#15-%e7%94%a8exists%e6%9b%bf%e6%8d%a2distinct)
 - [16. 'DISTINCT'与'GROUP BY'的去重](#16-distinct%e4%b8%8egroup-by%e7%9a%84%e5%8e%bb%e9%87%8d)
 - [17. 关于'JOIN'优化](#17-%e5%85%b3%e4%ba%8ejoin%e4%bc%98%e5%8c%96)
+- [18. 关于'LIMIT'优化](#18-%e5%85%b3%e4%ba%8elimit%e4%bc%98%e5%8c%96)
 
 <hr>
 
@@ -229,6 +230,17 @@ WHERE E.DEPT_NO = D.DEPT_NO
 > 
 > 不过还是尽可能让优化器去判断, 因为大部分情况下mysql优化器是比人要聪明的,<br/>
 > 所以使用'**STRAIGHT_JOIN**'一定要慎重, 因为大部分情况下认为指定的执行顺序并不一定会比优化引擎要靠谱.<br/>
+
+<hr>
+
+### 18. 关于'LIMIT'优化
+
+大数据量分页时, 会不会出现下面这种查询语句 : 
+``` select * from t where a = 1 limit 5000000, 5 ```
+这种语句的查询速度时很慢的, sql需要将5000005条数据查询出来后, 再取得最后5条返回.
+且会加载很多大量的热点不是很高的'数据页'占用buffer pool,造成'buffer pool'污染.
+可以参考下面的这种写法 : 
+``` select * from t a inner join (select id from t where a = 1 limit 5000000, 5) b on a.id = b.id ```
 
 <hr>
 
