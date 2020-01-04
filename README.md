@@ -9,7 +9,7 @@
 ### Java
 
 - [JVM结构的简单梳理](Article/Java/JVMStructure.md)
-- [提高Java代码运行效率的35个小细节](Article/Java/JavaCodeOptimizationDetails.md)
+- [提高Java代码运行效率的小细节](Article/Java/JavaCodeOptimizationDetails.md)
 - [Java基础问题杂项](Article/Java/JavaBasicQuestion.md)
 - [序列化SerialVersionUID该如何声明](Article/Java/JavaSerializationDeclareSerialVersionUID.md)
 - [序列化Serialization处理敏感属性](Article/Java/JavaSerializationHandlingSensitiveAttributes.md)

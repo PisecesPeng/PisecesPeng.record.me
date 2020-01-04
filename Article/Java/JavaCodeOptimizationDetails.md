@@ -1,4 +1,4 @@
-<h2> 提高Java代码运行效率的35个小细节 </h2>
+<h2> 提高Java代码运行效率的小细节 </h2>
 
 > 性能优化大部分都是在时间、效率、代码结构层次等方面的权衡,<br/>
 > 以下优化是比较浅鲜的,仅供参考,开发中需根据实际场景,敲出最合适的代码.<br/>
@@ -326,6 +326,62 @@ if ("123".equals(str)) { }
 
 ### 35. 不要创建一些不使用的对象,不要导入一些不使用的类
 
+### 36. 若需频繁调用Collection.contains方法可使用Set
+
+List的contains方法普遍时间复杂度为O(n)``` 内部使用for循环遍历 ```
+若代码中需要频繁调用contains, 可先将'list'转换成'HashSet'实现, 将O(n)的时间复杂度将为O(1).
+
+正例:
+```java
+// 频繁调用Collection.contains()
+List<Object> list = new ArrayList<>();
+HashSet<Object> set = list.stream().collect(Collectors.toCollection(HashSet::new));
+for (int i = 0; i <= Integer.MAX_VALUE; i++){
+    // 时间复杂度为O(1)
+    if (set.contains(i)){
+        System.out.println("list contains "+ i);
+    }
+}
+```
+
+### 37. 优先考虑使用同步代码块，其次才是同步方法
+
+'synchronized'是对象锁, 
+无论是用来修饰方法, 还是使用'synchronized(this)'同步代码块, 一个时间内只能有一个线程得到执行.
+但并不是每一场景都需要锁住对象, 所以开发时优先考虑同步代码块(非synchronized(this)).
+
+三种场景的synchronized使用示例 : 
+```java
+// 使用 synchronized 修饰方法
+public synchronized void a() {
+    System.out.println("echo a..");
+}
+// 使用 synchronized 修饰代码块
+public void b() {
+    synchronized(this) {
+        System.out.println("echo b..");
+    }
+}
+// 使用 非synchronized(this) 修饰代码块
+public void c() {
+    String s = "c";
+    synchronized(s) {
+        System.out.println("echo c..");
+    }
+}
+```
+
+### 38. 使用while循环自旋锁时, 注意合理休眠
+
+有些场景会使用``` while(true) {  // break condition } ```自旋锁.
+但是这是会损耗CPU资源的, 可以考虑合理休眠 : 
+```java
+while(true) {
+    // break condition 
+    Thread.sleep(1000);
+}
+```
+
 <br/>
 <br/>
 <br/>
@@ -335,6 +391,8 @@ if ("123".equals(str)) { }
 感谢以下文章给了我写作思路:<br/>
 https://mp.weixin.qq.com/s/50mCaRbrrTt8DqOmp7JTwg<br/>
 https://mp.weixin.qq.com/s/AiMz62n3pMOPLfWx-0KmHQ<br/>
+https://mp.weixin.qq.com/s/l2nrP_oAZcP0Qk006h0TJQ<br/>
+https://mp.weixin.qq.com/s/0-QZ5DnOB-5QGtGGKxLRUg<br/>
 
 
 
