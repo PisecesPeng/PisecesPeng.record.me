@@ -8,6 +8,7 @@
   - [timeout](#timeout)
   - [propagation](#propagation)
   - [isolation](#isolation)
+- [3. @**Transactional**注解失效的情况](#3-Transactional%E6%B3%A8%E8%A7%A3%E5%A4%B1%E6%95%88%E7%9A%84%E6%83%85%E5%86%B5)
 <hr>
 
 ### 1. 先说说'脏读、不可重复读、幻读'
@@ -120,4 +121,21 @@ SERIALIZABLE : 所有的事务依次逐个执行,这样事务之间就完全不�
 */
 @Transactional(isolation = Isolation.DEFAULT)
 ```
+<hr>
+
+### 3. @**Transactional**注解失效的情况
+
+> 1. 数据库本身是否支持事务, 例如:**mysql数据库表引擎InnoDB支持事务, 但MyISAM不支持事务**;
+
+> 2. @Transactional注解的方法需要public修饰;
+
+> 3. @Transactional注解所在的类不由**Spring容器**管理;
+
+> 4. 注意异常的是否check(**@Transactional注解**的'rollbackFor'和'noRollbackFor'), 别影响了事务生效;
+
+> 5. 不带事务的方法调用同一个类中带事务的方法, 事务不会生效;
+
+
+详见: https://www.ibm.com/developerworks/cn/java/j-master-spring-transactional-use/index.html
+
 <hr>
