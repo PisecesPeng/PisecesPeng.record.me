@@ -7,6 +7,7 @@
 - [Java四种引用类型](#java%e5%9b%9b%e7%a7%8d%e5%bc%95%e7%94%a8%e7%b1%bb%e5%9e%8b)
 - [快速失败(fail-fast)和安全失败(fail-safe)的区别](#%e5%bf%ab%e9%80%9f%e5%a4%b1%e8%b4%a5fail-fast%e5%92%8c%e5%ae%89%e5%85%a8%e5%a4%b1%e8%b4%a5fail-safe%e7%9a%84%e5%8c%ba%e5%88%ab)
 - [偏向锁、轻量级锁、重量级锁之间的简单比较](#%e5%81%8f%e5%90%91%e9%94%81%e8%bd%bb%e9%87%8f%e7%ba%a7%e9%94%81%e9%87%8d%e9%87%8f%e7%ba%a7%e9%94%81%e4%b9%8b%e9%97%b4%e7%9a%84%e7%ae%80%e5%8d%95%e6%af%94%e8%be%83)
+- ['-Integer.MIN_VALUE == Integer.MIN_VALUE'结果为true](#integerminvalue--integerminvalue%e7%bb%93%e6%9e%9c%e4%b8%batrue)
 <hr>
 
 ### Java是值传递还是引用传递
@@ -137,5 +138,24 @@ ps. 简而言之, **安全失败**(fail-safe)基于对底层集合做拷贝, 它
 | 偏向锁 | 加锁和解锁不需要额外的消耗,<br/>和执行非同步方法比仅存在纳秒级的差距. | 如果线程间存在锁竞争,<br/>会带来额外的锁撤销的消耗. | 适用于只有一个线程访问同步块场景. |
 | 轻量级锁 | 竞争的线程不会阻塞,<br/>提高了程序的响应速度. | 如果始终得不到锁竞争的线程,<br/>使用自旋会消耗CPU. | 追求响应时间, <br/>同步块执行速度非常快. |
 | 重量级锁 | 线程竞争不使用自旋,<br/>不会消耗CPU. | 线程阻塞,<br/>响应时间缓慢 | 追求吞吐量.<br/>同步块执行速度较长. |
+
+<hr>
+
+### '-Integer.MIN_VALUE == Integer.MIN_VALUE'结果为true
+
+Java用补码表示整数.<br/>
+用这种方法, 使得负数的个数与正数不一致.<br/>
+从而导致最小负数是没有对应的正数.<br/>
+
+```
+例如:
+Integer.MIN_VALUE 等于 -2147483648
+Integer.MAX_VALUE 等于 +2147483648 - 1
+```
+
+尝试对```.MIN_VALUE```取反时，会得到超过```.MAX_VALUE```的值, 因此会发生溢出变为负数.<br/>
+这也会引起其他意外情况, 例如 Math.abs(Integer.MIN_VALUE), 还是负值.<br/>
+
+ps. ```byte```和```short```没有这种情况.<br/>
 
 <hr>
