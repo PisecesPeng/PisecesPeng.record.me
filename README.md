@@ -79,6 +79,7 @@
 - [Telnetty](https://github.com/PisecesPeng/SampleWare/tree/master/A1JavaUtils/Telnetty) ``` Telnet communication by netty [Java] ```
 - [MongoFindDemo](https://github.com/PisecesPeng/SampleWare/tree/master/A1JavaUtils/MongoFindDemo) ``` Mongo client demo for find() [Java] ```
 - [ExportExcel](https://github.com/PisecesPeng/SampleWare/tree/master/A1JavaUtils/ExportExcel) ``` Excel export util [Java] ```
+- [RedisTemplateConn](https://github.com/PisecesPeng/SampleWare/tree/master/A1JavaUtils/RedisTemplateConnUtil) ``` Spring.RedisTemplate conn util [Java] ```
 
 ### Docker
 
