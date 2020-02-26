@@ -38,6 +38,7 @@
 - [Git配置'SSH key'以及关联远程仓库](Article/Tool/GitConfiguresSSHkeyAndAssociatedRemoteRepository.md)
 - [Git实用文件操作](Article/Tool/BrieflyDescribeGitsFileOperations.md)
 - [Vim基本操作摘要](Article/Tool/SummaryOfVimBasicOperations.md)
+- [Maven, assembly-plugin的简单配置](Article/Tool/MavenAssemblyPluginBuild.md)
 
 ## Practice
 
