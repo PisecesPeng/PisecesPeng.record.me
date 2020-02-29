@@ -4,7 +4,7 @@
 - [2. SQL语句中IN包含的值不应过多](#2-sql%e8%af%ad%e5%8f%a5%e4%b8%adin%e5%8c%85%e5%90%ab%e7%9a%84%e5%80%bc%e4%b8%8d%e5%ba%94%e8%bf%87%e5%a4%9a)
 - [3. 区分'IN'和'EXISTS', 'NOT IN'和'NOT EXISTS'](#3-%e5%8c%ba%e5%88%86in%e5%92%8cexists-not-in%e5%92%8cnot-exists)
 - [4. 注意范围查询语句](#4-%e6%b3%a8%e6%84%8f%e8%8c%83%e5%9b%b4%e6%9f%a5%e8%af%a2%e8%af%ad%e5%8f%a5)
-- [5. 避免使用'!='或'&lt;&gt;'操作符](#5-%e9%81%bf%e5%85%8d%e4%bd%bf%e7%94%a8%e6%88%96ltgt%e6%93%8d%e4%bd%9c%e7%ac%a6)
+- [5. 避免使用'!='或'<>'操作符](#5-%e9%81%bf%e5%85%8d%e4%bd%bf%e7%94%a8%e6%88%96%e6%93%8d%e4%bd%9c%e7%ac%a6)
 - [6. 避免使用'OR'连接条件](#6-%e9%81%bf%e5%85%8d%e4%bd%bf%e7%94%a8or%e8%bf%9e%e6%8e%a5%e6%9d%a1%e4%bb%b6)
 - [7. 尽量用'UNION ALL'代替'UNION'](#7-%e5%b0%bd%e9%87%8f%e7%94%a8union-all%e4%bb%a3%e6%9b%bfunion)
 - [8. 进行'is null'值和'is not null'判断都不可取](#8-%e8%bf%9b%e8%a1%8cis-null%e5%80%bc%e5%92%8cis-not-null%e5%88%a4%e6%96%ad%e9%83%bd%e4%b8%8d%e5%8f%af%e5%8f%96)
@@ -18,6 +18,7 @@
 - [16. 'DISTINCT'与'GROUP BY'的去重](#16-distinct%e4%b8%8egroup-by%e7%9a%84%e5%8e%bb%e9%87%8d)
 - [17. 关于'JOIN'优化](#17-%e5%85%b3%e4%ba%8ejoin%e4%bc%98%e5%8c%96)
 - [18. 关于'LIMIT'优化](#18-%e5%85%b3%e4%ba%8elimit%e4%bc%98%e5%8c%96)
+- [19. 建立索引的小建议](#19-%e5%bb%ba%e7%ab%8b%e7%b4%a2%e5%bc%95%e7%9a%84%e5%b0%8f%e5%bb%ba%e8%ae%ae)
 
 <hr>
 
@@ -219,8 +220,8 @@ WHERE E.DEPT_NO = D.DEPT_NO
 参与联合查询的表至少为2张表, 一般都存在大小之分.<br/>
 如果连接方式是'**INNER JOIN**', 在没有其他过滤条件的情况下MySQL会自动选择小表作为驱动表, <br/>
 但是'**LEFT JOIN**'在驱动表的选择上遵循的是左边驱动右边的原则, 即左表为驱动表.<br/>
-且合理利用索引<br/>
-被驱动表的索引字段作为on的限制字段,利用小表去驱动大表<br/>
+记得合理利用索引.<br/>
+且可将驱动表的索引字段作为on的限制字段,利用小表去驱动大表.<br/>
 
 > ps.<br/>
 >  这里多说一个'**STRAIGHT_JOIN**'<br/>
@@ -235,12 +236,36 @@ WHERE E.DEPT_NO = D.DEPT_NO
 
 ### 18. 关于'LIMIT'优化
 
-大数据量分页时, 会不会出现下面这种查询语句 : 
-``` select * from t where a = 1 limit 5000000, 5 ```
-这种语句的查询速度时很慢的, sql需要将5000005条数据查询出来后, 再取得最后5条返回.
-且会加载很多大量的热点不是很高的'数据页'占用buffer pool,造成'buffer pool'污染.
-可以参考下面的这种写法 : 
-``` select * from t a inner join (select id from t where a = 1 limit 5000000, 5) b on a.id = b.id ```
+大数据量分页时, 会不会出现下面这种查询语句 : <br/>
+``` select * from t where a = 1 limit 5000000, 5 ```<br/>
+这种语句的查询速度时很慢的, sql需要将5000005条数据查询出来后, 再取得最后5条返回.<br/>
+且会加载很多大量的热点不是很高的'数据页'占用buffer pool,造成'buffer pool'污染.<br/>
+可以参考下面的这种写法 : <br/>
+``` select * from t a inner join (select id from t where a = 1 limit 5000000, 5) b on a.id = b.id ```<br/>
+
+<hr>
+
+### 19. 建立索引的小建议
+
+1. 经常用来查询的字段可建索引.<br/>
+
+2. 常用来分组和排序的字段可建立索引.<br/>
+索引的作用是查询和排序,``` order by ```和``` group by ```可以使用索引.<br/>
+若是排序条件有多字段,也是按照最左前缀原则使用索引.<br/>
+
+3. 更新频繁的字段不要建立索引.<br/>
+频繁更新的字段如果建立来索引, 更新时就不仅更新数据,索引的B+树也会发生变化,<br/>
+得不偿失.<br/>
+
+4. 选择性小的列不要建立索引.<br/>
+类似性别字段, 几百万数据里只有几个值, 建立索引毫无意义.<br/>
+
+5. 索引尽量使用等值匹配(在连接条件中使用'='运算符).<br/>
+
+6. 尽量使用覆盖索引.<br/>
+如果查找的列刚刚好是(联合)索引的字段, 那就没有必要去再去搜索主键索引,<br/>
+直接取叶子节点值即可,这就是覆盖索引.<br/>
+例如少用'select *'不仅能减少读取的开销, 还能够使用覆盖索引.<br/>
 
 <hr>
 
@@ -250,6 +275,6 @@ WHERE E.DEPT_NO = D.DEPT_NO
 <br/>
 <br/>
 
-感谢以下文章给了我写作思路:<br/>
-https://mp.weixin.qq.com/s/nJHxIQYuABFWLSJoBIPHEA<br/>
-
+感谢以下文章<br/>
+https://mp.weixin.qq.com/s/nJHxIQYuABFWLSJoBIPHEA <br/>
+https://juejin.im/post/5e575cb56fb9a07c951cdb39?utm_source=gold_browser_extension <br/>
