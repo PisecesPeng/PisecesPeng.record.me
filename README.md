@@ -21,6 +21,7 @@
 - [Guava Array&List常用方法示例](Article/Java/GuavaArrayAndListExample.md)
 - [Guava Maps常用方法示例](Article/Java/GuavaMapsExample.md)
 - [Guava Sets常用方法示例](Article/Java/GuavaSetsExample.md)
+- [ThreadLocal.expungeStaleEntry应对内存泄漏](Article/Java/ThreadLocalExpungeStaleEntryDetail.md)
 
 ### Spring
 
