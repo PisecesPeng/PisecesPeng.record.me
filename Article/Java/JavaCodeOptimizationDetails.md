@@ -102,7 +102,7 @@ HashTable、Vector、StringBuffer等类使用了同步机制,降低了性能.<br
 所以例如下面的操作:<br/>
 ``` for (int i = 0; i < list.size(); i++) ```<br/>
 建议替换为:<br/>
-``` for (int i = 0, int length = list.size(); i < length; i++) ```<br/>
+``` for (int i = 0, length = list.size(); i < length; i++) ```<br/>
 这样,在list.size()很大的时候,就减少了很多的消耗.<br/>
 ```java
 for (int i = 1; i <= count; i++) {
