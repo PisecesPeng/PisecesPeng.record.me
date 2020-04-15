@@ -53,14 +53,31 @@ public class GsonEntity {
 
 ### 1. 基础的toJson()
 ```java
-// 未设置任何值
-GsonEntity entity = new GsonEntity();
+String gsonString;
 
-String gsonString1 = new Gson().toJson(entity);
-System.out.println(gsonString1);
-
-// 输出
-// {"Name":"Gson","age":0,"l_ong":0,"_this_IsA_flag":false,"f_loat":0.0}
+{
+    // 未设置任何值
+    // 对象 -> json
+    GsonEntity entity = new GsonEntity();
+    gsonString = new Gson().toJson(entity);
+    System.out.println(gsonString);
+    // 输出
+    // {"Name":"Gson","age":0,"l_ong":0,"_this_IsA_flag":false,"f_loat":0.0}
+}
+{
+    // json -> 对象
+    GsonEntity entity = new Gson().fromJson(gsonString, GsonEntity.class);
+    System.out.println(entity);
+    // 输出
+    // GsonEntity(Name=Gson, address=null, age=0, time=null, l_ong=0, _this_IsA_flag=false, f_loat=0.0)
+}
+{
+    // 类似map结构输出
+    JsonObject jsonObject = (JsonObject) new JsonParser().parse(gsonString);
+    System.out.println(jsonObject);
+    // 输出
+    // {"Name":"Gson","age":0,"l_ong":0,"_this_IsA_flag":false,"f_loat":0.0}
+}
 ```
 
 ### 2. 序列化空值
