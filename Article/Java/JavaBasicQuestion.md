@@ -7,7 +7,8 @@
 - [Java四种引用类型](#java%e5%9b%9b%e7%a7%8d%e5%bc%95%e7%94%a8%e7%b1%bb%e5%9e%8b)
 - [快速失败(fail-fast)和安全失败(fail-safe)的区别](#%e5%bf%ab%e9%80%9f%e5%a4%b1%e8%b4%a5fail-fast%e5%92%8c%e5%ae%89%e5%85%a8%e5%a4%b1%e8%b4%a5fail-safe%e7%9a%84%e5%8c%ba%e5%88%ab)
 - [偏向锁、轻量级锁、重量级锁之间的简单比较](#%e5%81%8f%e5%90%91%e9%94%81%e8%bd%bb%e9%87%8f%e7%ba%a7%e9%94%81%e9%87%8d%e9%87%8f%e7%ba%a7%e9%94%81%e4%b9%8b%e9%97%b4%e7%9a%84%e7%ae%80%e5%8d%95%e6%af%94%e8%be%83)
-- ['-Integer.MIN_VALUE == Integer.MIN_VALUE'结果为true](#integerminvalue--integerminvalue%e7%bb%93%e6%9e%9c%e4%b8%batrue)
+- [Integer的'MIN VALUE'正负结果比较](#integer%e7%9a%84min-value%e6%ad%a3%e8%b4%9f%e7%bb%93%e6%9e%9c%e6%af%94%e8%be%83)
+- [List foreach循环中, 使用'remove()'会引发什么结果](#list-foreach%e5%be%aa%e7%8e%af%e4%b8%ad-%e4%bd%bf%e7%94%a8remove%e4%bc%9a%e5%bc%95%e5%8f%91%e4%bb%80%e4%b9%88%e7%bb%93%e6%9e%9c)
 <hr>
 
 ### Java是值传递还是引用传递
@@ -74,7 +75,8 @@ ThreadLocal在操作ThreadLocalMap时,会去拿Thread.currentThread的'threadLoc
 
 > 1) **强引用**
 >> Java的默认声明就是强引用(如:Object o = new Object()),这也是其特点之一,强引用可以直接访问目标对象.<br/>
->> 强引用所指向的对象在任何时候都不会被系统回收.JVM宁愿抛出OOM异常,也不会回收强引用所指向的对象.所以就可能导致内存泄漏.<br/>
+>> 强引用所指向的对象在任何时候都不会被系统回收.JVM宁愿抛出OOM异常,也不会回收强引用所指向的对象,<br/>
+>> 所以就可能导致内存泄漏.<br/>
 >> 可将强引用赋值为null,这样就符合回收条件,适时的被GC回收了.<br/>
 
 > 2) **软引用**
@@ -85,7 +87,8 @@ ThreadLocal在操作ThreadLocalMap时,会去拿Thread.currentThread的'threadLoc
 >> 无论内存是否足够,只要JVM开始垃圾回收,弱引用相关联的对象都会被回收.<br/>
 
 > 4) **虚引用**
->> 一个持有虚引用的对象,和没有引用几乎是一样的,随时可能被垃圾回收器回收.当试图通过虚引用的get()方法取得强引用时,总是会失败.并且,虚引用必须和引用队列一起使用,它的作用在于跟踪垃圾回收过程.<br/>
+>> 一个持有虚引用的对象,和没有引用几乎是一样的,随时可能被垃圾回收器回收.<br/>
+>> 当试图通过虚引用的get()方法取得强引用时,总是会失败.并且,虚引用必须和引用队列一起使用,它的作用在于跟踪垃圾回收过程.<br/>
 >> 其构造方法必须强制传入ReferenceQueue.<br/>
 >> 其get()方法仅仅是返回一个null,不管对象有没有被回收,也就是说将永远无法通过虚引用来获取对象.<br/>
 >> 其对对象而言无感知,也不会影响对象的生命周期.<br/>
@@ -95,16 +98,20 @@ ThreadLocal在操作ThreadLocalMap时,会去拿Thread.currentThread的'threadLoc
 简述'引用队列' :
 引用队列可以与软引用、弱引用以及虚引用一起配合使用,当垃圾回收器准备回收一个对象时,
 如果发现它还有引用,那么就会在回收对象之前,把这个引用加入到与之关联的引用队列中去.
-程序可以通过判断引用队列中是否已经加入了引用,来判断被引用的对象是否将要被垃圾回收,这样就可以在对象被回收之前采取一些必要的措施
+程序可以通过判断引用队列中是否已经加入了引用,来判断被引用的对象是否将要被垃圾回收,
+这样就可以在对象被回收之前采取一些必要的措施
 ```
 ```
 简述'虚可达对象': 
-如果一个对象与GC Roots之间仅存在虚引用,则称这个对象为虚可达(phantom reachable)对象
+如果一个对象与GC Roots之间仅存在虚引用,则称这个对象为虚可达(phantom reachable)对象.
 虚引用的作用在于跟踪垃圾回收过程,在对象被收集器回收时收到一个系统通知.
-当垃圾回收器准备回收一个对象时,如果发现它还有虚引用,就会在垃圾回收后,将这个虚引用加入引用队列,在其关联的虚引用出队前,不会彻底销毁该对象.
+当垃圾回收器准备回收一个对象时,如果发现它还有虚引用,
+就会在垃圾回收后,将这个虚引用加入引用队列,在其关联的虚引用出队前,不会彻底销毁该对象.
 所以可以通过检查引用队列中是否有相应的虚引用来判断对象是否已经被回收了.
-如果一个对象没有强引用和软引用,对于垃圾回收器而言便是可以被清除的,在清除之前,会调用其finalize方法,如果一个对象已经被调用过finalize方法但是还没有被释放,它就变成了一个虚可达对象.
-与软引用和弱引用不同,显式使用虚引用可以阻止对象被清除,只有在程序中显式或者隐式移除这个虚引用时,这个已经执行过finalize方法的对象才会被清除.
+如果一个对象没有强引用和软引用,对于垃圾回收器而言便是可以被清除的,
+在清除之前,会调用其finalize方法,如果一个对象已经被调用过finalize方法但是还没有被释放,它就变成了一个虚可达对象.
+与软引用和弱引用不同,显式使用虚引用可以阻止对象被清除,
+只有在程序中显式或者隐式移除这个虚引用时,这个已经执行过finalize方法的对象才会被清除.
 想要显式的移除虚引用的话,只需要将其从引用队列中取出然后扔掉（置为null）即可.
 ```
 ```
@@ -141,7 +148,7 @@ ps. 简而言之, **安全失败**(fail-safe)基于对底层集合做拷贝, 它
 
 <hr>
 
-### '-Integer.MIN_VALUE == Integer.MIN_VALUE'结果为true
+### Integer的'MIN VALUE'正负结果比较
 
 Java用补码表示整数.<br/>
 用这种方法, 使得负数的个数与正数不一致.<br/>
@@ -157,5 +164,63 @@ Integer.MAX_VALUE 等于 +2147483648 - 1
 这也会引起其他意外情况, 例如 Math.abs(Integer.MIN_VALUE), 还是负值.<br/>
 
 ps. ```byte```和```short```没有这种情况.<br/>
+
+<hr>
+
+### List foreach循环中, 使用'remove()'会引发什么结果
+
+```java
+// '普通'的代码
+List list = ...;
+for (Object obj : list) {
+    list.remove(obj);
+}
+```
+这样删除肯定是不对的.<br/>
+正确的删除, 一般可以使用'**Iterator**'或者JDK1.8后的'**removeIf()**'等等..<br/>
+
+这题目中的比较'坑'的地方如下<br/>
+**foreach**是语法糖, 其本质是一个'**Iterator**'遍历, 所以要从'**Iterator**'去解释接下来会出现的结果.<br/>
+类似上文, 常见的代码如下(稍微修饰了下..):<br/>
+```java
+List<String> list = new ArrayList<>();
+list.add("a");
+list.add("b");
+Iterator itr = list.iterator();
+int loop = 1;  // 用来检测循环次数
+while (itr.hasNext()) {
+    System.out.println(loop++);
+    String s = (String) itr.next();
+    if ("a".equals(s)) list.remove(s);
+}
+```
+<br/>
+
+> 以上代码结果是, 不会报错:<br/>
+>> 由于在判断'**"a".equals(s)**'为true后,<br/>
+>> '**remove()**'会使得'**--size**'、会使得'**modCount++**',<br/>
+>> '**next()**'使得'**cursor = i + 1**',<br/>
+>> 然后再'**hasNext()**'后, '**cursor != size**'就会为false, <br/>
+>> 所以不会触发'**next()**', 也就不会触发下面代码<br/>
+```java
+if (modCount != expectedModCount)
+    throw new ConcurrentModificationException();
+```
+<br/>
+
+> 如果将"a"改为"b", 这块代码就会报错:<br/>
+>> 遍历到"b"时候, 同样'**remove(**)'会使得'**--size**'、会使得'**modCount++**',<br/>
+>> 然后再'**hasNext()**'后, '**cursor != size**'就会为true,<br/>
+>> 之所以为true, 实际是这两个值打了个交叉, cursor增加, size减少, 导致'!='还是成立,<br/>
+>> 所以会继续触发'**next()**', 以至于触发下面代码, 抛出了异常<br/>
+```java
+if (modCount != expectedModCount)
+    throw new ConcurrentModificationException();
+```
+
+ps. <br/>
+最上面的例子中, 并没有给出实例化的类,<br/>
+我们可以假设其实例化的是线程安全之类(如: CopyOnWriteArrayList ..).<br/> 
+那结果可能就没没问题了.<br/>
 
 <hr>
