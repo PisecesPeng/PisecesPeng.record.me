@@ -66,6 +66,7 @@
 - [RocksQueue](https://github.com/PisecesPeng/SampleWare/tree/master/RocksQueue) ``` Example for rocks-queue-java use. [Java: SpringBoot + rocks-queue-java] ```
 - [GzipFile](https://github.com/PisecesPeng/SampleWare/tree/master/GzipFile) ``` Upload&Download gzip file. [Java: SpringBoot + java.io.* + java.util.zip] ```
 - [DubboCross](https://github.com/PisecesPeng/SampleWare/tree/master/DubboCross) ``` Connect service using Dubbo only. [Java: SpringBoot + Dubbo] ```
+- [SwitchServices](https://github.com/PisecesPeng/SampleWare/tree/master/SwitchServices) ``` Simple example for SPI. [Java: SpringBoot + SPI] ```
 
 ## Record
 
