@@ -73,6 +73,14 @@ MySQL对于'**IN**'做了相应的优化, <br/>
 
 对于联合索引来说, 如果存在范围查询,<br/>
 比如'**BETWEEN**','**>**','**<**'等条件时, 会造成后面的索引字段失效.<br/>
+```sql
+...略
+WHERE date >= TO_DATE(?, 'YYYY-MM-DD')
+    AND date <= TO_DATE(?, 'YYYY-MM-DD')
+    AND id  = ?;
+```
+以上sql, id的索引会失效.<br/>
+简单来说, 存在多列索引, 建议将需要用'**=**'查询的列的索引放在最开始, '**RANGE**'搜索的列往后放<br/>
 
 <hr>
 
@@ -242,6 +250,7 @@ WHERE E.DEPT_NO = D.DEPT_NO
 且会加载很多大量的热点不是很高的'数据页'占用buffer pool,造成'buffer pool'污染.<br/>
 可以参考下面的这种写法 : <br/>
 ``` select * from t a inner join (select id from t where a = 1 limit 5000000, 5) b on a.id = b.id ```<br/>
+``` select * from t a, (select id from t where a = 1 limit 5000000, 5) b where a.id = b.id ```<br/>
 
 <hr>
 
@@ -278,3 +287,5 @@ WHERE E.DEPT_NO = D.DEPT_NO
 感谢以下文章<br/>
 https://mp.weixin.qq.com/s/nJHxIQYuABFWLSJoBIPHEA <br/>
 https://juejin.im/post/5e575cb56fb9a07c951cdb39?utm_source=gold_browser_extension <br/>
+https://www.kawabangga.com/posts/3893 <br/>
+https://juejin.im/post/5ea16dede51d45470b4ffc5b?utm_source=gold_browser_extension <br/>
