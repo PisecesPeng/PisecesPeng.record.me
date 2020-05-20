@@ -1,24 +1,25 @@
 <h2> 说一说Gson有哪些常用方法 </h2>
 
-- [1. 基础的toJson()](#1-%E5%9F%BA%E7%A1%80%E7%9A%84tojson)
-- [2. 序列化空值](#2-%E5%BA%8F%E5%88%97%E5%8C%96%E7%A9%BA%E5%80%BC)
-- [3. @SerializedName指定名称](#3-serializedname%E6%8C%87%E5%AE%9A%E5%90%8D%E7%A7%B0)
-- [4. @Expose限制返回结果](#4-expose%E9%99%90%E5%88%B6%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C)
-- [5. 版本控制输出结果](#5-%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C)
-- [6. 格式化日期输出](#6-%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%A5%E6%9C%9F%E8%BE%93%E5%87%BA)
-- [7. 格式化Json输出](#7-%E6%A0%BC%E5%BC%8F%E5%8C%96json%E8%BE%93%E5%87%BA)
-- [8. 禁止转义HTML标签](#8-%E7%A6%81%E6%AD%A2%E8%BD%AC%E4%B9%89html%E6%A0%87%E7%AD%BE)
-- [9. 通过ExclusionStrategy忽略指定类型的字段](#9-%E9%80%9A%E8%BF%87exclusionstrategy%E5%BF%BD%E7%95%A5%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%AD%97%E6%AE%B5)
-- [10. 通过Modifiers忽略指定类型的字段](#10-%E9%80%9A%E8%BF%87modifiers%E5%BF%BD%E7%95%A5%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%AD%97%E6%AE%B5)
-- [11. 设置命名规则](#11-%E8%AE%BE%E7%BD%AE%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99)
-- [12. 自定义命名规则](#12-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99)
-- [13. 使用Json输出特殊double/float值](#13-%E4%BD%BF%E7%94%A8json%E8%BE%93%E5%87%BA%E7%89%B9%E6%AE%8Adoublefloat%E5%80%BC)
-- [14. 将Long序列化为其他类型](#14-%E5%B0%86long%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%BA%E5%85%B6%E4%BB%96%E7%B1%BB%E5%9E%8B)
-- [15. other](#15-other)
+- [1. 基础的toJson()](#1-%e5%9f%ba%e7%a1%80%e7%9a%84tojson)
+- [2. 序列化空值](#2-%e5%ba%8f%e5%88%97%e5%8c%96%e7%a9%ba%e5%80%bc)
+- [3. @SerializedName指定名称](#3-serializedname%e6%8c%87%e5%ae%9a%e5%90%8d%e7%a7%b0)
+- [4. @Expose限制返回结果](#4-expose%e9%99%90%e5%88%b6%e8%bf%94%e5%9b%9e%e7%bb%93%e6%9e%9c)
+- [5. 版本控制输出结果](#5-%e7%89%88%e6%9c%ac%e6%8e%a7%e5%88%b6%e8%be%93%e5%87%ba%e7%bb%93%e6%9e%9c)
+- [6. 格式化日期输出](#6-%e6%a0%bc%e5%bc%8f%e5%8c%96%e6%97%a5%e6%9c%9f%e8%be%93%e5%87%ba)
+- [7. 格式化Json输出](#7-%e6%a0%bc%e5%bc%8f%e5%8c%96json%e8%be%93%e5%87%ba)
+- [8. 禁止转义HTML标签](#8-%e7%a6%81%e6%ad%a2%e8%bd%ac%e4%b9%89html%e6%a0%87%e7%ad%be)
+- [9. 通过ExclusionStrategy忽略指定类型的字段](#9-%e9%80%9a%e8%bf%87exclusionstrategy%e5%bf%bd%e7%95%a5%e6%8c%87%e5%ae%9a%e7%b1%bb%e5%9e%8b%e7%9a%84%e5%ad%97%e6%ae%b5)
+- [10. 通过Modifiers忽略指定类型的字段](#10-%e9%80%9a%e8%bf%87modifiers%e5%bf%bd%e7%95%a5%e6%8c%87%e5%ae%9a%e7%b1%bb%e5%9e%8b%e7%9a%84%e5%ad%97%e6%ae%b5)
+- [11. 设置命名规则](#11-%e8%ae%be%e7%bd%ae%e5%91%bd%e5%90%8d%e8%a7%84%e5%88%99)
+- [12. 自定义命名规则](#12-%e8%87%aa%e5%ae%9a%e4%b9%89%e5%91%bd%e5%90%8d%e8%a7%84%e5%88%99)
+- [13. 使用Json输出特殊double/float值](#13-%e4%bd%bf%e7%94%a8json%e8%be%93%e5%87%ba%e7%89%b9%e6%ae%8adoublefloat%e5%80%bc)
+- [14. 将Long序列化为其他类型](#14-%e5%b0%86long%e5%ba%8f%e5%88%97%e5%8c%96%e4%b8%ba%e5%85%b6%e4%bb%96%e7%b1%bb%e5%9e%8b)
+- [15. 将Json转换为List](#15-%e5%b0%86json%e8%bd%ac%e6%8d%a2%e4%b8%balist)
+- [16. other](#16-other)
 
-> **Gson**是Google提供的用来在**Java对象**和**JSON数据**之间进行映射的Java类库.<br/>
-> Gson提供了fromJson()和toJson()两个直接用于解析和生成的方法,前者实现反序列化,后者实现了序列化.<br/>
-> 本文主要是说说常用的**序列化**方法.<br/>
+> **Gson**是Google提供的用来在**Java对象**和**JSON数据**之间进行映射的Java类库.  
+> Gson提供了fromJson()和toJson()两个直接用于解析和生成的方法,前者实现反序列化,后者实现了序列化.  
+> 本文主要是说说常用的**序列化**方法.  
 
 <hr>
 
@@ -307,7 +308,25 @@ System.out.println(gsonString20);
 // {"Name":"Gson","age":0,"l_ong":"9223372036854775807","_this_IsA_flag":false,"f_loat":0.0}
 ```
 
-### 15. other
+### 15. 将Json转换为List
+```java
+//Json的解析类对象
+JsonParser parser = new JsonParser();
+//将 json(List<GsonEntity>) 转成一个JsonArray对象
+JsonArray jsonArray = parser.parse(json).getAsJsonArray();
+
+Gson gson = new Gson();
+ArrayList<GsonEntity> dataJsonList = new ArrayList<>();
+//加强for循环遍历JsonArray
+for (JsonElement data : jsonArray) {
+  // 使用gson，直接转成Bean对象
+  GsonEntity entity = gson.fromJson(data, GsonEntity.class);
+  dataJsonList.add(entity);
+}
+```
+
+### 16. other
+
 ```java
 // disableInnerClassSerialization(): 禁止序列化内部类
 // generateNonExecutableJson(): 生成不可执行的Json(插入一些)]}'特殊字符)
