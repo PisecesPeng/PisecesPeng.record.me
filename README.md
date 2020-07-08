@@ -20,6 +20,10 @@
   - [简单解释JavaNIO聊天Demo的流程](Article/Java/Standard/JavaNIOChatDemo.md)
   - [ThreadLocal.expungeStaleEntry应对内存泄漏](Article/Java/Standard/ThreadLocalExpungeStaleEntryDetail.md)
 
+* **Design**
+  
+  - [单例模式示例](Article/Java/Design/SingletonPattern.md)
+
 * **Guava**
   
   - [说一说Gson有哪些常用方法](Article/Java/Guava/SimpleGsonUtil.md)
