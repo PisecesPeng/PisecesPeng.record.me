@@ -55,7 +55,7 @@ JVM在执行字节码时,实际上最终还是把字节码解释成具体平台�
 **Java字节码**是一种运行于Java和机器语言的中间语言,Java字节码也是部署Java程序的最小单元.<br/>
 JVM本身就是用于执行Java字节码的执行器,所以'.java'源码文件要先编译为'.class'二进制字节码.<br/>
 
-![./res/JVMStructure/JaavaCompiler.png](./res/JVMStructure/JaavaCompiler.png)
+![./res/JVMStructure/JaavaCompiler.png](./res/JVMStructure/JavaCompiler.png)
 
 ``` ps. javap -c/-verbose 可以将'.class'已可阅读方式输出 ```
 
