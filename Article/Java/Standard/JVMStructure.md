@@ -1,33 +1,33 @@
 <h2> JVM结构的简单梳理 </h2>
 
-- [JVM是什么](#jvm%E6%98%AF%E4%BB%80%E4%B9%88)
-- [JVM的基本特性](#jvm%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%89%B9%E6%80%A7)
-- [JVM的流程结构](#jvm%E7%9A%84%E6%B5%81%E7%A8%8B%E7%BB%93%E6%9E%84)
-  - [1. Java编译(Java Compiler)](#1-java%E7%BC%96%E8%AF%91java-compiler)
-  - [2. 类加载子系统(Class Loader Subsystem)](#2-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%AD%90%E7%B3%BB%E7%BB%9Fclass-loader-subsystem)
+- [JVM是什么](#jvm是什么)
+- [JVM的基本特性](#jvm的基本特性)
+- [JVM的流程结构](#jvm的流程结构)
+  - [1. Java编译(Java Compiler)](#1-java编译java-compiler)
+  - [2. 类加载子系统(Class Loader Subsystem)](#2-类加载子系统class-loader-subsystem)
     - [2.1 Loading](#21-loading)
     - [2.2 Linking](#22-linking)
-      - [2.2.1 验证(Verifying)](#221-%E9%AA%8C%E8%AF%81verifying)
-      - [2.2.2 准备(Preparing)](#222-%E5%87%86%E5%A4%87preparing)
-      - [2.2.3 解析(Resolving)](#223-%E8%A7%A3%E6%9E%90resolving)
+      - [2.2.1 验证(Verifying)](#221-验证verifying)
+      - [2.2.2 准备(Preparing)](#222-准备preparing)
+      - [2.2.3 解析(Resolving)](#223-解析resolving)
     - [2.3 Initializing](#23-initializing)
-  - [3. 运行时数据区(Runtime Data Areas)](#3-%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BAruntime-data-areas)
-    - [3.1 堆(Heap)](#31-%E5%A0%86heap)
-      - [3.1.1 GC堆(Garbage Collected Heap)](#311-gc%E5%A0%86garbage-collected-heap)
-      - [3.1.2 运行时常量池(Runtime Constant Pool)](#312-%E8%BF%90%E8%A1%8C%E6%97%B6%E5%B8%B8%E9%87%8F%E6%B1%A0runtime-constant-pool)
-    - [3.2 程序计数器(Program Counter Register)](#32-%E7%A8%8B%E5%BA%8F%E8%AE%A1%E6%95%B0%E5%99%A8program-counter-register)
-    - [3.3 本地方法栈(Native Method Stack)](#33-%E6%9C%AC%E5%9C%B0%E6%96%B9%E6%B3%95%E6%A0%88native-method-stack)
-    - [3.4 虚拟机栈(VM Stack)](#34-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88vm-stack)
-      - [3.4.1 栈帧(Stack Frame)](#341-%E6%A0%88%E5%B8%A7stack-frame)
-        - [3.4.1.1 局部变量(Local Variables)](#3411-%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8Flocal-variables)
-        - [3.4.1.2 操作数栈(Operand Stacks)](#3412-%E6%93%8D%E4%BD%9C%E6%95%B0%E6%A0%88operand-stacks)
-        - [3.4.1.3 动态连接(Dynamic Linking)](#3413-%E5%8A%A8%E6%80%81%E8%BF%9E%E6%8E%A5dynamic-linking)
-        - [3.4.1.4 返回地址(Return Address)](#3414-%E8%BF%94%E5%9B%9E%E5%9C%B0%E5%9D%80return-address)
-  - [4. 元空间(Metaspace)](#4-%E5%85%83%E7%A9%BA%E9%97%B4metaspace)
-  - [5. 执行引擎(Execution Engine)](#5-%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8Eexecution-engine)
-    - [5.1 解释器(Interpreter)](#51-%E8%A7%A3%E9%87%8A%E5%99%A8interpreter)
-    - [5.2 即时编译器(JIT(Just-In-Time) Compiler)](#52-%E5%8D%B3%E6%97%B6%E7%BC%96%E8%AF%91%E5%99%A8jitjust-in-time-compiler)
-    - [5.3 GC收集器(Garbage Collector)](#53-gc%E6%94%B6%E9%9B%86%E5%99%A8garbage-collector)
+  - [3. 运行时数据区(Runtime Data Areas)](#3-运行时数据区runtime-data-areas)
+    - [3.1 堆(Heap)](#31-堆heap)
+      - [3.1.1 GC堆(Garbage Collected Heap)](#311-gc堆garbage-collected-heap)
+      - [3.1.2 运行时常量池(Runtime Constant Pool)](#312-运行时常量池runtime-constant-pool)
+    - [3.2 程序计数器(Program Counter Register)](#32-程序计数器program-counter-register)
+    - [3.3 本地方法栈(Native Method Stack)](#33-本地方法栈native-method-stack)
+    - [3.4 虚拟机栈(VM Stack)](#34-虚拟机栈vm-stack)
+      - [3.4.1 栈帧(Stack Frame)](#341-栈帧stack-frame)
+        - [3.4.1.1 局部变量(Local Variables)](#3411-局部变量local-variables)
+        - [3.4.1.2 操作数栈(Operand Stacks)](#3412-操作数栈operand-stacks)
+        - [3.4.1.3 动态连接(Dynamic Linking)](#3413-动态连接dynamic-linking)
+        - [3.4.1.4 返回地址(Return Address)](#3414-返回地址return-address)
+  - [4. 元空间(Metaspace)](#4-元空间metaspace)
+  - [5. 执行引擎(Execution Engine)](#5-执行引擎execution-engine)
+    - [5.1 解释器(Interpreter)](#51-解释器interpreter)
+    - [5.2 即时编译器(JIT(Just-In-Time) Compiler)](#52-即时编译器jitjust-in-time-compiler)
+    - [5.3 GC收集器(Garbage Collector)](#53-gc收集器garbage-collector)
 <hr>
 
 ## JVM是什么
@@ -36,9 +36,7 @@ JVM是一种用于计算设备的**规范**,它是一个虚构出来的计算机
 JVM屏蔽了与具体操作系统平台相关的信息,使Java程序只需生成在JVM上运行的**字节码**,就可以在多种平台上不加修改地运行.<br/>
 JVM在执行字节码时,实际上最终还是把字节码解释成具体平台上的**机器指令**执行.<br/>
 
-<div align="center">
-    <img src="https://raw.githubusercontent.com/PisecesPeng/PisecesPeng.record.me/master/resource/image/JVMStructure/JVMProcess.png">
-</div>
+![](./res/JVMStructure/JVMProcess.png)
 
 ## JVM的基本特性
 
@@ -50,18 +48,14 @@ JVM在执行字节码时,实际上最终还是把字节码解释成具体平台�
 
 ## JVM的流程结构
 
-<div align="center">
-    <img src="https://raw.githubusercontent.com/PisecesPeng/PisecesPeng.record.me/master/resource/image/JVMStructure/JVMStructure.png">
-</div>
+![](./res/JVMStructure/JVMStructure.png)
 
 ### 1. Java编译(Java Compiler)
 
 **Java字节码**是一种运行于Java和机器语言的中间语言,Java字节码也是部署Java程序的最小单元.<br/>
 JVM本身就是用于执行Java字节码的执行器,所以'.java'源码文件要先编译为'.class'二进制字节码.<br/>
 
-<div align="center">
-    <img src="https://raw.githubusercontent.com/PisecesPeng/PisecesPeng.record.me/master/resource/image/JVMStructure/JavaCompiler.png">
-</div>
+![](./res/JVMStructure/JavaCompiler.png)
 
 ``` ps. javap -c/-verbose 可以将'.class'已可阅读方式输出 ```
 
@@ -83,9 +77,7 @@ JVM本身就是用于执行Java字节码的执行器,所以'.java'源码文件�
 
 #### 2.1 Loading
 
-<div align="center">
-    <img src="https://raw.githubusercontent.com/PisecesPeng/PisecesPeng.record.me/master/resource/image/JVMStructure/ClassLoading.png">
-</div>
+![](./res/JVMStructure/ClassLoading.png)
 
 中文名称 | 实现语言 | 作用
 -- | -- | --
@@ -103,9 +95,7 @@ ps.
 
 #### 2.2 Linking
 
-<div align="center">
-    <img src="https://raw.githubusercontent.com/PisecesPeng/PisecesPeng.record.me/master/resource/image/JVMStructure/ClassLinking.png">
-</div>
+![](./res/JVMStructure/ClassLinking.png)
 
 ##### 2.2.1 验证(Verifying)
 
@@ -177,9 +167,7 @@ reference | null
 
 ### 3. 运行时数据区(Runtime Data Areas)
 
-<div align="center">
-    <img src="https://raw.githubusercontent.com/PisecesPeng/PisecesPeng.record.me/master/resource/image/JVMStructure/RuntimeDataAreas.png">
-</div>
+![](./res/JVMStructure/RuntimeDataAreas.png)
 
 #### 3.1 堆(Heap)
 
@@ -196,9 +184,7 @@ reference | null
 
 ##### 3.1.1 GC堆(Garbage Collected Heap)
 
-<div align="center">
-    <img src="https://raw.githubusercontent.com/PisecesPeng/PisecesPeng.record.me/master/resource/image/JVMStructure/GCHeap.png">
-</div>
+![](./res/JVMStructure/GCHeap.png)
 
 Heap划分为两大块 : 
 
@@ -236,9 +222,7 @@ Major GC的耗时比较长,需要先扫描再回收,且为了减少内存碎片�
 
 ##### 3.1.2 运行时常量池(Runtime Constant Pool)
 
-<div align="center">
-    <img src="https://raw.githubusercontent.com/PisecesPeng/PisecesPeng.record.me/master/resource/image/JVMStructure/ConstantPoolInfo.png">
-</div>
+![](./res/JVMStructure/ConstantPoolInfo.png)
 
 ``` ps. JDK1.7及之后版本的JVM已经将运行时常量池从方法区中移了出来,在Java Heap中开辟了一块区域存放运行时常量池 ```
 
@@ -283,9 +267,7 @@ Java并不要求常量一定只能在编译期产生,运行期间也可能产生
 
 #### 3.4 虚拟机栈(VM Stack)
 
-<div align="center">
-    <img src="https://raw.githubusercontent.com/PisecesPeng/PisecesPeng.record.me/master/resource/image/JVMStructure/VMStack.png">
-</div>
+![](./res/JVMStructure/VMStack.png)
 
 虚拟机栈是**线程私有**的,不能被任何其他线程引用,并跟随线程的启动而创建.其中存储的数据无素称为栈帧(Stack Frame).<br/>
 虚拟机栈会拥有多个栈帧(Stack Frame).JVM会把栈桢压入虚拟机栈或从中弹出一个栈帧.<br/>
@@ -319,9 +301,7 @@ reference类型表示一个对象实例的引用,returnAddress已经很少见了
 
 ###### 3.4.1.2 操作数栈(Operand Stacks)
 
-<div align="center">
-    <img src="https://raw.githubusercontent.com/PisecesPeng/PisecesPeng.record.me/master/resource/image/JVMStructure/OperandStacks.png">
-</div>
+![](./res/JVMStructure/OperandStacks.png)
 
 ```
 ps.
@@ -368,9 +348,7 @@ ps.
 
 ### 4. 元空间(Metaspace)
 
-<div align="center">
-    <img src="https://raw.githubusercontent.com/PisecesPeng/PisecesPeng.record.me/master/resource/image/JVMStructure/Metaspace.png">
-</div>
+![](./res/JVMStructure/Metaspace.png)
 
 ``` ps. JDK 1.8之后,方法区(Oracle Hotspot JVM)的永久代被彻底移除了,取而代之是元空间,元空间使用的是直接内存 ```
 
@@ -418,9 +396,7 @@ JVM通过类加载器把字节码载入运行时数据区,由执行引擎执行.
 
 #### 5.2 即时编译器(JIT(Just-In-Time) Compiler)
 
-<div align="center">
-    <img src="https://raw.githubusercontent.com/PisecesPeng/PisecesPeng.record.me/master/resource/image/JVMStructure/JITCompiler.png">
-</div>
+![](./res/JVMStructure/JITCompiler.png)
 
 ``` 即时编译器的引入用来弥补解释器的不足.执行引擎先以解释器的方式运行,然后在合适的时机,即时编译器把整修字节码编译成本地代码. ```
 

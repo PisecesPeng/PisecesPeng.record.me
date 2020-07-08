@@ -1,39 +1,33 @@
 <h2> 简要了解Spring @Transactional </h2>
 
-- [1. 先说说'脏读、不可重复读、幻读'](#1-%E5%85%88%E8%AF%B4%E8%AF%B4%E8%84%8F%E8%AF%BB%E4%B8%8D%E5%8F%AF%E9%87%8D%E5%A4%8D%E8%AF%BB%E5%B9%BB%E8%AF%BB)
-- [2. @**Transactional**注解的属性一览](#2-transactional%E6%B3%A8%E8%A7%A3%E7%9A%84%E5%B1%9E%E6%80%A7%E4%B8%80%E8%A7%88)
+- [1. 先说说'脏读、不可重复读、幻读'](#1-先说说脏读不可重复读幻读)
+- [2. @**Transactional**注解的属性一览](#2-transactional注解的属性一览)
   - [value](#value)
   - [rollbackFor](#rollbackfor)
   - [readOnly](#readonly)
   - [timeout](#timeout)
   - [propagation](#propagation)
   - [isolation](#isolation)
-- [3. @**Transactional**注解失效的情况](#3-Transactional%E6%B3%A8%E8%A7%A3%E5%A4%B1%E6%95%88%E7%9A%84%E6%83%85%E5%86%B5)
+- [3. @**Transactional**注解失效的情况](#3-transactional注解失效的情况)
 <hr>
 
 ### 1. 先说说'脏读、不可重复读、幻读'
 
 > 1. **脏读** : 脏读就是指当一个事务正在访问数据,并且对数据进行了修改,而这种修改还没有提交到数据库中,<br/>
 > 这时,另外一个事务也访问这个数据,然后使用了这个数据.<br/>
- <div align="center">
-    <img src="https://raw.githubusercontent.com/PisecesPeng/PisecesPeng.record.me/master/resource/image/SpringTransactional/DirtyReads.png">
-</div>
+![](./res/SpringTransactional/DirtyReads.png)
 <br>
 
 > 2. **不可重复读** : 是指在一个事务内,多次读同一数据.在这个事务还没有结束时,另外一个事务也访问该同一数据.<br/>
 > 那么,在第一个事务中的两次读数据之间,由于第二个事务的修改,那么第一个事务两次读到的的数据可能是不一样的.<br/>
 > 这样就发生了在一个事务内两次读到的数据是不一样的,因此称为是不可重复读.
- <div align="center">
-    <img src="https://raw.githubusercontent.com/PisecesPeng/PisecesPeng.record.me/master/resource/image/SpringTransactional/Non-repeatableReads.png">
-</div>
+![](./res/SpringTransactional/Non-repeatableReads.png)
 <br>
 
 > 3. **幻读** : 是指当事务不是独立执行时发生的一种现象,例如第一个事务对一个表中的数据进行了修改,这种修改涉及到表中的全部数据行.<br/>
 > 同时,第二个事务也修改这个表中的数据,这种修改是向表中插入一行新数据.<br/>
 > 那么,以后就会发生操作第一个事务的用户发现表中还有没有修改的数据行,就好象发生了幻觉一样.<br/>
- <div align="center">
-    <img src="https://raw.githubusercontent.com/PisecesPeng/PisecesPeng.record.me/master/resource/image/SpringTransactional/PhantomReads.png">
-</div>
+![](./res/SpringTransactional/PhantomReads.png)
 <br>
 
 ``` ps. 不可重复读的重点是'修改',同样的条件,你读取过的数据,再次读取出来发现'值'不一样了 ```<br/>

@@ -1,50 +1,59 @@
 <h1 align="center"> :man_technologist: PisecesPeng.Record.me </h1>
 
-## Article
+## :man_artist: Article
 
 ### Linux
 
-- [Linux常用进阶命令(持续更新..)](Article/Linux/LinuxCommandMemo(ContinuousUpdate..).md)
+- [Linux命令备忘](Article/Linux/LinuxCommandMemo.md)
 
 ### Java
 
-- [JVM结构的简单梳理](Article/Java/JVMStructure.md)
-- [提高Java代码运行效率的小细节](Article/Java/JavaCodeOptimizationDetails.md)
-- [Java基础问题杂项](Article/Java/JavaBasicQuestion.md)
-- [序列化SerialVersionUID该如何声明](Article/Java/JavaSerializationDeclareSerialVersionUID.md)
-- [序列化Serialization处理敏感属性](Article/Java/JavaSerializationHandlingSensitiveAttributes.md)
-- [集合类List常用方法示例](Article/Java/JavaIntroductionToTheListMethod.md)
-- [Java, 流Stream使用示例](Article/Java/JavaStreamUsageExample.md)
-- [简单解释JavaNIO聊天Demo的流程](Article/Java/JavaNIOChatDemo.md)
-- [说一说Gson有哪些常用方法](Article/Java/SimpleGsonUtil.md)
-- [Guava Cache常用方法示例](Article/Java/GuavaCacheUsageExample.md)
-- [Guava Array&List常用方法示例](Article/Java/GuavaArrayAndListExample.md)
-- [Guava Maps常用方法示例](Article/Java/GuavaMapsExample.md)
-- [Guava Sets常用方法示例](Article/Java/GuavaSetsExample.md)
-- [ThreadLocal.expungeStaleEntry应对内存泄漏](Article/Java/ThreadLocalExpungeStaleEntryDetail.md)
+* **Standard Edition**
+  
+  - [JVM结构的简单梳理](Article/Java/Standard/JVMStructure.md)
+  - [提高Java代码运行效率的小细节](Article/Java/Standard/JavaCodeOptimizationDetails.md)
+  - [Java基础问题杂项](Article/Java/Standard/JavaBasicQuestion.md)
+  - [序列化SerialVersionUID该如何声明](Article/Java/Standard/JavaSerializationDeclareSerialVersionUID.md)
+  - [序列化Serialization处理敏感属性](Article/Java/Standard/JavaSerializationHandlingSensitiveAttributes.md)
+  - [集合类List常用方法示例](Article/Java/Standard/JavaIntroductionToTheListMethod.md)
+  - [Java, 流Stream使用示例](Article/Java/Standard/JavaStreamUsageExample.md)
+  - [简单解释JavaNIO聊天Demo的流程](Article/Java/Standard/JavaNIOChatDemo.md)
+  - [ThreadLocal.expungeStaleEntry应对内存泄漏](Article/Java/Standard/ThreadLocalExpungeStaleEntryDetail.md)
 
-### Spring
+* **Guava**
+  
+  - [说一说Gson有哪些常用方法](Article/Java/Guava/SimpleGsonUtil.md)
+  - [Guava Cache常用方法示例](Article/Java/Guava/GuavaCacheUsageExample.md)
+  - [Guava Array&List常用方法示例](Article/Guava/Java/GuavaArrayAndListExample.md)
+  - [Guava Maps常用方法示例](Article/Java/Guava/GuavaMapsExample.md)
+  - [Guava Sets常用方法示例](Article/Java/Guava/GuavaSetsExample.md)
 
-- [Spring Data JPA, 开发中注意的问题](Article/Framework/Spring/SpringDataJPAProblemsEncounteredInDevelopment.md)
-- [简要了解Spring @Transactional](Article/Framework/Spring/BrieflyUnderstandSpringTransactional.md)
-- [常用Spring/SpringBoot注解扫盲](Article/Framework/Spring/SpringAnnotation.md)
+* **Spring**
+  
+  - [Spring Data JPA, 开发中注意的问题](Article/Java/Spring/SpringDataJPAProblemsEncounteredInDevelopment.md)
+  - [简要了解Spring @Transactional](Article/Java/Spring/BrieflyUnderstandSpringTransactional.md)
+  - [常用Spring/SpringBoot注解扫盲](Article/Java/Spring/SpringAnnotation.md)
 
-### SQL
+* **Maven**
+  
+  - [Maven基本命令](Article/Java/Maven/MavenSuitableForUsingItsCommand.md)
+  - [Maven踩坑杂项](Article/Java/Maven/MavenErrorMemo.md)
+  - [Maven, assembly-plugin的简单配置](Article/Java/Maven/MavenAssemblyPluginBuild.md)
 
-- [常见MySQL语句优化笔记](Article/SQL/MysqlOptimizationDetails.md)
+### Database
+
+- [常见MySQL语句优化笔记](Article/Database/MysqlOptimizationDetails.md)
 
 ### Tool
 
-- [Maven, 基本命令与杂项](Article/Tool/MavenSuitableForUsingItsCommand.md)
 - [Git配置'SSH key'以及关联远程仓库](Article/Tool/GitConfiguresSSHkeyAndAssociatedRemoteRepository.md)
 - [Git实用文件操作](Article/Tool/BrieflyDescribeGitsFileOperations.md)
 - [Vim基本操作摘要](Article/Tool/SummaryOfVimBasicOperations.md)
-- [Maven, assembly-plugin的简单配置](Article/Tool/MavenAssemblyPluginBuild.md)
 
-## Practice
+## :mountain_biking_man: Practice
 
 - [CodingSteam](https://github.com/PisecesPeng/CodingSteam) ``` Drive boost through coding steam. [Code] ```
-- [TheInitiationBay](https://github.com/PisecesPeng/SampleWare/tree/master/TheInitiationBay) ``` A social website with basic functions and friendly interface. [Java: SSM + Bootstrap] ```
+- [TheInitiationBay](https://github.com/PisecesPeng/SampleWare/tree/master/TheInitiationBay) ``` A social website with friendly interface. [Java: SSM + Bootstrap] ```
 - [StuTerminal](https://github.com/PisecesPeng/SampleWare/tree/master/StuTerminal) ``` Terminal for operating student data. [Java: JDBC] ```
 - [UserBaseJSP](https://github.com/PisecesPeng/SampleWare/tree/master/UserBaseJSP) ``` Simple JSP with login function. [Java: JSP] ```
 - [UserBasePlat](https://github.com/PisecesPeng/SampleWare/tree/master/UserBasePlat) ``` Simple user-enabled platform. [Java: MyBatis] ```
@@ -68,7 +77,7 @@
 - [DubboCross](https://github.com/PisecesPeng/SampleWare/tree/master/DubboCross) ``` Connect service using Dubbo only. [Java: SpringBoot + Dubbo] ```
 - [SwitchServices](https://github.com/PisecesPeng/SampleWare/tree/master/SwitchServices) ``` Simple example for SPI. [Java: SpringBoot + SPI] ```
 
-## Record
+## :memo: Record
 
 ### Code
 

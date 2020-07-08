@@ -1,4 +1,4 @@
-<h2> Maven, 基本命令与杂项 </h2>
+<h2> Maven基本命令 </h2>
 
 ### Maven常见命令
 
@@ -52,17 +52,4 @@ mvn spring-boot:run
 # -U  强制检查所有SNAPSHOT依赖更新，确保集成基于最新的状态(默认以天为单位检查更新)
 
 # -B 参数表示让Maven使用批处理模式构建项目，能够避免一些需要人工参与交互而造成的挂起状态
-```
-
-### Maven踩坑
-
-1. jar目录下的'_remote.repositories'需要注意'jar'or'pom'的'镜像id'是否正确 ?
-``` 
-PIPE.RELEASE.jar>central=
-PIPE.RELEASE.pom>central=
-```
-
-2. jar目录下的'*.lastUpdated'需要注意'.lastUpdated'的值(时间戳)是否为最近 ?
-``` 
-https\://*.lastUpdated=1234567890000
 ```

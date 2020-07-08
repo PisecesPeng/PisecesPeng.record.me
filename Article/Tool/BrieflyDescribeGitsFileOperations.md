@@ -1,12 +1,10 @@
 <h2> Git各区之间的文件操作 </h2>
 
-- [git 'work区'操作](#git-work%E5%8C%BA%E6%93%8D%E4%BD%9C)
-- [git 'stage(index)区'操作](#git-stageindex%E5%8C%BA%E6%93%8D%E4%BD%9C)
-- [git 'history区'操作](#git-history%E5%8C%BA%E6%93%8D%E4%BD%9C)
+- [git 'work区'操作](#git-work区操作)
+- [git 'stage(index)区'操作](#git-stageindex区操作)
+- [git 'history区'操作](#git-history区操作)
 
- <div align="center">
-    <img src="https://raw.githubusercontent.com/PisecesPeng/PisecesPeng.record.me/master/resource/image/GitFileOperation/GitOp.jpg">
-</div>
+![](./res/GitFileOperation/GitOp.jpg)
 <hr>
 
 ### git 'work区'操作
