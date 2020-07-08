@@ -4,7 +4,7 @@
 - [git 'stage(index)区'操作](#git-stageindex区操作)
 - [git 'history区'操作](#git-history区操作)
 
-![](./res/GitFileOperation/GitOp.jpg)
+![./res/GitFileOperation/GitOp.jpg](./res/GitFileOperation/GitOp.jpg)
 <hr>
 
 ### git 'work区'操作

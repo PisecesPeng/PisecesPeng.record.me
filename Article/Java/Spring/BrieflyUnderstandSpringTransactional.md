@@ -15,19 +15,19 @@
 
 > 1. **脏读** : 脏读就是指当一个事务正在访问数据,并且对数据进行了修改,而这种修改还没有提交到数据库中,<br/>
 > 这时,另外一个事务也访问这个数据,然后使用了这个数据.<br/>
-![](./res/SpringTransactional/DirtyReads.png)
+![./res/SpringTransactional/DirtyReads.png](./res/SpringTransactional/DirtyReads.png)
 <br>
 
 > 2. **不可重复读** : 是指在一个事务内,多次读同一数据.在这个事务还没有结束时,另外一个事务也访问该同一数据.<br/>
 > 那么,在第一个事务中的两次读数据之间,由于第二个事务的修改,那么第一个事务两次读到的的数据可能是不一样的.<br/>
 > 这样就发生了在一个事务内两次读到的数据是不一样的,因此称为是不可重复读.
-![](./res/SpringTransactional/Non-repeatableReads.png)
+![./res/SpringTransactional/Non-repeatableReads.png](./res/SpringTransactional/Non-repeatableReads.png)
 <br>
 
 > 3. **幻读** : 是指当事务不是独立执行时发生的一种现象,例如第一个事务对一个表中的数据进行了修改,这种修改涉及到表中的全部数据行.<br/>
 > 同时,第二个事务也修改这个表中的数据,这种修改是向表中插入一行新数据.<br/>
 > 那么,以后就会发生操作第一个事务的用户发现表中还有没有修改的数据行,就好象发生了幻觉一样.<br/>
-![](./res/SpringTransactional/PhantomReads.png)
+![./res/SpringTransactional/PhantomReads.png](./res/SpringTransactional/PhantomReads.png)
 <br>
 
 ``` ps. 不可重复读的重点是'修改',同样的条件,你读取过的数据,再次读取出来发现'值'不一样了 ```<br/>

@@ -36,7 +36,7 @@ JVM是一种用于计算设备的**规范**,它是一个虚构出来的计算机
 JVM屏蔽了与具体操作系统平台相关的信息,使Java程序只需生成在JVM上运行的**字节码**,就可以在多种平台上不加修改地运行.<br/>
 JVM在执行字节码时,实际上最终还是把字节码解释成具体平台上的**机器指令**执行.<br/>
 
-![](./res/JVMStructure/JVMProcess.png)
+![./res/JVMStructure/JVMProcess.png](./res/JVMStructure/JVMProcess.png)
 
 ## JVM的基本特性
 
@@ -48,14 +48,14 @@ JVM在执行字节码时,实际上最终还是把字节码解释成具体平台�
 
 ## JVM的流程结构
 
-![](./res/JVMStructure/JVMStructure.png)
+![./res/JVMStructure/JVMStructure.png](./res/JVMStructure/JVMStructure.png)
 
 ### 1. Java编译(Java Compiler)
 
 **Java字节码**是一种运行于Java和机器语言的中间语言,Java字节码也是部署Java程序的最小单元.<br/>
 JVM本身就是用于执行Java字节码的执行器,所以'.java'源码文件要先编译为'.class'二进制字节码.<br/>
 
-![](./res/JVMStructure/JavaCompiler.png)
+![./res/JVMStructure/JaavaCompiler.png](./res/JVMStructure/JaavaCompiler.png)
 
 ``` ps. javap -c/-verbose 可以将'.class'已可阅读方式输出 ```
 
@@ -77,7 +77,7 @@ JVM本身就是用于执行Java字节码的执行器,所以'.java'源码文件�
 
 #### 2.1 Loading
 
-![](./res/JVMStructure/ClassLoading.png)
+![./res/JVMStructure/ClassLoading.png](./res/JVMStructure/ClassLoading.png)
 
 中文名称 | 实现语言 | 作用
 -- | -- | --
@@ -95,7 +95,7 @@ ps.
 
 #### 2.2 Linking
 
-![](./res/JVMStructure/ClassLinking.png)
+![./res/JVMStructure/ClassLinking.png](./res/JVMStructure/ClassLinking.png)
 
 ##### 2.2.1 验证(Verifying)
 
@@ -167,7 +167,7 @@ reference | null
 
 ### 3. 运行时数据区(Runtime Data Areas)
 
-![](./res/JVMStructure/RuntimeDataAreas.png)
+![./res/JVMStructure/RuntimeDataAreas.png](./res/JVMStructure/RuntimeDataAreas.png)
 
 #### 3.1 堆(Heap)
 
@@ -184,7 +184,7 @@ reference | null
 
 ##### 3.1.1 GC堆(Garbage Collected Heap)
 
-![](./res/JVMStructure/GCHeap.png)
+![./res/JVMStructure/GCHeap.png](./res/JVMStructure/GCHeap.png)
 
 Heap划分为两大块 : 
 
@@ -222,7 +222,7 @@ Major GC的耗时比较长,需要先扫描再回收,且为了减少内存碎片�
 
 ##### 3.1.2 运行时常量池(Runtime Constant Pool)
 
-![](./res/JVMStructure/ConstantPoolInfo.png)
+![./res/JVMStructure/ConstantPoolInfo.png](./res/JVMStructure/ConstantPoolInfo.png)
 
 ``` ps. JDK1.7及之后版本的JVM已经将运行时常量池从方法区中移了出来,在Java Heap中开辟了一块区域存放运行时常量池 ```
 
@@ -267,7 +267,7 @@ Java并不要求常量一定只能在编译期产生,运行期间也可能产生
 
 #### 3.4 虚拟机栈(VM Stack)
 
-![](./res/JVMStructure/VMStack.png)
+![./res/JVMStructure/VMStack.png](./res/JVMStructure/VMStack.png)
 
 虚拟机栈是**线程私有**的,不能被任何其他线程引用,并跟随线程的启动而创建.其中存储的数据无素称为栈帧(Stack Frame).<br/>
 虚拟机栈会拥有多个栈帧(Stack Frame).JVM会把栈桢压入虚拟机栈或从中弹出一个栈帧.<br/>
@@ -301,7 +301,7 @@ reference类型表示一个对象实例的引用,returnAddress已经很少见了
 
 ###### 3.4.1.2 操作数栈(Operand Stacks)
 
-![](./res/JVMStructure/OperandStacks.png)
+![./res/JVMStructure/OperandStacks.png](./res/JVMStructure/OperandStacks.png)
 
 ```
 ps.
@@ -348,7 +348,7 @@ ps.
 
 ### 4. 元空间(Metaspace)
 
-![](./res/JVMStructure/Metaspace.png)
+![./res/JVMStructure/Metaspace.png](./res/JVMStructure/Metaspace.png)
 
 ``` ps. JDK 1.8之后,方法区(Oracle Hotspot JVM)的永久代被彻底移除了,取而代之是元空间,元空间使用的是直接内存 ```
 
@@ -396,7 +396,7 @@ JVM通过类加载器把字节码载入运行时数据区,由执行引擎执行.
 
 #### 5.2 即时编译器(JIT(Just-In-Time) Compiler)
 
-![](./res/JVMStructure/JITCompiler.png)
+![./res/JVMStructure/JITCompiler.png](./res/JVMStructure/JITCompiler.png)
 
 ``` 即时编译器的引入用来弥补解释器的不足.执行引擎先以解释器的方式运行,然后在合适的时机,即时编译器把整修字节码编译成本地代码. ```
 
