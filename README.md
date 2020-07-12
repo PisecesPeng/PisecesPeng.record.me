@@ -4,55 +4,55 @@
 
 ### Linux
 
-- [Linux命令备忘](Article/Linux/LinuxCommandMemo.md)
+- [Linux命令备忘](https://www.yuque.com/docs/share/893b1b4b-5c1b-4288-9b66-f95f864c5d6b)
 
 ### Java
 
 * **Standard Edition**
   
-  - [JVM结构的简单梳理](Article/Java/Standard/JVMStructure.md)
-  - [提高Java代码运行效率的小细节](Article/Java/Standard/JavaCodeOptimizationDetails.md)
-  - [Java基础问题杂项](Article/Java/Standard/JavaBasicQuestion.md)
-  - [序列化SerialVersionUID该如何声明](Article/Java/Standard/JavaSerializationDeclareSerialVersionUID.md)
-  - [序列化Serialization处理敏感属性](Article/Java/Standard/JavaSerializationHandlingSensitiveAttributes.md)
-  - [集合类List常用方法示例](Article/Java/Standard/JavaIntroductionToTheListMethod.md)
-  - [Java, 流Stream使用示例](Article/Java/Standard/JavaStreamUsageExample.md)
-  - [简单解释JavaNIO聊天Demo的流程](Article/Java/Standard/JavaNIOChatDemo.md)
-  - [ThreadLocal.expungeStaleEntry应对内存泄漏](Article/Java/Standard/ThreadLocalExpungeStaleEntryDetail.md)
+  - [JVM结构的简单梳理](https://www.yuque.com/docs/share/1c4b9165-9d4e-4ce0-82d9-79b127281b5d)
+  - [提高Java代码运行效率的小细节](https://www.yuque.com/docs/share/fa598a0c-4783-4de1-93b9-f2417dc8dca5)
+  - [Java基础问题杂项](https://www.yuque.com/docs/share/6c9f085d-08d5-441b-98bd-270ef4b739eb)
+  - [序列化SerialVersionUID该如何声明](https://www.yuque.com/docs/share/90de0e0a-83d6-4aa1-aa5f-e778420a6732)
+  - [序列化Serialization处理敏感属性](https://www.yuque.com/docs/share/3ea71b8c-e385-483d-b1e0-adfb36b96d8d)
+  - [集合类List常用方法示例](https://www.yuque.com/docs/share/c19d2803-03ec-44f5-804d-a007c39ef030)
+  - [Java, 流Stream使用示例](https://www.yuque.com/docs/share/d8e0a46a-565d-4dee-8c3b-f9cc78e4d6b9)
+  - [简单解释JavaNIO聊天Demo的流程](https://www.yuque.com/docs/share/ebcda0bd-52d8-4960-a0a2-27d7e9c42f9c)
+  - [ThreadLocal.expungeStaleEntry应对内存泄漏](https://www.yuque.com/docs/share/8bab69fd-e111-4692-8af4-a729eac4d777)
 
 * **Design**
   
-  - [单例模式示例](Article/Java/Design/SingletonPattern.md)
+  - [单例模式示例](https://www.yuque.com/docs/share/2680e236-d581-4f52-be62-0edcfb3068f8)
 
 * **Guava**
   
-  - [说一说Gson有哪些常用方法](Article/Java/Guava/SimpleGsonUtil.md)
-  - [Guava Cache常用方法示例](Article/Java/Guava/GuavaCacheUsageExample.md)
-  - [Guava Array&List常用方法示例](Article/Guava/Java/GuavaArrayAndListExample.md)
-  - [Guava Maps常用方法示例](Article/Java/Guava/GuavaMapsExample.md)
-  - [Guava Sets常用方法示例](Article/Java/Guava/GuavaSetsExample.md)
+  - [说一说Gson有哪些常用方法](https://www.yuque.com/docs/share/63b9b065-b668-40ea-b60c-25817fa62d0f)
+  - [Guava Cache常用方法示例](https://www.yuque.com/docs/share/334ebe6f-6abd-4842-83d5-364297832e29)
+  - [Guava Array&List常用方法示例](https://www.yuque.com/docs/share/5e21ca32-ccd2-454e-9a30-8d1d23e524b1)
+  - [Guava Maps常用方法示例](https://www.yuque.com/docs/share/df9abb28-b61b-470e-9c7d-414098e33ccb)
+  - [Guava Sets常用方法示例](https://www.yuque.com/docs/share/6088e619-03ee-4395-8fff-3e3208816042)
 
 * **Spring**
   
-  - [Spring Data JPA, 开发中注意的问题](Article/Java/Spring/SpringDataJPAProblemsEncounteredInDevelopment.md)
-  - [简要了解Spring @Transactional](Article/Java/Spring/BrieflyUnderstandSpringTransactional.md)
-  - [常用Spring/SpringBoot注解扫盲](Article/Java/Spring/SpringAnnotation.md)
+  - [Spring Data JPA, 开发中注意的问题](https://www.yuque.com/docs/share/d5edf60d-a49b-40c2-b217-4302657701e8)
+  - [简要了解Spring @Transactional](https://www.yuque.com/docs/share/709bf40b-cf2e-4c7a-bb34-57b9d1bac7dd)
+  - [常用Spring/SpringBoot注解扫盲](https://www.yuque.com/docs/share/3a955876-4a51-40b0-9e90-1c6383096808)
 
 * **Maven**
   
-  - [Maven基本命令](Article/Java/Maven/MavenSuitableForUsingItsCommand.md)
-  - [Maven踩坑杂项](Article/Java/Maven/MavenErrorMemo.md)
-  - [Maven, assembly-plugin的简单配置](Article/Java/Maven/MavenAssemblyPluginBuild.md)
+  - [Maven基本命令](https://www.yuque.com/docs/share/bd8eed2f-f441-48b7-998a-4759efe154af)
+  - [Maven踩坑杂项](https://www.yuque.com/docs/share/5618f0e3-a38c-42da-a5bc-cdd1e1634d81)
+  - [Maven, assembly-plugin的简单配置](https://www.yuque.com/docs/share/6c7fd297-30f8-42a3-9f10-d250d5d2bf30)
 
 ### Database
 
-- [常见MySQL语句优化笔记](Article/Database/MysqlOptimizationDetails.md)
+- [常见MySQL语句优化笔记](https://www.yuque.com/docs/share/b5d34bce-9796-42b1-ba91-e78d20340cbf)
 
 ### Tool
 
-- [Git配置'SSH key'以及关联远程仓库](Article/Tool/GitConfiguresSSHkeyAndAssociatedRemoteRepository.md)
-- [Git实用文件操作](Article/Tool/BrieflyDescribeGitsFileOperations.md)
-- [Vim基本操作摘要](Article/Tool/SummaryOfVimBasicOperations.md)
+- [Git配置'SSH key'以及关联远程仓库](https://www.yuque.com/docs/share/30e6ceea-90ac-4704-8ca6-3bd3ba8b2e07)
+- [Git实用文件操作](https://www.yuque.com/docs/share/046ceec2-370f-40d5-a183-298353bb99e1)
+- [Vim基本操作摘要](https://www.yuque.com/docs/share/bcbf2800-3091-4df7-9b45-5cb92a6d6349)
 
 ## :mountain_biking_man: Practice
 
