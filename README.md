@@ -16,6 +16,7 @@
   - [序列化SerialVersionUID该如何声明](https://www.yuque.com/docs/share/90de0e0a-83d6-4aa1-aa5f-e778420a6732)
   - [序列化Serialization处理敏感属性](https://www.yuque.com/docs/share/3ea71b8c-e385-483d-b1e0-adfb36b96d8d)
   - [集合类List常用方法示例](https://www.yuque.com/docs/share/c19d2803-03ec-44f5-804d-a007c39ef030)
+  - [集合类Map常用方法示例](https://www.yuque.com/docs/share/4406f232-5dce-489e-a6c1-267953e313a6)
   - [Java, 流Stream使用示例](https://www.yuque.com/docs/share/d8e0a46a-565d-4dee-8c3b-f9cc78e4d6b9)
   - [简单解释JavaNIO聊天Demo的流程](https://www.yuque.com/docs/share/ebcda0bd-52d8-4960-a0a2-27d7e9c42f9c)
   - [ThreadLocal.expungeStaleEntry应对内存泄漏](https://www.yuque.com/docs/share/8bab69fd-e111-4692-8af4-a729eac4d777)
