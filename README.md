@@ -48,6 +48,7 @@
 ### Database
 
 - [常见MySQL语句优化笔记](https://www.yuque.com/docs/share/b5d34bce-9796-42b1-ba91-e78d20340cbf)
+- [常见MySQL函数笔记](https://www.yuque.com/docs/share/0141c327-7e47-4df1-89fa-d13061e8f472)
 
 ### Tool
 
