@@ -5,6 +5,7 @@
 ### Linux
 
 - [Linux命令备忘](https://www.yuque.com/docs/share/893b1b4b-5c1b-4288-9b66-f95f864c5d6b)
+- [Linux日志查看常用命令](https://www.yuque.com/docs/share/5c8a9541-8e70-478a-9d76-74a5893654da)
 
 ### Java
 
