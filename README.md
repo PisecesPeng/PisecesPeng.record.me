@@ -21,6 +21,7 @@
   - [Java, 流Stream使用示例](https://www.yuque.com/docs/share/d8e0a46a-565d-4dee-8c3b-f9cc78e4d6b9)
   - [简单解释JavaNIO聊天Demo的流程](https://www.yuque.com/docs/share/ebcda0bd-52d8-4960-a0a2-27d7e9c42f9c)
   - [ThreadLocal.expungeStaleEntry应对内存泄漏](https://www.yuque.com/docs/share/8bab69fd-e111-4692-8af4-a729eac4d777)
+  - [简述Java中锁的特点与优化机制](https://www.yuque.com/docs/share/994c66c9-f93d-4046-821b-b2f184352880)
 
 * **Design**
   
