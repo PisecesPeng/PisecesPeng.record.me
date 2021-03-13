@@ -54,9 +54,9 @@
 
 ### Tool
 
-- [Git配置'SSH key'以及关联远程仓库](https://www.yuque.com/docs/share/30e6ceea-90ac-4704-8ca6-3bd3ba8b2e07)
-- [Git实用文件操作](https://www.yuque.com/docs/share/046ceec2-370f-40d5-a183-298353bb99e1)
-- [Vim基本操作摘要](https://www.yuque.com/docs/share/bcbf2800-3091-4df7-9b45-5cb92a6d6349)
+- [Git配置'SSH key'以及关联远程仓库](https://mp.weixin.qq.com/s/9XLI61fVWLrp1hUNF2AwsA)
+- [Git实用文件操作](https://mp.weixin.qq.com/s/VwkXa7bFkL5VhzVwAbZHNA)
+- [Vim基本操作摘要](https://mp.weixin.qq.com/s/vKLp17v5Sz-lbhY5ZcLZ7w)
 
 ## :mountain_biking_man: Practice
 
