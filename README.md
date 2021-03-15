@@ -5,7 +5,7 @@
 ### Linux
 
 - [Linux命令备忘](https://www.yuque.com/docs/share/893b1b4b-5c1b-4288-9b66-f95f864c5d6b)
-- [Linux日志查看常用命令](https://www.yuque.com/docs/share/5c8a9541-8e70-478a-9d76-74a5893654da)
+- [Linux日志查看常用命令](https://mp.weixin.qq.com/s/iGmMI8gPsPl4hHdFht8S8Q)
 
 ### Java
 
@@ -55,7 +55,7 @@
 ### Tool
 
 - [Git配置'SSH key'以及关联远程仓库](https://mp.weixin.qq.com/s/9XLI61fVWLrp1hUNF2AwsA)
-- [Git实用文件操作](https://mp.weixin.qq.com/s/VwkXa7bFkL5VhzVwAbZHNA)
+- [Git各区之间的文件操作](https://mp.weixin.qq.com/s/zTooWMyvCOtM9ueos6omsA)
 - [Vim基本操作摘要](https://mp.weixin.qq.com/s/vKLp17v5Sz-lbhY5ZcLZ7w)
 
 ## :mountain_biking_man: Practice
