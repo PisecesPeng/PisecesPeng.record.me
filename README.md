@@ -16,8 +16,8 @@
   - [Java基础问题杂项](https://www.yuque.com/docs/share/6c9f085d-08d5-441b-98bd-270ef4b739eb)
   - [序列化SerialVersionUID该如何声明](https://www.yuque.com/docs/share/90de0e0a-83d6-4aa1-aa5f-e778420a6732)
   - [序列化Serialization处理敏感属性](https://www.yuque.com/docs/share/3ea71b8c-e385-483d-b1e0-adfb36b96d8d)
-  - [集合类List常用方法示例](https://www.yuque.com/docs/share/c19d2803-03ec-44f5-804d-a007c39ef030)
-  - [集合类Map常用方法示例](https://www.yuque.com/docs/share/4406f232-5dce-489e-a6c1-267953e313a6)
+  - [集合类List常用方法示例](https://mp.weixin.qq.com/s/c_N7ubL0xIhMAOsnh2vRUw)
+  - [集合类Map常用方法示例](https://mp.weixin.qq.com/s/jFGWbFtuZcAZakeCxtqtjQ)
   - [Java, 流Stream使用示例](https://www.yuque.com/docs/share/d8e0a46a-565d-4dee-8c3b-f9cc78e4d6b9)
   - [简单解释JavaNIO聊天Demo的流程](https://www.yuque.com/docs/share/ebcda0bd-52d8-4960-a0a2-27d7e9c42f9c)
   - [ThreadLocal.expungeStaleEntry应对内存泄漏](https://www.yuque.com/docs/share/8bab69fd-e111-4692-8af4-a729eac4d777)
@@ -29,11 +29,11 @@
 
 * **Guava**
   
-  - [说一说Gson有哪些常用方法](https://www.yuque.com/docs/share/63b9b065-b668-40ea-b60c-25817fa62d0f)
-  - [Guava Cache常用方法示例](https://www.yuque.com/docs/share/334ebe6f-6abd-4842-83d5-364297832e29)
-  - [Guava Array&List常用方法示例](https://www.yuque.com/docs/share/5e21ca32-ccd2-454e-9a30-8d1d23e524b1)
-  - [Guava Maps常用方法示例](https://www.yuque.com/docs/share/df9abb28-b61b-470e-9c7d-414098e33ccb)
-  - [Guava Sets常用方法示例](https://www.yuque.com/docs/share/6088e619-03ee-4395-8fff-3e3208816042)
+  - [说一说Gson有哪些常用方法](https://mp.weixin.qq.com/s/qdFYYEdfDZRZ9GSeS-O6UA)
+  - [Guava Cache常用方法示例](https://mp.weixin.qq.com/s/M3phq8GQ6eCSDtjb_-fyuQ)
+  - [Guava Array&List常用方法示例](https://mp.weixin.qq.com/s/bJP60TQOLwElOv4hpzhDkQ)
+  - [Guava Maps常用方法示例](https://mp.weixin.qq.com/s/uCRwlzp41HxExyvR3buiww)
+  - [Guava Sets常用方法示例](https://mp.weixin.qq.com/s/M_hWMqGcqVSgMptrpBCs3g)
 
 * **Spring**
   
@@ -43,9 +43,8 @@
 
 * **Maven**
   
-  - [Maven基本命令](https://www.yuque.com/docs/share/bd8eed2f-f441-48b7-998a-4759efe154af)
-  - [Maven踩坑杂项](https://www.yuque.com/docs/share/5618f0e3-a38c-42da-a5bc-cdd1e1634d81)
-  - [Maven, assembly-plugin的简单配置](https://www.yuque.com/docs/share/6c7fd297-30f8-42a3-9f10-d250d5d2bf30)
+  - [Maven基本命令](https://mp.weixin.qq.com/s/0UPofiLe4BwsnuzTKLvz_g)
+  - [Maven, assembly-plugin的简单配置](https://mp.weixin.qq.com/s/6vYw5L-cfgAzgXrhdOUwbw)
 
 ### Database
 
