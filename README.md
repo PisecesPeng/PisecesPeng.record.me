@@ -16,9 +16,9 @@
   - [Java基础问题杂项](https://www.yuque.com/docs/share/6c9f085d-08d5-441b-98bd-270ef4b739eb)
   - [序列化SerialVersionUID该如何声明](https://www.yuque.com/docs/share/90de0e0a-83d6-4aa1-aa5f-e778420a6732)
   - [序列化Serialization处理敏感属性](https://www.yuque.com/docs/share/3ea71b8c-e385-483d-b1e0-adfb36b96d8d)
-  - [集合类List常用方法示例](https://mp.weixin.qq.com/s/c_N7ubL0xIhMAOsnh2vRUw)
-  - [集合类Map常用方法示例](https://mp.weixin.qq.com/s/jFGWbFtuZcAZakeCxtqtjQ)
-  - [Java, 流Stream使用示例](https://www.yuque.com/docs/share/d8e0a46a-565d-4dee-8c3b-f9cc78e4d6b9)
+  - [集合类List常用方法示例](https://zhuanlan.zhihu.com/p/359373833)
+  - [集合类Map常用方法示例](https://zhuanlan.zhihu.com/p/359374546)
+  - [Java, Stream使用示例](https://zhuanlan.zhihu.com/p/359103648)
   - [简单解释JavaNIO聊天Demo的流程](https://www.yuque.com/docs/share/ebcda0bd-52d8-4960-a0a2-27d7e9c42f9c)
   - [ThreadLocal.expungeStaleEntry应对内存泄漏](https://www.yuque.com/docs/share/8bab69fd-e111-4692-8af4-a729eac4d777)
   - [简述Java中锁的特点与优化机制](https://www.yuque.com/docs/share/994c66c9-f93d-4046-821b-b2f184352880)
@@ -29,11 +29,11 @@
 
 * **Guava**
   
-  - [说一说Gson有哪些常用方法](https://mp.weixin.qq.com/s/qdFYYEdfDZRZ9GSeS-O6UA)
-  - [Guava Cache常用方法示例](https://mp.weixin.qq.com/s/M3phq8GQ6eCSDtjb_-fyuQ)
-  - [Guava Array&List常用方法示例](https://mp.weixin.qq.com/s/bJP60TQOLwElOv4hpzhDkQ)
-  - [Guava Maps常用方法示例](https://mp.weixin.qq.com/s/uCRwlzp41HxExyvR3buiww)
-  - [Guava Sets常用方法示例](https://mp.weixin.qq.com/s/M_hWMqGcqVSgMptrpBCs3g)
+  - [说一说Gson有哪些常用方法](https://zhuanlan.zhihu.com/p/359948894)
+  - [Guava Cache常用方法示例](https://zhuanlan.zhihu.com/p/359950098)
+  - [Guava Array&Lists常用方法示例](https://zhuanlan.zhihu.com/p/359951091)
+  - [Guava Maps常用方法示例](https://zhuanlan.zhihu.com/p/359952176)
+  - [Guava Sets常用方法示例](https://zhuanlan.zhihu.com/p/359953025)
 
 * **Spring**
   
