@@ -4,8 +4,7 @@
 
 ### Linux
 
-- [Linux命令备忘](https://www.yuque.com/docs/share/893b1b4b-5c1b-4288-9b66-f95f864c5d6b)
-- [Linux日志查看常用命令](https://mp.weixin.qq.com/s/iGmMI8gPsPl4hHdFht8S8Q)
+- [Linux日志查看常用命令](https://zhuanlan.zhihu.com/p/360428939)
 
 ### Java
 
@@ -14,8 +13,8 @@
   - [JVM结构的简单梳理](https://www.yuque.com/docs/share/1c4b9165-9d4e-4ce0-82d9-79b127281b5d)
   - [提高Java代码运行效率的小细节](https://www.yuque.com/docs/share/fa598a0c-4783-4de1-93b9-f2417dc8dca5)
   - [Java基础问题杂项](https://www.yuque.com/docs/share/6c9f085d-08d5-441b-98bd-270ef4b739eb)
-  - [序列化SerialVersionUID该如何声明](https://www.yuque.com/docs/share/90de0e0a-83d6-4aa1-aa5f-e778420a6732)
-  - [序列化Serialization处理敏感属性](https://www.yuque.com/docs/share/3ea71b8c-e385-483d-b1e0-adfb36b96d8d)
+  - [序列化SerialVersionUID该如何声明](https://zhuanlan.zhihu.com/p/362467718)
+  - [序列化Serialization处理敏感属性](https://zhuanlan.zhihu.com/p/362466692)
   - [集合类List常用方法示例](https://zhuanlan.zhihu.com/p/359373833)
   - [集合类Map常用方法示例](https://zhuanlan.zhihu.com/p/359374546)
   - [Java, Stream使用示例](https://zhuanlan.zhihu.com/p/359103648)
@@ -38,24 +37,24 @@
 * **Spring**
   
   - [Spring Data JPA, 开发中注意的问题](https://www.yuque.com/docs/share/d5edf60d-a49b-40c2-b217-4302657701e8)
-  - [简要了解Spring @Transactional](https://www.yuque.com/docs/share/709bf40b-cf2e-4c7a-bb34-57b9d1bac7dd)
+  - [简要了解Spring @Transactional](https://zhuanlan.zhihu.com/p/361424788)
   - [常用Spring/SpringBoot注解扫盲](https://www.yuque.com/docs/share/3a955876-4a51-40b0-9e90-1c6383096808)
 
 * **Maven**
   
-  - [Maven基本命令](https://mp.weixin.qq.com/s/0UPofiLe4BwsnuzTKLvz_g)
-  - [Maven, assembly-plugin的简单配置](https://mp.weixin.qq.com/s/6vYw5L-cfgAzgXrhdOUwbw)
+  - [Maven基本命令](https://zhuanlan.zhihu.com/p/360429437)
+  - [Maven, assembly-plugin的简单配置](https://zhuanlan.zhihu.com/p/360429271)
 
 ### Database
 
-- [常见MySQL语句优化笔记](https://www.yuque.com/docs/share/b5d34bce-9796-42b1-ba91-e78d20340cbf)
-- [常见MySQL函数笔记](https://www.yuque.com/docs/share/0141c327-7e47-4df1-89fa-d13061e8f472)
+- [常见MySQL语句优化笔记](https://zhuanlan.zhihu.com/p/360859806)
+- [常见MySQL函数笔记](https://zhuanlan.zhihu.com/p/360858244)
 
 ### Tool
 
-- [Git配置'SSH key'以及关联远程仓库](https://mp.weixin.qq.com/s/9XLI61fVWLrp1hUNF2AwsA)
-- [Git各区之间的文件操作](https://mp.weixin.qq.com/s/zTooWMyvCOtM9ueos6omsA)
-- [Vim基本操作摘要](https://mp.weixin.qq.com/s/vKLp17v5Sz-lbhY5ZcLZ7w)
+- [Git配置'SSH key'以及关联远程仓库](https://zhuanlan.zhihu.com/p/360423059)
+- [Git各区之间的文件操作](https://zhuanlan.zhihu.com/p/360423684)
+- [Vim基本操作摘要](https://zhuanlan.zhihu.com/p/360424770)
 
 ## :mountain_biking_man: Practice
 
