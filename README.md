@@ -11,20 +11,13 @@
 * **Standard Edition**
   
   - [JVM结构的简单梳理](https://www.yuque.com/docs/share/1c4b9165-9d4e-4ce0-82d9-79b127281b5d)
-  - [提高Java代码运行效率的小细节](https://www.yuque.com/docs/share/fa598a0c-4783-4de1-93b9-f2417dc8dca5)
-  - [Java基础问题杂项](https://www.yuque.com/docs/share/6c9f085d-08d5-441b-98bd-270ef4b739eb)
   - [序列化SerialVersionUID该如何声明](https://zhuanlan.zhihu.com/p/362467718)
   - [序列化Serialization处理敏感属性](https://zhuanlan.zhihu.com/p/362466692)
   - [集合类List常用方法示例](https://zhuanlan.zhihu.com/p/359373833)
   - [集合类Map常用方法示例](https://zhuanlan.zhihu.com/p/359374546)
   - [Java, Stream使用示例](https://zhuanlan.zhihu.com/p/359103648)
-  - [简单解释JavaNIO聊天Demo的流程](https://www.yuque.com/docs/share/ebcda0bd-52d8-4960-a0a2-27d7e9c42f9c)
-  - [ThreadLocal.expungeStaleEntry应对内存泄漏](https://www.yuque.com/docs/share/8bab69fd-e111-4692-8af4-a729eac4d777)
-  - [简述Java中锁的特点与优化机制](https://www.yuque.com/docs/share/994c66c9-f93d-4046-821b-b2f184352880)
-
-* **Design**
-  
-  - [单例模式示例](https://www.yuque.com/docs/share/2680e236-d581-4f52-be62-0edcfb3068f8)
+  - [ThreadLocal.expungeStaleEntry应对内存泄漏](https://zhuanlan.zhihu.com/p/363626563)
+  - [简述Java中锁的特点与优化机制](https://zhuanlan.zhihu.com/p/363632315)
 
 * **Guava**
   
@@ -36,9 +29,7 @@
 
 * **Spring**
   
-  - [Spring Data JPA, 开发中注意的问题](https://www.yuque.com/docs/share/d5edf60d-a49b-40c2-b217-4302657701e8)
   - [简要了解Spring @Transactional](https://zhuanlan.zhihu.com/p/361424788)
-  - [常用Spring/SpringBoot注解扫盲](https://www.yuque.com/docs/share/3a955876-4a51-40b0-9e90-1c6383096808)
 
 * **Maven**
   
