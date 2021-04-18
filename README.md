@@ -73,6 +73,7 @@
 - [GzipFile](https://github.com/PisecesPeng/SampleWare/tree/master/GzipFile) ``` Upload&Download gzip file. [Java: SpringBoot + java.io.* + java.util.zip] ```
 - [DubboCross](https://github.com/PisecesPeng/SampleWare/tree/master/DubboCross) ``` Connect service using Dubbo only. [Java: SpringBoot + Dubbo] ```
 - [SwitchServices](https://github.com/PisecesPeng/SampleWare/tree/master/SwitchServices) ``` Simple example for SPI. [Java: SpringBoot + SPI] ```
+- [LetsgoStarter](https://github.com/PisecesPeng/SampleWare/tree/master/LetsgoStarter) ``` Simple example for Starter. [Java: Spring-Boot-Starter] ```
 
 ## :memo: Record
 
