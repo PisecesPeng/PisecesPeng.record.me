@@ -48,9 +48,8 @@ git init
 git remote add origin git://xxx/xx.git
 ```
 
-`ps. origin为该远程仓库的名称,可以由用户自定义设置,不过推荐origin`
-`ps. 该操作仅将远程仓库相关联,并没有将仓库中的文件pull下来`
-
+`ps. origin为该远程仓库的名称,可以由用户自定义设置,不过推荐origin.`  
+`ps. 该操作仅将远程仓库相关联,并没有将仓库中的文件pull下来.`  
 
 查看本地的所有远程仓库 : `git remote -v`
 
