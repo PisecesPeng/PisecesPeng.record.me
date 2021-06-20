@@ -56,6 +56,7 @@
   
   - [Maven基本命令](https://github.com/PisecesPeng/PisecesPeng.record.me/blob/master/Java/Maven/Maven%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4.md)
   - [Maven, assembly-plugin的简单配置](https://github.com/PisecesPeng/PisecesPeng.record.me/blob/master/Java/Maven/Maven%2C%20assembly-plugin%E7%9A%84%E7%AE%80%E5%8D%95%E9%85%8D%E7%BD%AE.md)
+  - [Maven, shade-plugin的简单配置](https://github.com/PisecesPeng/PisecesPeng.record.me/blob/master/Java/Maven/Maven%2C%20shade-plugin%E7%9A%84%E7%AE%80%E5%8D%95%E9%85%8D%E7%BD%AE.md)
 
 ### Database
 
