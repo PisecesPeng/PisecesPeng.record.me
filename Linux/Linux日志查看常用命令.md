@@ -59,6 +59,10 @@ tail -10f test.log
 `-v 显示不包括匹配文本的所有行`  
 `-x 只显示全列符合的行`  
 `-E 将样式为延伸的正则表达式来使用`  
+`-i 忽略字符大小写的差别`  
+`-A <number> 增加显示匹配内容后{:number}行内容`  
+`-B <number> 增加显示匹配内容前{:number}行内容`  
+`-C <number> 增加显示匹配内容前后各{:number}行内容`  
 
 常用组合命令示例 : 
 ```bash
@@ -79,6 +83,11 @@ grep 'aa' test.log | grep -v 'bb'
 # 显示文本中带'aa'或带'bb'或两者均含有的匹配内容
 grep 'aa\|bb' test.log
 grep -E 'aa|bb' test.log 
+
+# 显示文本中带'aa'的匹配内容(忽略大小写)
+grep -i 'aa' test.log 
+# 显示文本中带'aa'的匹配内容(忽略大小写), 及其上下内容各5行
+grep -i 'aa' -C 5 test.log 
 ```
 
 
