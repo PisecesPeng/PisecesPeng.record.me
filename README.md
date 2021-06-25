@@ -134,6 +134,7 @@
 - [SwitchServices](https://github.com/PisecesPeng/SampleWare/tree/master/SwitchServices) ``` Simple example for SPI. [Java: SpringBoot + SPI] ```
 - [LetsgoStarter](https://github.com/PisecesPeng/SampleWare/tree/master/LetsgoStarter) ``` Simple example for Starter. [Java: Spring-Boot-Starter] ```
 - [Blockpage](https://github.com/PisecesPeng/SampleWare/tree/master/Blockpage) ``` Simple example for Ant Design Pro. [TypeScript: React + UmiJS + ADP] ```
+- [PGEditor](https://github.com/PisecesPeng/SampleWare/tree/master/PGEditor) ``` Simple example for Monaco Editor. [TypeScript: React + UmiJS + Monaco-Editor] ```
 
 <hr>
 
