@@ -108,33 +108,8 @@
 
 ## :mountain_biking_man: Practice
 
-- [CodingSteam](https://github.com/PisecesPeng/CodingSteam) ``` Drive boost through coding steam. [Code] ```
-- [TheInitiationBay](https://github.com/PisecesPeng/SampleWare/tree/master/TheInitiationBay) ``` A social website with friendly interface. [Java: SSM + Bootstrap] ```
-- [StuTerminal](https://github.com/PisecesPeng/SampleWare/tree/master/StuTerminal) ``` Terminal for operating student data. [Java: JDBC] ```
-- [UserBaseJSP](https://github.com/PisecesPeng/SampleWare/tree/master/UserBaseJSP) ``` Simple JSP with login function. [Java: JSP] ```
-- [UserBasePlat](https://github.com/PisecesPeng/SampleWare/tree/master/UserBasePlat) ``` Simple user-enabled platform. [Java: MyBatis] ```
-- [Bookstore](https://github.com/PisecesPeng/SampleWare/tree/master/BookStore) ``` Bookstore with basic functions. [Java: Spring + MyBatis] ```
-- [Fakebook](https://github.com/PisecesPeng/SampleWare/tree/master/Fakebook) ``` Basic social webpage. [Java: Spring + SpringMVC + MyBatis] ```
-- [InChat](https://github.com/PisecesPeng/SampleWare/tree/master/InChat) ``` Online chat webpage. [JavaScript: Express + Socket.IO] ```
-- [OpKnightAPI](https://github.com/PisecesPeng/SampleWare/tree/master/OpKnightAPI) ``` Op knight API with RESTful. [Java: SpringBoot + MyBatis] ```
-- [Derby&H2Demo](https://github.com/PisecesPeng/SampleWare/tree/master/Derby%26H2Demo) ``` Start derby&H2 configuration. [Java: SpringBoot] ```
-- [LoginKaptcha](https://github.com/PisecesPeng/SampleWare/tree/master/LoginKaptcha) ``` login with captcha. [Java: SpringBoot + kaptcha] ```
-- [BakeryTerminal](https://github.com/PisecesPeng/SampleWare/tree/master/BakeryTerminal) ``` Bakery service terminal. [Java: SpringBoot + SpringDataJPA + SpringTest] ```
-- [LuckyGuy](https://github.com/PisecesPeng/SampleWare/tree/master/LuckyGuy) ``` Have you won the prize?. [Java: SpringBoot + Redis + Interceptor] ```
-- [Swaggdemo](https://github.com/PisecesPeng/SampleWare/tree/master/Swaggdemo) ``` Just a simple swagger demo. [Java: SpringBoot + Swagger] ```
-- [StarSinger](https://github.com/PisecesPeng/SampleWare/tree/master/StarSinger) ``` Spring AOP with Dynamic(CGLIB & JDK) & Static ```
-- [TicketCloud](https://github.com/PisecesPeng/SampleWare/tree/master/TicketCloud) ``` Simple SpringCloud demo. [Java: SpringBoot + SpringCloud + Guava] ```
-- [TroubleCrasher](https://github.com/PisecesPeng/SampleWare/tree/master/TroubleCrasher) ``` Let's Crash the Exception. [Java: SpringBoot + Exception] ```
-- [Ticktask](https://github.com/PisecesPeng/SampleWare/tree/master/Ticktask) ``` The task is running accurately. [Java: SpringBoot + Spring-Scheduling] ```
-- [NaiveRPC](https://github.com/PisecesPeng/SampleWare/tree/master/NaiveRPC) ``` This is a very naive RPC. [Java: Netty] ```
-- [OriginSql4Spring](https://github.com/PisecesPeng/SampleWare/tree/master/OriginSql4Spring) ``` Execute sql by JdbcTemplate. [Java: SpringBoot + JdbcTemplate + Flyway] ```
-- [RocksQueue](https://github.com/PisecesPeng/SampleWare/tree/master/RocksQueue) ``` Example for rocks-queue-java use. [Java: SpringBoot + rocks-queue-java] ```
-- [GzipFile](https://github.com/PisecesPeng/SampleWare/tree/master/GzipFile) ``` Upload&Download gzip file. [Java: SpringBoot + java.io.* + java.util.zip] ```
-- [DubboCross](https://github.com/PisecesPeng/SampleWare/tree/master/DubboCross) ``` Connect service using Dubbo only. [Java: SpringBoot + Dubbo] ```
-- [SwitchServices](https://github.com/PisecesPeng/SampleWare/tree/master/SwitchServices) ``` Simple example for SPI. [Java: SpringBoot + SPI] ```
-- [LetsgoStarter](https://github.com/PisecesPeng/SampleWare/tree/master/LetsgoStarter) ``` Simple example for Starter. [Java: Spring-Boot-Starter] ```
-- [Blockpage](https://github.com/PisecesPeng/SampleWare/tree/master/Blockpage) ``` Simple example for Ant Design Pro. [TypeScript: React + UmiJS + ADP] ```
-- [PGEditor](https://github.com/PisecesPeng/SampleWare/tree/master/PGEditor) ``` Simple example for Monaco Editor. [TypeScript: React + UmiJS + Monaco-Editor] ```
+- [Algorithm](https://github.com/PisecesPeng/PisecesPeng.record.me/issues?q=is%3Aissue+is%3Aclosed) ```Algorithm practice. [Code] ```
+- [SampleWare](https://github.com/PisecesPeng/SampleWare) ``` Samples of all projects for practice. [Project] ```
 
 <hr>
 
