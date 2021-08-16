@@ -2,11 +2,16 @@
 
 <div align="center">
 
-| &nbsp;Linux&nbsp; | &nbsp;Java&nbsp; | Database | Toolbox | &nbsp;&nbsp;Util&nbsp;&nbsp; | Docker | Script | Practice |
+| Practice | &nbsp;Linux&nbsp; | &nbsp;Java&nbsp; | Database | Toolbox | &nbsp;&nbsp;Util&nbsp;&nbsp; | Docker | Script |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| [:penguin:](#linux) | [:coffee:](#java) | [:open_file_folder:](#database) | [:nut_and_bolt:](#toolbox) | [:bookmark:](#util) | [:whale:](#docker) | [:page_with_curl:](#script) | [:mountain_biking_man:](#mountain_biking_man-practice) |
+| [:mountain_biking_man:](#mountain_biking_man-practice) | [:penguin:](#linux) | [:coffee:](#java) | [:open_file_folder:](#database) | [:nut_and_bolt:](#toolbox) | [:bookmark:](#util) | [:whale:](#docker) | [:page_with_curl:](#script) |
 
 </div>
+
+## :mountain_biking_man: Practice
+
+- [Algorithm](https://github.com/PisecesPeng/PisecesPeng.record.me/issues?q=is%3Aissue+is%3Aclosed) ```Algorithm practice. [Code] ```
+- [SampleWare](https://github.com/PisecesPeng/SampleWare) ``` Samples of all projects for practice. [Project] ```
 
 ## :man_artist: Article
 
@@ -90,6 +95,7 @@
 - [RunJMH](https://github.com/PisecesPeng/SampleWare/tree/master/A1JavaUtils/RunJMH) ``` Benchmark by jmh [Java] ```
 - [DingNotify](https://github.com/PisecesPeng/SampleWare/tree/master/A1JavaUtils/DingNotify) ``` notify by DingTalk [Java] ```
 - [ExportExcelByTemp](https://github.com/PisecesPeng/SampleWare/tree/master/A1JavaUtils/ExportExcelByTemp) ``` export excel by template [Java] ```
+- [SequenceList](https://github.com/PisecesPeng/SampleWare/tree/master/A1JavaUtils/SequenceList) ``` Generate arrays regularly [Java & TS] ```
 
 ### Docker
 
@@ -105,11 +111,6 @@
 - [SQL](https://github.com/PisecesPeng/SampleWare/tree/master/A1Script/SQL) ``` Recording SQL scripts ```
 - [Shell](https://github.com/PisecesPeng/SampleWare/tree/master/A1Script/Shell) ``` Recording Shell scripts ```
 - [Hadoop](https://github.com/PisecesPeng/SampleWare/tree/master/A1Script/Hadoop) ``` Recording Hadoop scripts ```
-
-## :mountain_biking_man: Practice
-
-- [Algorithm](https://github.com/PisecesPeng/PisecesPeng.record.me/issues?q=is%3Aissue+is%3Aclosed) ```Algorithm practice. [Code] ```
-- [SampleWare](https://github.com/PisecesPeng/SampleWare) ``` Samples of all projects for practice. [Project] ```
 
 <hr>
 
