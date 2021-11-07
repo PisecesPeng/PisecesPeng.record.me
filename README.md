@@ -25,6 +25,7 @@
 * **Design**
   
   - [单例模式示例](https://github.com/PisecesPeng/PisecesPeng.record.me/blob/master/Java/Design/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%E7%A4%BA%E4%BE%8B.md)
+  - [工厂模式示例](https://github.com/PisecesPeng/PisecesPeng.record.me/blob/master/Java/Design/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E7%A4%BA%E4%BE%8B.md)
 
 * **Standard Edition**
   
