@@ -184,6 +184,15 @@ Map<String, Integer> collectMap = listDemo.stream().collect(Collectors.toMap(
 //         s -> s.getAge()  // 生成value
 // ));
 
+// 出现重复Key时, 设置新老Value的取舍逻辑
+// Map<Integer, Demo> collectMap = listDemo.stream()
+// 	.collect(
+// 		Collectors.toMap(
+//			Demo::getAge, (demo) -> demo,
+//			(oldValue, newValue) -> newValue.getName().compareTo(oldValue.getName()) > 0 ? newValue : oldValue  // 新老Value的取舍逻辑
+//		)
+//	);
+
 // 依据某个条件判断(是否满足),将其分成互补的两部分
 Map<Boolean, List<Demo>> passingMap = listDemo.stream()
     			.collect(Collectors.partitioningBy(s -> s.getAge() >= 20));
@@ -210,6 +219,15 @@ List<Demo> listDemo = new ArrayList(){{
 Map<String, Integer> summingMap = listDemo.stream()
 				.collect(Collectors.groupingBy(Demo::getName, Collectors.summingInt(Demo::getAge)));
 // summingMap 结果为: {a=39, b=21, c=21}
+
+Map<String, Optional<Demo>> maxMap = listDemo.stream()
+				.collect(Collectors.groupingBy(Demo::getName, Collectors.maxBy(Comparator::getAge)));
+// maxMap 结果为: {a=Demo{name='a', age=20}, b=Demo{name='b', age=21}, c=Demo{name='c', age=21}}
+
+Map<String, Optional<Demo>> minMap = listDemo.stream()
+				.collect(Collectors.groupingBy(Demo::getName, Collectors.minBy(Comparator::getAge)));
+// minMap 结果为: {a=Demo{name='a', age=19}, b=Demo{name='b', age=21}, c=Demo{name='c', age=21}}
+
 ```
 
 
