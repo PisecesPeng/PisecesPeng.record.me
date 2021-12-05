@@ -128,6 +128,12 @@ class WordCounterSpliterator implements Spliterator<Character> {
     /**
      * 该方法会对现有的stream进行分拆(一般用在parallelStream的情况),
      * 当该方法返回null的时候, 说明当前已不能再进行分割, 就会调用顺序处理{@link #forEachRemaining}.
+     * <p>
+     * 还不明确的要点:
+     * {@link AbstractPipeline#evaluate}中{@link AbstractPipeline#isParallel}会引导走向{@link TerminalOp#evaluateParallel}
+     * {@link TerminalOp}是一个接口, 其实现类中执行时, 多次会用到{@link Sink},
+     * 而其之后的*Ops类中, 对{@link Sink}会Wrap包括(begin、end、accpt)的实现,
+     * 我怀疑这就是与使用{@link #trySplit()}有关的地方
      */
     @Override
     public Spliterator<Character> trySplit() {
@@ -155,7 +161,8 @@ class WordCounterSpliterator implements Spliterator<Character> {
     }
 
     /**
-     * 返回数字, 代表Spliterator本身的特性的编码
+     * 返回数字, 代表Spliterator本身的特性的编码,
+     * 不同的编码, 会在Stream中匹配, 执行不同的逻辑
      * <p>
      * ORDERED	    元素有既定的顺序(例如{@link List}), 因此{@link Spliterator}在遍历和划分时也会遵循这一顺序
      * DISTINCT	    对于任意一对遍历过的元素x和y, x.equals(y)返回false
