@@ -37,6 +37,7 @@
   - [Java, Stream使用示例](https://github.com/PisecesPeng/PisecesPeng.record.me/blob/master/Java/StandardEdition/Java%2C%20%E6%B5%81Stream%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B.md)
   - [ThreadLocal.expungeStaleEntry应对内存泄漏](https://github.com/PisecesPeng/PisecesPeng.record.me/blob/master/Java/StandardEdition/ThreadLocal%2C%20expungeStaleEntry%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3.md)
   - [简述Java中锁的特点与优化机制](https://github.com/PisecesPeng/PisecesPeng.record.me/blob/master/Java/StandardEdition/%E7%AE%80%E8%BF%B0Java%E4%B8%AD%E9%94%81%E7%9A%84%E7%89%B9%E7%82%B9%E4%B8%8E%E4%BC%98%E5%8C%96%E6%9C%BA%E5%88%B6.md)
+  - [Java, Spliterator使用示例](https://github.com/PisecesPeng/PisecesPeng.record.me/blob/master/Java/StandardEdition/Java%2C%20Spliterator%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B.md)
   - [提高Java代码运行效率的小细节](https://github.com/PisecesPeng/PisecesPeng.record.me/blob/master/Java/StandardEdition/%E6%8F%90%E9%AB%98Java%E4%BB%A3%E7%A0%81%E8%BF%90%E8%A1%8C%E6%95%88%E7%8E%87%E7%9A%84%E5%B0%8F%E7%BB%86%E8%8A%82.md)
   - [Java基础问题杂项](https://github.com/PisecesPeng/PisecesPeng.record.me/blob/master/Java/StandardEdition/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%E6%9D%82%E9%A1%B9.md)
 
@@ -92,7 +93,7 @@
 - [ExportExcel](https://github.com/PisecesPeng/SampleWare/tree/master/A1JavaUtils/ExportExcel) ``` Excel export util [Java] ```
 - [RedisTemplateConn](https://github.com/PisecesPeng/SampleWare/tree/master/A1JavaUtils/RedisTemplateConnUtil) ``` Spring.RedisTemplate conn util [Java] ```
 - [JdbcTemplateConn](https://github.com/PisecesPeng/SampleWare/tree/master/A1JavaUtils/JdbcTemplateConnUtil) ``` Spring.JdbcTemplate conn util [Java] ```
-- [FileUpDown](https://github.com/PisecesPeng/SampleWare/tree/master/A1JavaUtils/FileUpDown) ``` File download & upload [Java] ```
+- [FileUpDown](https://github.com/PisecesPeng/SampleWare/tree/master/A1JavaUtils/FileUpDown) ``` File download & upload [Java & TS] ```
 - [ImportExcel](https://github.com/PisecesPeng/SampleWare/tree/master/A1JavaUtils/ImportExcel) ``` Excel import util [Java] ```
 - [RunJMH](https://github.com/PisecesPeng/SampleWare/tree/master/A1JavaUtils/RunJMH) ``` Benchmark by jmh [Java] ```
 - [DingNotify](https://github.com/PisecesPeng/SampleWare/tree/master/A1JavaUtils/DingNotify) ``` notify by DingTalk [Java] ```
