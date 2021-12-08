@@ -155,7 +155,7 @@ collectSet.forEach(System.out::print);  // 输出结果为 : abcde
 ```
 
 ```java
-// Demo Class for toMap()
+// Demo Class for demo
 class Demo {
     private String name;
     private Integer age;
@@ -228,6 +228,12 @@ Map<String, Optional<Demo>> minMap = listDemo.stream()
 				.collect(Collectors.groupingBy(Demo::getName, Collectors.minBy(Comparator::getAge)));
 // minMap 结果为: {a=Demo{name='a', age=19}, b=Demo{name='b', age=21}, c=Demo{name='c', age=21}}
 
+Map<String, Double> avgMap = list.stream()
+                .collect(Collectors.groupingBy(Demo::getName, Collectors.averagingDouble(Demo::getAge)));
+// avgMap 结果为: {a=19.5, b=21, c=21}
+Double avgNum = list.stream()
+                .collect(Collectors.collectingAndThen(Collectors.averagingDouble(Demo::getAge), Double::new));
+// avgNum 结果为: 20.25
 ```
 
 
