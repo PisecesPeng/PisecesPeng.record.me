@@ -116,7 +116,7 @@ class WordCounterSpliterator implements Spliterator<Character> {
      * 该方法会处理每个元素, 如果没有元素处理, 则应该返回false(中断Stream处理), 否则返回true
      * <p>
      * ps.
-     * {@link Stream#reduce}reduce操作的accumulate方法最终将调用到{@link #forEachRemaining(Consumer)}
+     * {@link Stream#reduce}操作的accumulate方法将调用到{@link #forEachRemaining}
      * 从而将{@link Consumer}传递到{@link #tryAdvance(Consumer)}中的Consumer.accept调用
      */
     @Override
@@ -129,11 +129,22 @@ class WordCounterSpliterator implements Spliterator<Character> {
      * 该方法会对现有的stream进行分拆(一般用在parallelStream的情况),
      * 当该方法返回null的时候, 说明当前已不能再进行分割, 就会调用顺序处理{@link #forEachRemaining}.
      * <p>
-     * 还不明确的要点:
      * {@link AbstractPipeline#evaluate}中{@link AbstractPipeline#isParallel}会引导走向{@link TerminalOp#evaluateParallel}
-     * {@link TerminalOp}是一个接口, 其实现类中执行时, 多次会用到{@link Sink},
-     * 而其之后的*Ops类中, 对{@link Sink}会Wrap包括(begin、end、accpt)的实现,
-     * 我怀疑这就是与使用{@link #trySplit()}有关的地方
+     * 1) 默认{@link TerminalOp#evaluateParallel}会执行{@link AbstractPipeline#copyInto},
+     *    该逻辑会调用{@link #forEachRemainin}.
+     * 2) 实现{@link TerminalOp}有好几个实现类, 这里使用{@link ReduceOps.ReduceOp}作为例子展示.
+     *    {@link ReduceOps.ReduceOp#evaluateParallel}会返回{@link ReduceOps.ReduceTask}, 这个Task类继承了{@link ForkJoinTask},
+     *    2.1. {@link ReduceOps.ReduceTask}调用{@link AbstractTask}构造,
+     *         在{@link AbstractTask}覆写了{@link AbstractTask#compute()},
+     *         其中调用了{@link Spliterator#trySplit()}和{@link AbstractTask#setLocalResult}.
+     *    2.2. 又回到{@link ReduceOps.ReduceOp#evaluateParallel}中, 调用了{@link ReduceOps.ReduceTask#invoke()},
+     *         invoke方法继承自{@link ForkJoinTask}, 顺出调用链, invoke->doInvoke->doExec->exec.
+     *    2.3. {@link ForkJoinTask#exec}是一个抽象方法, 被{@link ReduceOps.ReduceTask}的继承类{@link CountedCompleter#exec}的实现,
+     *         其中调用了{@link AbstractTask#compute()},
+     *         至此, 调用链完整了.
+     *    2.4  最后, {@link ForkJoinTask#invoke}返回的是{@link ForkJoinTask#getRawResult},
+     *         该方法被{@link AbstractTask#getRawResult}覆写, 返回的是{@link AbstractTask#localResult},
+     *         这个变量在第2.1.步骤中被赋值.
      */
     @Override
     public Spliterator<Character> trySplit() {
