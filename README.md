@@ -48,7 +48,7 @@
   - [Guava Array&Lists常用方法示例](https://github.com/PisecesPeng/PisecesPeng.record.me/blob/master/Java/Guava/Guava%20Array%20%26%20Lists%20%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E7%A4%BA%E4%BE%8B.md)
   - [Guava Maps常用方法示例](https://github.com/PisecesPeng/PisecesPeng.record.me/blob/master/Java/Guava/Guava%20Maps%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E7%A4%BA%E4%BE%8B.md)
   - [Guava Sets常用方法示例](https://github.com/PisecesPeng/PisecesPeng.record.me/blob/master/Java/Guava/Guava%20Sets%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E7%A4%BA%E4%BE%8B.md)
-  - [Guava实用工具类示例](https://github.com/PisecesPeng/PisecesPeng.record.me/blob/PisecesPeng-patch-1/Java/Guava/Guava%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7%E7%B1%BB%E7%A4%BA%E4%BE%8B.md)
+  - [Guava实用工具类示例](https://github.com/PisecesPeng/PisecesPeng.record.me/blob/master/Java/Guava/Guava%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7%E7%B1%BB%E7%A4%BA%E4%BE%8B.md)
 
 * **Mybatis**
   
