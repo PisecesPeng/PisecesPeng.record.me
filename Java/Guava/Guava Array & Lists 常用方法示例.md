@@ -21,6 +21,9 @@
 
 ## 1. Guava Array 常见方法使用
 
+> 注意, 本文仅展示`Ints`的部分方法,  
+> Guava还提供了很多诸如: `Longs`、`Doubles`、`Booleans`等...基础类操作类
+
 ### 1.1 数组与List相互转换[asList、toArray]
 
 ```java
