@@ -36,6 +36,8 @@
   - [Map常用方法示例](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Map常用方法示例.md)
   - [Stream流使用示例](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Stream流使用示例.md)
   - [Spliterator使用示例](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Spliterator使用示例.md)
+  - [CompletableFuture常用方法示例](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/CompletableFuture常用方法示例.md)
+  - [ExecutorService线程池的创建](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/ExecutorService线程池的创建.md)
   - [ThreadLocal, expungeStaleEntry方法详解](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/ThreadLocal,%20expungeStaleEntry方法详解.md)
   - [SerialVersionUID该如何声明](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/SerialVersionUID该如何声明.md)
   - [Serialization处理敏感属性](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Serialization处理敏感属性.md)
@@ -135,7 +137,7 @@
 
 * **Dotfile**
 
-  - [.vimrc](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Record/Script/Dotfile/.vimrc)
+  - [.ideavimrc](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Record/Script/Dotfile/.ideavimrc)
 
 ## :mountain_biking_man: Practice
 
@@ -200,3 +202,6 @@
 | [回文链表](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/回文链表) | 双指针、迭代、递归、链表 | 
 | [复制带随机指针的链表](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/复制带随机指针的链表) | 哈希表、迭代、递归、链表 | 
 | [外观数列](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/外观数列) | 哈希表、迭代 | 
+| [字符串中的第一个唯一字符](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/字符串中的第一个唯一字符) | 哈希表、迭代 | 
+| [字符串转换整数(atoi)](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/字符串转换整数(atoi)) | 哈希表、自动机 | 
+
