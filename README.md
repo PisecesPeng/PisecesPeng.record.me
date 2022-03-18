@@ -26,6 +26,7 @@
   - [装饰器模式示例](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/Design/装饰器模式示例.md)
   - [观察者模式示例](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/Design/观察者模式示例.md)
   - [访问器模式示例](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/Design/访问器模式示例.md)
+  - [构造者模式示例](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/Design/构造者模式示例.md)
 
 * **Standard Edition**
 
@@ -110,6 +111,7 @@
 - [DingNotify](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Record/Gist/DingNotify) ``` notify by DingTalk [Java] ```
 - [ExportExcelByTemp](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Record/Gist/ExportExcelByTemp) ``` export excel by template [Java] ```
 - [SequenceList](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Record/Gist/SequenceList) ``` Generate arrays regularly [Java & TS] ```
+- [Painter](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Record/Gist/Painter) ``` The painter of pixels [Java] ```
 
 ### Script
 
@@ -137,7 +139,8 @@
 
 * **Dotfile**
 
-  - [.ideavimrc](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Record/Script/Dotfile/.ideavimrc)
+  - [idea](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Record/Script/Dotfile/idea)
+  - [neovim](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Record/Script/Dotfile/nvim)
 
 ## :mountain_biking_man: Practice
 
