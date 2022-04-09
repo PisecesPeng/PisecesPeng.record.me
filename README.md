@@ -42,6 +42,7 @@
   - [ThreadLocal, expungeStaleEntry方法详解](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/ThreadLocal,%20expungeStaleEntry方法详解.md)
   - [SerialVersionUID该如何声明](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/SerialVersionUID该如何声明.md)
   - [Serialization处理敏感属性](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Serialization处理敏感属性.md)
+  - [常用时间类转换示例](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/常用时间类转换示例.md)
   - [Java基础问题杂项](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Java基础问题杂项.md)
 
 * **Guava**
@@ -207,4 +208,5 @@
 | [外观数列](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/外观数列) | 哈希表、迭代 | 
 | [字符串中的第一个唯一字符](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/字符串中的第一个唯一字符) | 哈希表、迭代 | 
 | [字符串转换整数(atoi)](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/字符串转换整数(atoi)) | 哈希表、自动机 | 
-
+| [存在重复元素](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/存在重复元素) | 排序、哈希表 |  
+| [实现strStr()](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/实现strStr) | 迭代、KMP算法 |  
