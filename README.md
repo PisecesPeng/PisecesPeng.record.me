@@ -2,9 +2,9 @@
 
 <div align="center">
 
-| &nbsp;Article&nbsp; | &nbsp;Record&nbsp; | Practice | Algorithm |
-| :---: | :---: | :---: | :---: | 
-| [:man_artist:](#man_artist-article) | [:man_technologist:](#man_technologist-record) | [:mountain_biking_man:](#mountain_biking_man-practice) | [:climbing_man:](#climbing_man-algorithm) |
+| &nbsp;Article&nbsp; | &nbsp;Record&nbsp; | Practice |
+| :---: | :---: | :---: |
+| [:man_artist:](#man_artist-article) | [:man_technologist:](#man_technologist-record) | [:mountain_biking_man:](#mountain_biking_man-practice) |
   
 </div>
   
@@ -30,7 +30,7 @@
 
 * **Standard Edition**
 
-  - [JVM结构的简单梳理](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/JVM结构的简单梳理.md)
+  - [JVM流程结构的简单梳理](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/JVM流程结构的简单梳理.md)
   - [简述Java中锁的特点与优化机制](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/简述Java中锁的特点与优化机制.md)
   - [提高Java代码运行效率的小细节](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/提高Java代码运行效率的小细节.md)
   - [List常用方法示例](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/List常用方法示例.md)
@@ -63,6 +63,7 @@
   - [常用Spring&SpringBoot注解扫盲](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/Spring/常用Spring&SpringBoot注解扫盲.md)
   - [简要了解Spring @Transactional](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/Spring/简要了解Spring%20@Transactional.md)
   - [Spring Data JPA使用备忘](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/Spring/Spring%20Data%20JPA使用备忘.md)
+  - [SpringBean生命周期梳理](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/Spring/SpringBean生命周期梳理.md)
 
 * **Maven**
 
@@ -176,37 +177,4 @@
 - [Overhear](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Practice/Overhear) ``` Simple example for ApplicationListener. [Java: SpringBoot + ApplicationListener] ```
 - [Tespace](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Practice/Tespace) ``` Simple example for Testcontainers. [Java: SpringBoot + Testcontainers] ```
 
-## :climbing_man: Algorithm
-
-| Problem | Topics |
-| :---: | :---: |
-| [3的幂](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/3的幂) | 整数、进制转换、迭代、递归 | 
-| [FizzBuzz](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/FizzBuzz) | 哈希表、数组、迭代 | 
-| [x的平方根](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/x的平方根) | 二分查找、双指针、迭代 | 
-| [丑数II](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/丑数II) | 动态规划、最小堆、迭代 | 
-| [两个数组的交集II](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/两个数组的交集II) | 双指针、哈希表、迭代 | 
-| [两数之和](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/两数之和) | 二分查找、哈希表、数组、迭代 | 
-| [两数相加](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/两数相加) | 迭代、链表 | 
-| [买卖股票的最佳时机 ](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/买卖股票的最佳时机) | 数组、迭代 | 
-| [买卖股票的最佳时期2](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/买卖股票的最佳时机2) | 动态规划、贪心算法、迭代 | 
-| [二叉树的层序遍历 ](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/二叉树的层序遍历 ) | 广度优先搜索、迭代 | 
-| [二叉树的最大深度](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/二叉树的最大深度) | 广度优先搜索、深度优先搜索、迭代、递归 | 
-| [二进制求和](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/二进制求和) | 位运算、迭代 | 
-| [从尾到头打印链表 ](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/从尾到头打印链表 ) | 栈、迭代、链表 | 
-| [位1的个数](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/位1的个数) | 位运算、数组、迭代 | 
-| [删除排序数组中的重复项](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/删除排序数组中的重复项 ) | 双指针、数组、迭代 | 
-| [删除链表的倒数第N个节点](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/删除链表的倒数第N个节点) | 双指针、栈、迭代 | 
-| [加一](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/加一) | 数组、迭代 | 
-| [反转字符串](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/反转字符串) | 双指针、迭代 | 
-| [反转链表](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/反转链表) | 迭代、递归、链表 | 
-| [只出现一次的数字](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/只出现一次的数字) | 位运算、迭代 | 
-| [合并两个有序数组](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/合并两个有序数组) | 双指针、迭代、逆向双指针 | 
-| [合并两个有序链表](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/合并两个有序链表) | 迭代、递归 | 
-| [回文数](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/回文数) | 整数、迭代 | 
-| [回文链表](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/回文链表) | 双指针、迭代、递归、链表 | 
-| [复制带随机指针的链表](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/复制带随机指针的链表) | 哈希表、迭代、递归、链表 | 
-| [外观数列](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/外观数列) | 哈希表、迭代 | 
-| [字符串中的第一个唯一字符](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/字符串中的第一个唯一字符) | 哈希表、迭代 | 
-| [字符串转换整数(atoi)](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/字符串转换整数(atoi)) | 哈希表、自动机 | 
-| [存在重复元素](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/存在重复元素) | 排序、哈希表 |  
-| [实现strStr()](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Algorithm/实现strStr) | 迭代、KMP算法 |  
+ 
