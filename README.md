@@ -72,6 +72,10 @@
   - [Maven基本命令](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/Maven/Maven基本命令.md)
   - [Maven, shade-plugin的简单配置](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/Maven/Maven,%20shade-plugin的简单配置.md)
 
+### React
+
+- [React组件生命周期简述](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/React/React组件生命周期简述.md)
+
 ### Database
 
 - [常见MySQL函数笔记](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Database/常见MySQL函数笔记.md)
