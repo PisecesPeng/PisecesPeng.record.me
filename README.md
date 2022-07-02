@@ -118,6 +118,7 @@
 - [ExportExcelByTemp](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Record/Gist/ExportExcelByTemp) ``` export excel by template [Java] ```
 - [SequenceList](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Record/Gist/SequenceList) ``` Generate arrays regularly [Java & TS] ```
 - [Painter](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Record/Gist/Painter) ``` The painter of pixels [Java] ```
+- [FontConverter](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Record/Gist/FontConverter) ` Digital font unicode conversion [TS & CSS] `
 
 ### Script
 
@@ -181,4 +182,4 @@
 - [Overhear](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Practice/Overhear) ``` Simple example for ApplicationListener. [Java: SpringBoot + ApplicationListener] ```
 - [Tespace](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Practice/Tespace) ``` Simple example for Testcontainers. [Java: SpringBoot + Testcontainers] ```
 - [Selflog](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Practice/Selflog) ` Simple example for slf4j#MDC. [Java: SpringBoot + slf4j#MDC] `
- 
+- [Mystrategy](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Practice/Mystrategy) ` Simple example for Strategy Pattern. [Java: SpringBoot + StrategyPattern] `
