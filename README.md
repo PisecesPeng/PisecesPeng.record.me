@@ -43,7 +43,7 @@
   - [SerialVersionUID该如何声明](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/SerialVersionUID该如何声明.md)
   - [Serialization处理敏感属性](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Serialization处理敏感属性.md)
   - [常用时间类转换示例](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/常用时间类转换示例.md)
-  - [Java基础问题杂项](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Java基础问题杂项.md)
+  - [Java基础问题摘要](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Java基础问题摘要.md)
 
 * **Guava**
 
@@ -119,6 +119,7 @@
 - [SequenceList](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Record/Gist/SequenceList) ``` Generate arrays regularly [Java & TS] ```
 - [Painter](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Record/Gist/Painter) ``` The painter of pixels [Java] ```
 - [FontConverter](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Record/Gist/FontConverter) ` Digital font unicode conversion [TS & CSS] `
+- [LittleAudio](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Record/Gist/LittleAudio) ` About working with H5(audio) [Java & H5] `
 
 ### Script
 
