@@ -39,6 +39,7 @@
   - [Spliterator使用示例](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Spliterator使用示例.md)
   - [CompletableFuture常用方法示例](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/CompletableFuture常用方法示例.md)
   - [ExecutorService线程池的创建](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/ExecutorService线程池的创建.md)
+  - [线程池的异常处理](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/线程池的异常处理.md)
   - [ThreadLocal, expungeStaleEntry方法详解](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/ThreadLocal,%20expungeStaleEntry方法详解.md)
   - [SerialVersionUID该如何声明](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/SerialVersionUID该如何声明.md)
   - [Serialization处理敏感属性](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Serialization处理敏感属性.md)
