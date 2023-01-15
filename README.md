@@ -65,6 +65,7 @@
   - [简要了解Spring @Transactional](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/Spring/简要了解Spring%20@Transactional.md)
   - [Spring Data JPA使用备忘](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/Spring/Spring%20Data%20JPA使用备忘.md)
   - [SpringBean生命周期梳理](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/Spring/SpringBean生命周期梳理.md)
+  - [Spring启动流程](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/Spring/Spring启动流程.md)
 
 * **Maven**
 
