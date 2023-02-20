@@ -31,6 +31,7 @@
 * **Standard Edition**
 
   - [JVM流程结构的简单梳理](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/JVM流程结构的简单梳理.md)
+  - [JVM调优小抄](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/JVM调优小抄.md)
   - [简述Java中锁的特点与优化机制](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/简述Java中锁的特点与优化机制.md)
   - [提高Java代码运行效率的小细节](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/提高Java代码运行效率的小细节.md)
   - [List常用方法示例](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/List常用方法示例.md)
@@ -64,6 +65,7 @@
   - [常用Spring&SpringBoot注解扫盲](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/Spring/常用Spring&SpringBoot注解扫盲.md)
   - [简要了解Spring @Transactional](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/Spring/简要了解Spring%20@Transactional.md)
   - [Spring Data JPA使用备忘](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/Spring/Spring%20Data%20JPA使用备忘.md)
+  - [Spring常见扩展点](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/Spring/Spring常见扩展点.md)
   - [SpringBean生命周期梳理](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/Spring/SpringBean生命周期梳理.md)
   - [Spring启动流程](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/Spring/Spring启动流程.md)
 
@@ -74,9 +76,10 @@
   - [Maven基本命令](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/Maven/Maven基本命令.md)
   - [Maven, shade-plugin的简单配置](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/Maven/Maven,%20shade-plugin的简单配置.md)
 
-### React
+### TypeScript
 
-- [React组件生命周期简述](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/React/React组件生命周期简述.md)
+- [TypeScript小抄](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/TypeScript/TypeScript小抄.md)
+- [React组件生命周期简述](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/TypeScript/React组件生命周期简述.md)
 
 ### Database
 
@@ -122,6 +125,7 @@
 - [Painter](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Record/Gist/Painter) ``` The painter of pixels [Java] ```
 - [FontConverter](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Record/Gist/FontConverter) ` Digital font unicode conversion [TS & CSS] `
 - [LittleAudio](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Record/Gist/LittleAudio) ` About working with H5(audio) [Java & H5] `
+- [WriteCombining](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Record/Gist/WriteCombining) ` CPU Write Combining demo [Java] `
 
 ### Script
 
