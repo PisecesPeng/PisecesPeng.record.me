@@ -46,6 +46,7 @@
   - [Serialization处理敏感属性](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Serialization处理敏感属性.md)
   - [常用时间类转换示例](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/常用时间类转换示例.md)
   - [Java基础问题摘要](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Java基础问题摘要.md)
+  - [并发设计优化思路](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/并发设计优化思路.md)
 
 * **Guava**
 
