@@ -5,9 +5,9 @@
 | &nbsp;Article&nbsp; | &nbsp;Record&nbsp; | Practice |
 | :---: | :---: | :---: |
 | [:man_artist:](#man_artist-article) | [:man_technologist:](#man_technologist-record) | [:mountain_biking_man:](#mountain_biking_man-practice) |
-  
+
 </div>
-  
+
 ## :man_artist: Article
 
 ### Linux
@@ -30,23 +30,39 @@
 
 * **Standard Edition**
 
-  - [JVM流程结构的简单梳理](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/JVM流程结构的简单梳理.md)
-  - [JVM调优小抄](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/JVM调优小抄.md)
-  - [简述Java中锁的特点与优化机制](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/简述Java中锁的特点与优化机制.md)
-  - [提高Java代码运行效率的小细节](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/提高Java代码运行效率的小细节.md)
-  - [List常用方法示例](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/List常用方法示例.md)
-  - [Map常用方法示例](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Map常用方法示例.md)
-  - [Stream流使用示例](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Stream流使用示例.md)
-  - [Spliterator使用示例](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Spliterator使用示例.md)
-  - [CompletableFuture常用方法示例](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/CompletableFuture常用方法示例.md)
-  - [ExecutorService线程池的创建](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/ExecutorService线程池的创建.md)
-  - [线程池的异常处理](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/线程池的异常处理.md)
-  - [ThreadLocal, expungeStaleEntry方法详解](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/ThreadLocal,%20expungeStaleEntry方法详解.md)
-  - [SerialVersionUID该如何声明](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/SerialVersionUID该如何声明.md)
-  - [Serialization处理敏感属性](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Serialization处理敏感属性.md)
-  - [常用时间类转换示例](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/常用时间类转换示例.md)
-  - [Java基础问题摘要](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Java基础问题摘要.md)
-  - [并发设计优化思路](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/并发设计优化思路.md)
+  * **Java Virtual Machine**
+
+    - [JVM流程结构的简单梳理](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/JavaVirtualMachine/JVM流程结构的简单梳理.md)
+    - [JVM调优小抄](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/JavaVirtualMachine/JVM调优小抄.md)
+
+  * **Collections**
+
+    - [List常用方法示例](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Collections/List常用方法示例.md)
+    - [Map常用方法示例](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Collections/Map常用方法示例.md)
+    - [Stream流使用示例](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Collections/Stream流使用示例.md)
+    - [Spliterator使用示例](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Collections/Spliterator使用示例.md)
+    - [List的删除问题与失败简述](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Collections/List的删除问题与失败简述.md)
+
+  * **Concurrent**
+
+    - [简述Java中锁的特点与优化机制](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Concurrent/简述Java中锁的特点与优化机制.md)
+    - [CompletableFuture常用方法示例](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Concurrent/CompletableFuture常用方法示例.md)
+    - [ExecutorService线程池的创建](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Concurrent/ExecutorService线程池的创建.md)
+    - [线程池的异常处理](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Concurrent/线程池的异常处理.md)
+    - [ThreadLocal, expungeStaleEntry方法详解](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Concurrent/ThreadLocal,%20expungeStaleEntry方法详解.md)
+    - [ThreadLocal父子数据传递示例](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Concurrent/ThreadLocal父子数据传递示例.md)
+    - [Pattern&Matcher的多线程问题](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Concurrent/Pattern&Matcher的多线程问题.md)
+    - [并发设计优化思路](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Concurrent/并发设计优化思路.md)
+    - [Java线程问题摘要](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Concurrent/Java线程问题摘要.md)
+
+  * **Point**
+
+    - [提高Java代码运行效率的小细节](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Point/提高Java代码运行效率的小细节.md)
+    - [Java引用类型简述](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Point/Java引用类型简述.md)
+    - [SerialVersionUID该如何声明](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Point/SerialVersionUID该如何声明.md)
+    - [Serialization处理敏感属性](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Point/Serialization处理敏感属性.md)
+    - [常用时间类转换示例](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Point/常用时间类转换示例.md)
+    - [Java基础问题摘要](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/StandardEdition/Point/Java基础问题摘要.md)
 
 * **Guava**
 
@@ -102,7 +118,7 @@
 
 ## :man_technologist: Record
 
-### Gist 
+### Gist
 
 - [Javassist](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Record/Gist/Javassist) ``` Template generation class [Java] ```
 - [JpmmlInvoker](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Record/Gist/JpmmlInvoker) ``` invoke pmml [Java] ```
@@ -127,6 +143,8 @@
 - [FontConverter](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Record/Gist/FontConverter) ` Digital font unicode conversion [TS & CSS] `
 - [LittleAudio](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Record/Gist/LittleAudio) ` About working with H5(audio) [Java & H5] `
 - [WriteCombining](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Record/Gist/WriteCombining) ` CPU Write Combining demo [Java] `
+- [ContendDemo](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Record/Gist/ContendDemo) ` false sharing(@Contended) demo [Java] `
+- [SelfConstraint](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Record/Gist/SelfConstraint) ` custom validator(@MobileValidator) demo [Java] `
 
 ### Script
 
