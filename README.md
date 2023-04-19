@@ -27,6 +27,7 @@
   - [观察者模式示例](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/Design/观察者模式示例.md)
   - [访问器模式示例](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/Design/访问器模式示例.md)
   - [构造者模式示例](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/Design/构造者模式示例.md)
+  - [状态模式示例](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Article/Java/Design/状态模式示例.md)
 
 * **Standard Edition**
 
@@ -164,12 +165,17 @@
 
 * **Shell**
 
-  - [runjar](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Record/Script/Shell/runjar.sh)
+  - [runjar.sh](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Record/Script/Shell/runjar.sh)
 
 * **SQL**
 
-  - [mysql](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Record/Script/SQL/mysql.sql)
-  - [oracle](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Record/Script/SQL/oracle.sql)
+  - [mysql.sql](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Record/Script/SQL/mysql.sql)
+  - [oracle.sql](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Record/Script/SQL/oracle.sql)
+
+* **Redis**
+
+  - [lock_set.lua](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Record/Script/Redis/lock_set.lua)
+  - [lock_del.lua](https://github.com/PisecesPeng/ReinventTheWheel/tree/main/Record/Script/Redis/lock_del.lua)
 
 * **Dotfile**
 
